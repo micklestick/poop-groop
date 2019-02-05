@@ -25,7 +25,7 @@ Each item should link to the actual product, be it a google spreadsheet, google 
 - [Product Backlog](https://github.com/micklestick/poop-groop/blob/master/requirements/product_backlog.md)
 - [Sprint Backlog](https://github.com/drhollander/COP4331_Sample/blob/master/sprint1/sprint_backlog.md)
   - [Burndown Chart](https://www.google.com/search?tbm=isch&q=sprint+burndown+chart&oq=sprint+burndown+chart)
-- [Requirements](https://github.com/drhollander/COP4331_Sample/blob/master/sprint1/requirements.md)
+- [Requirements](https://github.com/micklestick/poop-groop/blob/master/requirements/requirements.md)
 - Design Documents
   - System Architecture
   - Class Diagrams
