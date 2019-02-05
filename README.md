@@ -22,7 +22,7 @@ Your vision statement should contain the following information and be formatted 
 
 Each item should link to the actual product, be it a google spreadsheet, google doc, github markdown file, etc. Do not link to a markdown file that contains only a link to another location - link directly from the appropriate item below. Add any additional items required for the specific sprint submission.
 
-- [Product Backlog](https://github.com/drhollander/COP4331_Sample/blob/master/sprint1/product_backlog.md)
+- [Product Backlog](https://github.com/micklestick/poop-groop/blob/master/requirements/product_backlog.md)
 - [Sprint Backlog](https://github.com/drhollander/COP4331_Sample/blob/master/sprint1/sprint_backlog.md)
   - [Burndown Chart](https://www.google.com/search?tbm=isch&q=sprint+burndown+chart&oq=sprint+burndown+chart)
 - [Requirements](https://github.com/drhollander/COP4331_Sample/blob/master/sprint1/requirements.md)
