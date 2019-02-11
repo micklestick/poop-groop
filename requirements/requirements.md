@@ -2,10 +2,8 @@
 
 | Requirement ID | User Story ID | Requirement | Status |
 |----------------|---------------|-------------|--------|
-|            000 |           001 | Each entry in the product backlog shall have a unique ID | Verified |
-|            001 |           001 | Each entry in the product backlog shall have a textual description | Verified |
-|            002 |           001 | Each entry in the product backlog shall have a priority | Verified |
-|            003 |           001 | Each entry in the product backlog shall have an estimation of effort | Verified |
-|            004 |           001 | Each entry in the product backlog shall have a validation criteria | Verified |
-|            005 |           001 | Each entry in the product backlog shall have a status that can be one of NOT STARTED, WORKING, or DONE | Verified |
-|            005 |           001 | The product backlog shall be displayed as a table with one entry per row | Verified |
+|            000 |           000 | On screen arrows get the user from their origin to their destination | Not Started |
+|            001 |           001 | Building abbreviations should auto-complete to full building names, then start navigation | Not Started |
+|            002 |           002 | A on-screen element will tell the user how many minutes they have left to get to their destination. | Verified |
+|            003 |           003 | A list of favorites will appear and tapping on a location will start navigation from the user's current position to that destination. | Verified |
+|            004 |           004 | An on-screen element will tell the user how many miles/feet they are away from their destination. | Verified |
