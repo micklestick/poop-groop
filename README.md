@@ -29,9 +29,9 @@ Each item should link to the actual product, be it a google spreadsheet, google 
 - [Burndown Chart](https://github.com/micklestick/poop-groop/blob/master/project-information/burndown_chart.md)
 - [Requirements](https://github.com/micklestick/poop-groop/blob/master/project-information/requirements.md)
 - [Design Documents](https://github.com/micklestick/poop-groop/blob/master/project-design/)
-- [System Architecture](https://github.com/micklestick/poop-groop/blob/master/project-design/system-architecture)
-- [Class Diagrams](https://github.com/micklestick/poop-groop/blob/master/project-design/class-diagrams)
-- [Sequence Diagrams](https://github.com/micklestick/poop-groop/blob/master/project-design/sequence-diagrams)
+    - [System Architecture](https://github.com/micklestick/poop-groop/blob/master/project-design/system-architecture)
+    - [Class Diagrams](https://github.com/micklestick/poop-groop/blob/master/project-design/class-diagrams)
+    - [Sequence Diagrams](https://github.com/micklestick/poop-groop/blob/master/project-design/sequence-diagrams)
 - [Source Code](https://github.com/micklestick/poop-groop/blob/master/project-construction/src)
 - [Test Cases](https://github.com/micklestick/poop-groop/blob/master/project-construction/test)
 - Product Demonstration
