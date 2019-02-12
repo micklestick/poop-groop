@@ -22,17 +22,12 @@ to still see in front of you while looking at directions, never having to look d
 
 # Sprint 1
 
-Each item should link to the actual product, be it a google spreadsheet, google doc, github markdown file, etc. Do not link to a markdown file that contains only a link to another location - link directly from the appropriate item below. Add any additional items required for the specific sprint submission.
-
-- [Product Backlog](https://github.com/micklestick/poop-groop/blob/master/requirements/product_backlog.md)
-- [Sprint Backlog](https://github.com/micklestick/poop-groop/blob/master/requirements/sprint_backlog.md)
-  - [Burndown Chart](https://www.google.com/search?tbm=isch&q=sprint+burndown+chart&oq=sprint+burndown+chart)
-- [Requirements](https://github.com/micklestick/poop-groop/blob/master/requirements/requirements.md)
-- Design Documents
-  - System Architecture
-  - Class Diagrams
-  - Sequence Diagrams
-  - etc.
-- Source Code
-- Test Cases
+Each item should link to the actual product, be it a google spreadsheet, google doc, github markdown file, etc. Do not link to a markdown file that contains only a link to another locatEach item should link to the actual product, be it a google spreadsheet, google doc, github markdown file, etc. Do not on.Each item should link to the actual product, be it a google spreadsheet, google doc, github markdown file, etc. Do not SpEach item should link to the actual product, be it a google spreadsheet, google doc, github markdown file, etc. Do noownEach item should link to the actual product, be it a google spreadsheet, google doc, github markdown file, etc. Dnts]Each item should link to the actual product, be it a google spreadsheet, google doc, github markdown file, etc.](https://github.com/micklestick/poop-groop/blob/master/project-design/)
+  - [System Architecture](https://github.com/micklestick/poop-groop/blob/master/project-design/system-architecture)
+  - [Class Diagrams](https://github.com/micklestick/poop-groop/blob/master/project-design/class-diagrams)
+  - [Sequence Diagrams](https://github.com/micklestick/poop-groop/blob/master/project-design/sequence-diagrams)
+- [Source Code](https://github.com/micklestick/poop-groop/blob/master/project-construction/src)
+- [Test Cases](https://github.com/micklestick/poop-groop/blob/master/project-construction/test)
 - Product Demonstration
+
+
