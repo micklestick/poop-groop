@@ -35,3 +35,20 @@ Thumbs.db
 *.log
 *.sql
 *.sqlite
+
+# Xcode #
+#########
+xcuserdata/
+project.xcworkspace/
+DerivedData/
+
+# build products #
+##################
+build/
+*.[oa]
+
+# Cocoapods #
+#############
+
+Pods/
+
