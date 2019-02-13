@@ -20,8 +20,6 @@ to still see in front of you while looking at directions, never having to look d
 
 # Sprint 1
 
-Each item should link to the actual product, be it a google spreadsheet, google doc, github markdown file, etc. Do not link to a markdown file that contains only a link to another location - link directly from the appropriate item below. Add any additional items required for the specific sprint submission.
-
 - [Product Backlog](https://github.com/micklestick/poop-groop/blob/master/project-information/product_backlog.md)
 - [Sprint Backlog](https://github.com/micklestick/poop-groop/blob/master/project-information/sprint_backlog.md)
 - [Burndown Chart](https://github.com/micklestick/poop-groop/blob/master/project-information/burndown_chart.md)
@@ -32,5 +30,4 @@ Each item should link to the actual product, be it a google spreadsheet, google 
     - [Sequence Diagrams](https://github.com/micklestick/poop-groop/blob/master/project-design/sequence-diagrams)
 - [Source Code](https://github.com/micklestick/poop-groop/blob/master/project-construction/src)
 - [Test Cases](https://github.com/micklestick/poop-groop/blob/master/project-construction/test)
-- Product Demonstration
-
+- [Product Demonstration](https://github.com/micklestick/poop-groop/blob/master/project-construction/demo)
