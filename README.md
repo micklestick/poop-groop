@@ -9,8 +9,6 @@
 
 ## Vision Statement
 
-Your vision statement should contain the following information and be formatted as one or more paragraphs.
-
 This application is being built with the newcomer UCF student or employee in mind. Navigating campus can be hard without
 much aid. There are many sideroads, exits, and buildings in between to easily get lost in. Our app, KnightsMap, will help
 newer students and employees navigate the campus with ease through the use of AR. That leads to less time spent figuring
