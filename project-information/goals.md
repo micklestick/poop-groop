@@ -9,6 +9,9 @@
 | 004 | As a student, I need to know the current distance to my destination because I need to choose appropriate transportation. | 001.1 | 004 |
 | 005 | As a student, I need to select destinations from a list of favorites because it will save me time. | 003 | 003 |
 | 006 | As a student, I need destinations to auto-complete because it will save me typing. | 003 | 001 |
+| 007 | As a student, I need to find the resturants I want to eat at because it will prevent me from getting lost | 004.0 | 007 |
+| 007 | As a student, I need to find the store I need to visit. | 004.1 | 007 |
+
 | XXX | As an X, I need to Y because Z | TBD | TBD |
 
 | Goal ID | Goal Description | Requirements |
@@ -21,5 +24,7 @@
 | 002.2 | The application should take account of the user's transportation's speed when providing directions. For instance, since cars are fast than walking, the nearest parking lot should be selected to minimize travel time. | TBD |
 | 002.3 | The application should allow the user to override the aforementioned, should they so choose. i.e. Users should be allowed to select a sub-optimal parking lot so they can meet friends. | TBD |
 | 003 | The application should provide ease to use functionality to increase user convience. | TBD |
+| 004.0 | The application should provide users with directions to resturants. | TBD |
+| 004.1 | The application should provide users with directions to various stores on campus. | TBD |
 
 TODO: Turn this all into a database and generate the view with a shell script (including cross references).
