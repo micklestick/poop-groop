@@ -15,6 +15,7 @@
 		70B9A6952213E7FF003C11EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B9A6932213E7FF003C11EF /* LaunchScreen.storyboard */; };
 		70B9A6A02213E7FF003C11EF /* KnightsMapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B9A69F2213E7FF003C11EF /* KnightsMapsTests.swift */; };
 		70B9A6AB2213E7FF003C11EF /* KnightsMapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B9A6AA2213E7FF003C11EF /* KnightsMapsUITests.swift */; };
+		70D794102216005200BC40D2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D7940F2216005200BC40D2 /* LocationManager.swift */; };
 		FF16D994FF858E57B7686F88 /* libPods-KnightsMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B71002B3C1C8B6938BB71AB /* libPods-KnightsMaps.a */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		70B9A6A62213E7FF003C11EF /* KnightsMapsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KnightsMapsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B9A6AA2213E7FF003C11EF /* KnightsMapsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnightsMapsUITests.swift; sourceTree = "<group>"; };
 		70B9A6AC2213E7FF003C11EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70D7940F2216005200BC40D2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		DB8C553EC2EF7B3A602D04AC /* Pods-KnightsMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMaps.release.xcconfig"; path = "Target Support Files/Pods-KnightsMaps/Pods-KnightsMaps.release.xcconfig"; sourceTree = "<group>"; };
 		DD9EC0AC53717030D5AD7269 /* Pods-KnightsMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMaps.debug.xcconfig"; path = "Target Support Files/Pods-KnightsMaps/Pods-KnightsMaps.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 		70B9A6872213E7FE003C11EF /* KnightsMaps */ = {
 			isa = PBXGroup;
 			children = (
+				70D7940F2216005200BC40D2 /* LocationManager.swift */,
 				70B9A6882213E7FE003C11EF /* AppDelegate.swift */,
 				70B9A68A2213E7FE003C11EF /* art.scnassets */,
 				70B9A68C2213E7FE003C11EF /* ViewController.swift */,
@@ -331,6 +334,7 @@
 			files = (
 				70B9A68D2213E7FE003C11EF /* ViewController.swift in Sources */,
 				70B9A6892213E7FE003C11EF /* AppDelegate.swift in Sources */,
+				70D794102216005200BC40D2 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
