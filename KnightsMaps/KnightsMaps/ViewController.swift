@@ -15,7 +15,7 @@ import CoreLocation
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
-<<<<<<< HEAD
+
     @IBOutlet var latitudeLabel: UILabel!
     @IBOutlet var longitudeLabel: UILabel!
     @IBOutlet var statusLabel: UILabel!
@@ -30,12 +30,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         super.viewDidLoad()
         updateUI()
         
-=======
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
->>>>>>> 29865f8c9d7667a4f2dacf43a5f30aff44abe9bf
         // Set the view's delegate
         sceneView.delegate = self
 
@@ -48,7 +42,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the scene to the view
         sceneView.scene = scene
     }
-<<<<<<< HEAD
     
     func updateUI()
     {
@@ -132,10 +125,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         present(alert, animated: true, completion: nil)
     }
-    
-=======
 
->>>>>>> 29865f8c9d7667a4f2dacf43a5f30aff44abe9bf
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
