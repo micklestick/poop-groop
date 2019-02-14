@@ -8,6 +8,10 @@
 ehthumbs.db
 Thumbs.db
 
+# Authorization info #
+######################
+secret.txt
+
 # Compiled source #
 ###################
 *.com
