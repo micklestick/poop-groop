@@ -10,13 +10,24 @@ import UIKit
 import SceneKit
 import ARKit
 import ARCL
+import CoreLocation
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet var latitudeLabel: UILabel!
+    @IBOutlet var longitudeLabel: UILabel!
+    @IBOutlet var statusLabel: UILabel!
+    @IBOutlet var findLocationButton: UIButton!
+    
+    let locationManager = CLLocationManager()
+    var location: CLLocation?
+    var isUpdatingLocation = false
+    var lastLocationError: Error?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -29,6 +40,89 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the scene to the view
         sceneView.scene = scene
+    }
+    
+    func updateUI()
+    {
+        if let location = location
+        {
+            //TODO: populate location labels with coordinate info
+            latitudeLabel.text = String(format: "%.8f", location.coordinate.latitude)
+            longitudeLabel.text = String(format: "%.8f", location.coordinate.longitude)
+            statusLabel.text = "New Location Detected!"
+        }
+        else
+        {
+            statusLabel.text = "Tap 'Find Location' to Start"
+            latitudeLabel.text = "-"
+            longitudeLabel.text = "-"
+            
+        }
+    }
+    
+    //MARK: - Target/Action
+    @IBAction func findLocation()
+    {
+        //Request permission
+        let authorizationStatus = CLLocationManager.authorizationStatus()
+        
+        if authorizationStatus == .notDetermined
+        {
+            locationManager.requestWhenInUseAuthorization()
+            return
+        }
+        //Report if permission is denied
+        if authorizationStatus == .denied || authorizationStatus == .restricted
+        {
+            reportLocationServicesDeniedError()
+            return
+        }
+        // start / stop finding location
+        if isUpdatingLocation
+        {
+            stopLocationManager()
+        }
+        else
+        {
+            location = nil
+            lastLocationError = nil
+            startLocationManager()
+        }
+        
+        updateUI()
+    }
+    
+    func startLocationManager()
+    {
+        if CLLocationManager.locationServicesEnabled()
+        {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+            locationManager.startUpdatingLocation()
+            isUpdatingLocation = true
+        }
+    }
+    
+    func stopLocationManager()
+    {
+        if isUpdatingLocation
+        {
+            locationManager.stopUpdatingLocation()
+            locationManager.delegate = nil
+            isUpdatingLocation = false
+        }
+        
+    }
+    
+    
+    
+    func reportLocationServicesDeniedError()
+    {
+        let alert = UIAlertController(title: "Location services disabled!", message: "Please go to settings and enable location services.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,5 +166,28 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
+    }
+}
+
+extension ViewController : CLLocationManagerDelegate
+{
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("ERROR! locationManager-didFailWithError: \(error)" )
+        
+        if (error as NSError).code == CLError.locationUnknown.rawValue
+        {
+            lastLocationError = error
+            stopLocationManager()
+            updateUI()
+        }
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        location = locations.last!
+        print("Got the location! locationManager-didUpdateLocations: \(location)")
+        stopLocationManager()
+        updateUI()
     }
 }

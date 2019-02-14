@@ -87,7 +87,6 @@
 				DD9EC0AC53717030D5AD7269 /* Pods-KnightsMaps.debug.xcconfig */,
 				DB8C553EC2EF7B3A602D04AC /* Pods-KnightsMaps.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
