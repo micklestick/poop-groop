@@ -1,2 +1,7 @@
 exclude:
     - Pods
+
+except:
+    - trailing-whitespace
+    - comment-whitespace
+    - colon-whitespace
