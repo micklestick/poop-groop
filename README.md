@@ -17,6 +17,7 @@ Unlike the current Google Maps, which does offer walking instructions, KnightsMa
 - [Product Backlog](https://trello.com/b/OslTPyHi/poop-group-project)
 - [Sprint Backlog](https://trello.com/b/OslTPyHi/poop-group-project)
 - [Burndown Chart](https://www.burndownfortrello.com/index.php)
+- [User Stories](https://github.com/micklestick/poop-groop/blob/master/project-information/user-stories.md)
 - [Requirements](https://github.com/micklestick/poop-groop/blob/master/project-information/requirements.md)
 - [Design Documents](https://github.com/micklestick/poop-groop/blob/master/project-design/)
     - [System Architecture](https://github.com/micklestick/poop-groop/blob/master/project-design/system-architecture)
