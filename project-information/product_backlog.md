@@ -10,3 +10,7 @@
 | 005 | As a student, I want to be able to see if I am at the building I am navigating to because I want to know when I am at my destination. | 5 | 3 | An on-screen element that shows the name of the building being navigated to over the correct building. | NOT STARTED |
 | 006 | As a student, I want to be able to see information about the building I searched because I want to know if it is open. | 1 | 2 | An on-screen element that shows information for the building searched such as hours open or services offered. | NOT STARTED |
 | 007 | As a student, I want to be able to find stores and restaurants around campus because I do not know where they all are. | 3 | 1 | Restaurants will come up in search results amongst buildings. | NOT STARTED|
+| 008 | As a student, I want to see a path on the ground leading me to my destination. | 5 | 5 | A path is drawn along the ground leading the user to their destination | NOT STARTED |
+| 009 | As a student, I want the app to automatically find my location. | 3 | 5 | The application automatically detects the user's longitude and lattitude | NOT STARTED |
+|010 | As a student, I want to be able to enter a destination UCF building. | 2 | 5 | The user has a field that they can enter their destination building and that value is saved and used for navigation. | NOT STARTED|
+| 011 | As a student, I want to be able to cancel my navigation early. | 2 | 3 | NOT STARTED
