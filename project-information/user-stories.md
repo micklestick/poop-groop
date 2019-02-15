@@ -16,14 +16,14 @@
 
 | Goal ID | Goal Description | Requirements |
 |-|-|-|
-| 000 | The application should provide users with basic information about nearby buildings. | TBD |
-| 001.0 | The application should provide users with directions to their destination. | TBD |
-| 001.1 | The application should provide users metadata on the directions provided. i.e. Estimated time to destination. | TBD |
-| 002.0 | The application should allow users to select a transportation method. | TBD |
+| 000 | The application should provide users with basic information about nearby buildings. | 006, 005 |
+| 001.0 | The application should provide users with directions to their destination. | 006 |
+| 001.1 | The application should provide users metadata on the directions provided. i.e. Estimated time to destination. | 002 |
+| 002.0 | The application should allow users to select a transportation method. | 000 |
 | 002.1 | The application should direct user's to a convientent spot to store their transportation. i.e. A bike rack, or a parking lot. | TBD |
 | 002.2 | The application should take account of the user's transportation's speed when providing directions. For instance, since cars are fast than walking, the nearest parking lot should be selected to minimize travel time. | TBD |
 | 002.3 | The application should allow the user to override the aforementioned, should they so choose. i.e. Users should be allowed to select a sub-optimal parking lot so they can meet friends. | TBD |
-| 003 | The application should provide ease of use functionality to increase user convience. | TBD |
+| 003 | The application should provide ease of use functionality to increase user convience. | 001, 003 |
 | 004 | The application should have the neccesary infrastructure to support implementation of other goals. | 007 |
 
 TODO: Turn this all into a database and generate the view with a shell script (including cross references).
