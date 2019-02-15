@@ -8,7 +8,7 @@
 | 003 | As a student, I need to know how long it will take to reach the destination because I need to schedule my time. | 001.1 | 002 |
 | 004 | As a student, I need to know the current distance to my destination because I need to choose appropriate transportation. | 001.1 | 002 |
 | 005 | As a student, I need to select destinations from a list of favorites because it will save me time. | 003 | 003 |
-| 006 | As a student, I need destinations to auto-complete because it will save me typing. | 003 | 001 |
+| 006 | As a student, I need destinations to auto-complete because it will reduce typing. | 003 | 001 |
 | 007 | As a student, I know I need to know which restaurants are in a building because it will help me find the restaurant I want to eat at. | 000 | 006 |
 | 008 | As a student, I need to find the building containing a store I want to visit. | 001.0, 000 | 006 |
 
