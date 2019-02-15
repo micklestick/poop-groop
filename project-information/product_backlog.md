@@ -13,4 +13,4 @@
 | 008 | As a student, I want to see a path on the ground leading me to my destination. | 5 | 5 | A path is drawn along the ground leading the user to their destination | NOT STARTED |
 | 009 | As a student, I want the app to automatically find my location. | 3 | 5 | The application automatically detects the user's longitude and lattitude | NOT STARTED |
 |010 | As a student, I want to be able to enter a destination UCF building. | 2 | 5 | The user has a field that they can enter their destination building and that value is saved and used for navigation. | NOT STARTED|
-| 011 | As a student, I want to be able to cancel my navigation early. | 2 | 3 | NOT STARTED
+| 011 | As a student, I want to be able to cancel my navigation early. | 2 | 3 | The user will have an on-screen button that can end the navigation immediately. |NOT STARTED|
