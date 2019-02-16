@@ -11,6 +11,11 @@
 | 006 | As a student, I need destinations to auto-complete because it will reduce typing. | 003 | 001 |
 | 007 | As a student, I know I need to know which restaurants are in a building because it will help me find the restaurant I want to eat at. | 000 | 006 |
 | 008 | As a student, I need to find the building containing a store I want to visit. | 001.0, 000 | 006 |
+| 009 | As a student, I need the app to automatically find my location because I want my navigation to be accurate. | 004 | 009 |
+| 010 | As a student, I want the app to have an icon because I want to idenitify it easily. | 010 | 010 |
+| 011 | As a student, I want the app to have a launch screen because I want loading to feel faster | 011 | 011 |
+| 012 | As a student, I want to search for resutarants around campus because I want to easily find somewhere to eat. | 013 | 013 |
+| 013 | As a sudent, I want to search for stores around campus because I want to find where I can buy supplies. | 014 | 014 |
 
 | XXX | As an X, I need to Y because Z | TBD | TBD |
 
