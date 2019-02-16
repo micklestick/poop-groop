@@ -514,6 +514,7 @@
 			baseConfigurationReference = DD9EC0AC53717030D5AD7269 /* Pods-KnightsMaps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QU53XSEP4J;
 				INFOPLIST_FILE = KnightsMaps/Info.plist;
@@ -533,6 +534,7 @@
 			baseConfigurationReference = DB8C553EC2EF7B3A602D04AC /* Pods-KnightsMaps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QU53XSEP4J;
 				INFOPLIST_FILE = KnightsMaps/Info.plist;
