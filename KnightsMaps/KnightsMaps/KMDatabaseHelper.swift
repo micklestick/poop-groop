@@ -16,17 +16,35 @@ class KMDatabaseHelper {
         // if version number is newer, call get() method
     }
 
+    // get connection to database to recieve JSON
     func getConnection() {
-        // get connection to database to recieve JSON
+
         // url request with placeholder url
         let jsonUrlString = "https://jsonplaceholder.typicode.com/users"
-        guard let url = URL(string: jsonUrlString) else { return }
+
+        // create Url object
+        guard let endpoint = URL(string: jsonUrlString) else {
+            print("Error creating endpoint")
+            return
+        }
 
         // create JSON url session for get request
-        let session = URLSession.shared.dataTask(with: url) { (data, response, err) in
+        URLSession.shared.dataTask(with: endpoint) { (data, response, err) in
             // error check here
-        }.resume()
 
+            // create instance of data pulled from get request
+            guard let data = data else {
+                print("JSONError: failed to get data")
+                return
+            }
+
+            do {
+                // decode the JSON here
+            } catch {
+                // error trap here
+            }
+
+        }.resume()
 
     }
 
@@ -35,6 +53,8 @@ class KMDatabaseHelper {
 
         // store information decoded in a KMBuilding object
         // store KMBuilding object in a KMBuilding array and return array
+
+
     }
 
 }
