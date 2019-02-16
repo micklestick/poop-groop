@@ -5,7 +5,7 @@
 | 000 | 001 | 001.0 | AR arrows directing the user from origin to destination. | High | Product Backlog |
 | 001 | 006 | 003 | Building names and abbreviations can be used interchangeably. | Low | Product Backlog |
 | 002 | 003 | 001.1 | The user will be informed of the time left to their destination. | Low | Product Backlog |
-| 003 | 003 | XXX | The user will be informed of the distance left to their destination | Low | DONE |
+| 003 | 003 | 001.1 | The user will be informed of the distance left to their destination | Low | DONE |
 | 003 | 005 | 003 | The user can designate destinations as favorites. | Low | Product Backlog |
 | 004 | 005 | 003 | Users are provided 'quick-start' functionality for favorite destinations. | Low | Product Backlog |
 | 005 | 005 | 000 | The user will be informed which building they are viewing. | High | Product Backlog |
@@ -16,7 +16,7 @@
 | 010 | 010 | XXX | The user will have an icon for the app. | High | DONE |
 | 011 | 011 | XXX | The user will have a launch screen for the app. | High | DONE |
 | 012 | 012 | XXX | The user can search for restuarants around campus. | Low | Product Backlog |
-| 013 | 013 | XXX | The user can search for stores around campus. | Low | Product Backlog |
+| 013 | 013 | 005 | The user can search for stores around campus. | Low | Product Backlog |
 
 Note: Priority is provisional and should be further discussed.
 
