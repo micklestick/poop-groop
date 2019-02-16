@@ -12,8 +12,8 @@
 | 007 | As a student, I know I need to know which restaurants are in a building because it will help me find the restaurant I want to eat at. | 013 | 013 |
 | 008 | As a student, I need to find stores around campus because I need to find where to buy supplies | 005 | 014 |
 | 009 | As a student, I need the app to automatically find my location because I want my navigation to be accurate. | 004 | 009 |
-| 010 | As a student, I want the app to have an icon because I want to idenitify it easily. | 010 | 010 |
-| 011 | As a student, I want the app to have a launch screen because I want loading to feel faster | 011 | 011 |
+| 010 | As a student, I want the app to have an icon because I want to idenitify it easily. | 007 | 010 |
+| 011 | As a student, I want the app to have a launch screen because I want loading to feel faster | 006 | 011 |
 | 012 | As a student, I want to be able to change my destination during navigation so I can meet my friends. | 002.2, 002.3 | 015 |
 | 013 | As a student, I want to find the nearest transportation parking to my destination so I can save time. | 002.1, 002.2 | 016 |
 
@@ -31,5 +31,7 @@
 | 003 | The application should provide ease of use functionality to increase user convience. | 001, 003 |
 | 004 | The application should have the neccesary infrastructure to support implementation of other goals. | 007 |
 | 005 | The application should store location data on stores around campus. | 013 |
+| 006 | The application should have a launch splash screen to cover the loading time. | 011 |
+| 007 | The application should have an icon to be easily identified. | 010 |
 
 TODO: Turn this all into a database and generate the view with a shell script (including cross references).
