@@ -18,6 +18,7 @@
 		70D794102216005200BC40D2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D7940F2216005200BC40D2 /* LocationManager.swift */; };
 		FEB73ED1221638B70040A251 /* KMBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73ED0221638B70040A251 /* KMBuilding.swift */; };
 		FEC9A2282217AEE600EBC9B2 /* KMLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9A2272217AEE600EBC9B2 /* KMLocation.swift */; };
+		FEC9A22A2217B15300EBC9B2 /* KMDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9A2292217B15300EBC9B2 /* KMDatabaseHelper.swift */; };
 		FF16D994FF858E57B7686F88 /* libPods-KnightsMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B71002B3C1C8B6938BB71AB /* libPods-KnightsMaps.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		DD9EC0AC53717030D5AD7269 /* Pods-KnightsMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMaps.debug.xcconfig"; path = "Target Support Files/Pods-KnightsMaps/Pods-KnightsMaps.debug.xcconfig"; sourceTree = "<group>"; };
 		FEB73ED0221638B70040A251 /* KMBuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMBuilding.swift; sourceTree = "<group>"; };
 		FEC9A2272217AEE600EBC9B2 /* KMLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMLocation.swift; sourceTree = "<group>"; };
+		FEC9A2292217B15300EBC9B2 /* KMDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMDatabaseHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				70B9A6932213E7FF003C11EF /* LaunchScreen.storyboard */,
 				70B9A6962213E7FF003C11EF /* Info.plist */,
 				FEB73ED0221638B70040A251 /* KMBuilding.swift */,
+				FEC9A2292217B15300EBC9B2 /* KMDatabaseHelper.swift */,
 				FEC9A2272217AEE600EBC9B2 /* KMLocation.swift */,
 			);
 			path = KnightsMaps;
@@ -340,6 +343,7 @@
 			files = (
 				70B9A68D2213E7FE003C11EF /* ViewController.swift in Sources */,
 				FEB73ED1221638B70040A251 /* KMBuilding.swift in Sources */,
+				FEC9A22A2217B15300EBC9B2 /* KMDatabaseHelper.swift in Sources */,
 				70B9A6892213E7FE003C11EF /* AppDelegate.swift in Sources */,
 				70D794102216005200BC40D2 /* LocationManager.swift in Sources */,
 				FEC9A2282217AEE600EBC9B2 /* KMLocation.swift in Sources */,
