@@ -15,7 +15,8 @@
 | 010 | As a student, I want the app to have an icon because I want to idenitify it easily. | 010 | 010 |
 | 011 | As a student, I want the app to have a launch screen because I want loading to feel faster | 011 | 011 |
 | 012 | As a student, I want to search for resutarants around campus because I want to easily find somewhere to eat. | 013 | 013 |
-| 013 | As a sudent, I want to search for stores around campus because I want to find where I can buy supplies. | 014 | 014 |
+| 013 | As a student, I want to search for stores around campus because I want to find where I can buy supplies. | 013 | 014 |
+| 014 | As a student, I want to be able to change my destination during navigation so I can meet my friends. | 002.2, 002.3 | 015 |
 
 | XXX | As an X, I need to Y because Z | TBD | TBD |
 
@@ -27,8 +28,9 @@
 | 002.0 | The application should allow users to select a transportation method. | 000 |
 | 002.1 | The application should direct user's to a convientent spot to store their transportation. i.e. A bike rack, or a parking lot. | TBD |
 | 002.2 | The application should take account of the user's transportation's speed when providing directions. For instance, since cars are fast than walking, the nearest parking lot should be selected to minimize travel time. | TBD |
-| 002.3 | The application should allow the user to override the aforementioned, should they so choose. i.e. Users should be allowed to select a sub-optimal parking lot so they can meet friends. | TBD |
+| 002.3 | The application should allow the user to override the aforementioned, should they so choose. i.e. Users should be allowed to select a sub-optimal parking lot so they can meet friends. | 014 |
 | 003 | The application should provide ease of use functionality to increase user convience. | 001, 003 |
 | 004 | The application should have the neccesary infrastructure to support implementation of other goals. | 007 |
+| 005 | The application should store location data on stores around campus. | 013 |
 
 TODO: Turn this all into a database and generate the view with a shell script (including cross references).
