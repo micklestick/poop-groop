@@ -22,13 +22,3 @@ class KMBuilding {
         self.info = info
     }
 }
-// Custom location class for storing latitude and longitude as one object
-class KMLocation {
-    let latitude: Float
-    let longitude: Float
-
-    init(latitude: Float, longitude: Float) {
-        self.latitude = latitude
-        self.longitude = longitude
-    }
-}
