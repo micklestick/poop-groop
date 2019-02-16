@@ -15,8 +15,8 @@
 | 009 | XXX | 004 | The application will interface with Core Location to retrieve location data. | High | DONE |
 | 010 | 010 | XXX | The user will have an icon for the app. | High | DONE |
 | 011 | 011 | XXX | The user will have a launch screen for the app. | High | DONE |
-| 012 | 013 | XXX | The user can search for restuarants around campus. | Low | Product Backlog |
-| 013 | 014 | XXX | The user can search for stores around campus. | Low | Product Backlog |
+| 012 | 012 | XXX | The user can search for restuarants around campus. | Low | Product Backlog |
+| 013 | 013 | XXX | The user can search for stores around campus. | Low | Product Backlog |
 
 Note: Priority is provisional and should be further discussed.
 
