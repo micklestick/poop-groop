@@ -38,12 +38,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
         // Set the scene to the view
         sceneView.scene = scene
-        
+
         // Location test lables
         statusLabel.text = "Tap 'Find Location' to Start"
         latitudeLabel.text = "-"
         longitudeLabel.text = "-"
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -109,5 +109,3 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 
 }
-
-

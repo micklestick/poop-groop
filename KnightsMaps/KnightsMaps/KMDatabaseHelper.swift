@@ -29,7 +29,7 @@ class KMDatabaseHelper {
         }
 
         // create JSON url session for get request
-        URLSession.shared.dataTask(with: endpoint) { (data, response, err) in
+       /* URLSession.shared.dataTask(with: endpoint) { (data, response, err) in
             // error check here
 
             // create instance of data pulled from get request
@@ -44,7 +44,7 @@ class KMDatabaseHelper {
                 // error trap here
             }
 
-        }.resume()
+        }.resume()*/
 
     }
 
@@ -55,6 +55,20 @@ class KMDatabaseHelper {
         // store KMBuilding object in a KMBuilding array and return array
 
 
+    }
+
+    // function for generating an example test array of type KMBuilding
+    // will be removed when database is fully functioning
+
+    static func makeObjectArray() -> [KMBuilding] {
+
+        let egnbuilding = KMBuilding(name: "Engineering 2", acronym: "EGN2", latitude: -01.234, longitude: 34.519, info: "The maing building for engineering stuff")
+
+        let cb2building = KMBuilding(name: "Classroom Building 2", acronym: "CB2", latitude: 87.345, longitude: 20.304, info: "The slightly better building for random classes")
+
+        let cb1building = KMBuilding(name: "Classroom Building 1", acronym: "CB1", latitude: 88.385, longitude: 22.324, info: "The slightly worse building for random classes")
+
+        return [egnbuilding, cb2building, cb1building]
     }
 
 }
