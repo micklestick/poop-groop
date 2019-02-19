@@ -48,8 +48,8 @@ class KMDatabaseHelper {
 
     }
 
-    func decodeJSON() {
-        // decode JSON from database
+    func parseJSON() {
+        // parse JSON from database
 
         // store information decoded in a KMBuilding object
         // store KMBuilding object in a KMBuilding array and return array

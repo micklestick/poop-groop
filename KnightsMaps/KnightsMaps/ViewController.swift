@@ -23,7 +23,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var findLocationButton: UIButton!
     
     var locationManager = LocationManager()
-
+    var buildings = KMDatabaseHelper.makeObjectArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
