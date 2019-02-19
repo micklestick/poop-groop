@@ -24,7 +24,7 @@ class KMDatabase: Database {
         MongoSwift.initialize()
 //        self.client = try! MongoClient(connectionString: "mongodb://localhost:27017")
         // SSL doesn't work on iOS.
-        self.client = try! MongoClient(connectionString: "mongodb+srv://developer:Praeparet_Bellum@knightsmapsdatabase-bg2m3.mongodb.net/?serverSelectionTryOnce=false&serverSelectionTimeoutMS=15000&ssl=false")
+        self.client = try! MongoClient(connectionString: "mongodb+srv://developer:Praeparet_Bellum@knightsmapsdatabase-bg2m3.mongodb.net/?ssl=false")
         self.database = try! client.db("KnightsMapsDatabase")
     }
 

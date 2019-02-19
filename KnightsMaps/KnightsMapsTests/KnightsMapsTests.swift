@@ -38,7 +38,7 @@ class KnightsMapsTests: XCTestCase {
         let document: Dictionary = ["id": "myID"]
         do {
             try self.database.put("test", document)
-        } catch { print("An error has occured.") }
+        } catch { print("An error (\(error)) has occured.") }
 //        XCTAssertEqual(try database.get("test", "myID"), document, "Database returned wrong object.")
     }
 
