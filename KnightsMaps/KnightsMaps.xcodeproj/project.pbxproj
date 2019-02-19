@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AD40231221C28160049237B /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD40230221C28160049237B /* Database.swift */; };
+		6AD40234221C284B0049237B /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD40233221C284B0049237B /* Building.swift */; };
 		70B9A6892213E7FE003C11EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B9A6882213E7FE003C11EF /* AppDelegate.swift */; };
 		70B9A68B2213E7FE003C11EF /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 70B9A68A2213E7FE003C11EF /* art.scnassets */; };
 		70B9A68D2213E7FE003C11EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B9A68C2213E7FE003C11EF /* ViewController.swift */; };
@@ -16,6 +18,7 @@
 		70B9A6A02213E7FF003C11EF /* KnightsMapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B9A69F2213E7FF003C11EF /* KnightsMapsTests.swift */; };
 		70B9A6AB2213E7FF003C11EF /* KnightsMapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B9A6AA2213E7FF003C11EF /* KnightsMapsUITests.swift */; };
 		70D794102216005200BC40D2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D7940F2216005200BC40D2 /* LocationManager.swift */; };
+		9D6633289001B9CA54913DF8 /* libPods-KnightsMapsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A9A32EC7E3455193187BFF /* libPods-KnightsMapsTests.a */; };
 		FEB73ED1221638B70040A251 /* KMBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73ED0221638B70040A251 /* KMBuilding.swift */; };
 		FF16D994FF858E57B7686F88 /* libPods-KnightsMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B71002B3C1C8B6938BB71AB /* libPods-KnightsMaps.a */; };
 /* End PBXBuildFile section */
@@ -39,6 +42,9 @@
 
 /* Begin PBXFileReference section */
 		0B71002B3C1C8B6938BB71AB /* libPods-KnightsMaps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KnightsMaps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5286F789FE9C6DFFD024E7C4 /* Pods-KnightsMapsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMapsTests.release.xcconfig"; path = "Target Support Files/Pods-KnightsMapsTests/Pods-KnightsMapsTests.release.xcconfig"; sourceTree = "<group>"; };
+		6AD40230221C28160049237B /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		6AD40233221C284B0049237B /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		70B9A6852213E7FE003C11EF /* KnightsMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnightsMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B9A6882213E7FE003C11EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70B9A68A2213E7FE003C11EF /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -54,6 +60,8 @@
 		70B9A6AA2213E7FF003C11EF /* KnightsMapsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnightsMapsUITests.swift; sourceTree = "<group>"; };
 		70B9A6AC2213E7FF003C11EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70D7940F2216005200BC40D2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		C5A9A32EC7E3455193187BFF /* libPods-KnightsMapsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KnightsMapsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAADB87BF87E9CEFA915644F /* Pods-KnightsMapsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMapsTests.debug.xcconfig"; path = "Target Support Files/Pods-KnightsMapsTests/Pods-KnightsMapsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB8C553EC2EF7B3A602D04AC /* Pods-KnightsMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMaps.release.xcconfig"; path = "Target Support Files/Pods-KnightsMaps/Pods-KnightsMaps.release.xcconfig"; sourceTree = "<group>"; };
 		DD9EC0AC53717030D5AD7269 /* Pods-KnightsMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMaps.debug.xcconfig"; path = "Target Support Files/Pods-KnightsMaps/Pods-KnightsMaps.debug.xcconfig"; sourceTree = "<group>"; };
 		FEB73ED0221638B70040A251 /* KMBuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMBuilding.swift; sourceTree = "<group>"; };
@@ -72,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6633289001B9CA54913DF8 /* libPods-KnightsMapsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +99,8 @@
 			children = (
 				DD9EC0AC53717030D5AD7269 /* Pods-KnightsMaps.debug.xcconfig */,
 				DB8C553EC2EF7B3A602D04AC /* Pods-KnightsMaps.release.xcconfig */,
+				DAADB87BF87E9CEFA915644F /* Pods-KnightsMapsTests.debug.xcconfig */,
+				5286F789FE9C6DFFD024E7C4 /* Pods-KnightsMapsTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -98,8 +109,26 @@
 			isa = PBXGroup;
 			children = (
 				0B71002B3C1C8B6938BB71AB /* libPods-KnightsMaps.a */,
+				C5A9A32EC7E3455193187BFF /* libPods-KnightsMapsTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6AD4022D221C27AE0049237B /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				6AD40232221C283A0049237B /* Models */,
+				6AD40230221C28160049237B /* Database.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		6AD40232221C283A0049237B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6AD40233221C284B0049237B /* Building.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		70B9A67C2213E7FE003C11EF = {
@@ -127,6 +156,7 @@
 		70B9A6872213E7FE003C11EF /* KnightsMaps */ = {
 			isa = PBXGroup;
 			children = (
+				6AD4022D221C27AE0049237B /* Database */,
 				70D7940F2216005200BC40D2 /* LocationManager.swift */,
 				70B9A6882213E7FE003C11EF /* AppDelegate.swift */,
 				70B9A68A2213E7FE003C11EF /* art.scnassets */,
@@ -170,6 +200,7 @@
 				70B9A6822213E7FE003C11EF /* Frameworks */,
 				70B9A6832213E7FE003C11EF /* Resources */,
 				6A83296D2214F98E0004F72B /* Run Script */,
+				977ACDE9DBCFF2610694FF9F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,6 +215,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70B9A6B22213E7FF003C11EF /* Build configuration list for PBXNativeTarget "KnightsMapsTests" */;
 			buildPhases = (
+				E66EF61BCC783588A99DD3DE /* [CP] Check Pods Manifest.lock */,
 				70B9A6972213E7FF003C11EF /* Sources */,
 				70B9A6982213E7FF003C11EF /* Frameworks */,
 				70B9A6992213E7FF003C11EF /* Resources */,
@@ -328,6 +360,56 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif hash tailor 2>/dev/null; then\n    tailor\nelse\n    echo \"warning: Please install Tailor from https://tailor.sh.\"\nfi\n";
 		};
+		977ACDE9DBCFF2610694FF9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KnightsMaps/Pods-KnightsMaps-frameworks.sh",
+				"${PODS_ROOT}/mongo-embedded-c-driver/iPhoneOS/Frameworks/bson.framework",
+				"${PODS_ROOT}/mongo-embedded-c-driver/iPhoneOS/Frameworks/bson.framework.dSYM",
+				"${PODS_ROOT}/mongo-embedded-c-driver/iPhoneOS/Frameworks/mongoc.framework",
+				"${PODS_ROOT}/mongo-embedded-c-driver/iPhoneOS/Frameworks/mongoc.framework.dSYM",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bson.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/bson.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mongoc.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/mongoc.framework.dSYM",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KnightsMaps/Pods-KnightsMaps-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E66EF61BCC783588A99DD3DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KnightsMapsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -336,7 +418,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				70B9A68D2213E7FE003C11EF /* ViewController.swift in Sources */,
+				6AD40234221C284B0049237B /* Building.swift in Sources */,
 				FEB73ED1221638B70040A251 /* KMBuilding.swift in Sources */,
+				6AD40231221C28160049237B /* Database.swift in Sources */,
 				70B9A6892213E7FE003C11EF /* AppDelegate.swift in Sources */,
 				70D794102216005200BC40D2 /* LocationManager.swift in Sources */,
 			);
@@ -549,6 +633,7 @@
 		};
 		70B9A6B32213E7FF003C11EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAADB87BF87E9CEFA915644F /* Pods-KnightsMapsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -569,6 +654,7 @@
 		};
 		70B9A6B42213E7FF003C11EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5286F789FE9C6DFFD024E7C4 /* Pods-KnightsMapsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

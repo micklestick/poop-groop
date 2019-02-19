@@ -1,16 +1,24 @@
 PODS:
   - ARCL (1.0.4)
+  - mongo-embedded-c-driver (1.13.0-4.0.4)
+  - MongoSwift (0.0.9):
+    - mongo-embedded-c-driver (~> 1.13.0-4.0.0)
 
 DEPENDENCIES:
   - ARCL
+  - MongoSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ARCL
+    - mongo-embedded-c-driver
+    - MongoSwift
 
 SPEC CHECKSUMS:
   ARCL: 5fd2b0d7aabf91f15dbc0e8c510b25516b8a755a
+  mongo-embedded-c-driver: b46360baa15fc142baae80628822f26663220bde
+  MongoSwift: c7420b38a7e223439667f8c50aefada29c270df8
 
-PODFILE CHECKSUM: 7c797bcfb64085e0a0f84523e6b2fd5f0e2232f5
+PODFILE CHECKSUM: ba33fc3b6083720e2813319ea6fd5088380b37ca
 
 COCOAPODS: 1.6.0

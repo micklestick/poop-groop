@@ -1,2 +1,10 @@
-target 'KnightsMaps'
-pod 'ARCL'
+platform :ios, '12.1'
+inhibit_all_warnings!
+
+target 'KnightsMaps' do
+	pod 'ARCL'
+	pod 'MongoSwift'
+	target 'KnightsMapsTests' do
+		inherit! :search_paths
+	end
+end

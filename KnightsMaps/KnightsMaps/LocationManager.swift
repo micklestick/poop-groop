@@ -11,7 +11,7 @@ import CoreLocation
 
 // This was easiest to make just as an NSObject
 // We will want this the be a CLLocationManager
-class LocationManager : NSObject {
+class LocationManager: NSObject {
     
     let locationManager = CLLocationManager()
     var location: CLLocation?
