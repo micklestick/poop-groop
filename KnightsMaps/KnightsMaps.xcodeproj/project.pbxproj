@@ -20,6 +20,8 @@
 		70D794102216005200BC40D2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D7940F2216005200BC40D2 /* LocationManager.swift */; };
 		9D6633289001B9CA54913DF8 /* libPods-KnightsMapsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A9A32EC7E3455193187BFF /* libPods-KnightsMapsTests.a */; };
 		FEB73ED1221638B70040A251 /* KMBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73ED0221638B70040A251 /* KMBuilding.swift */; };
+		FEC9A2282217AEE600EBC9B2 /* KMLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9A2272217AEE600EBC9B2 /* KMLocation.swift */; };
+		FEC9A22A2217B15300EBC9B2 /* KMDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9A2292217B15300EBC9B2 /* KMDatabaseHelper.swift */; };
 		FF16D994FF858E57B7686F88 /* libPods-KnightsMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B71002B3C1C8B6938BB71AB /* libPods-KnightsMaps.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		DB8C553EC2EF7B3A602D04AC /* Pods-KnightsMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMaps.release.xcconfig"; path = "Target Support Files/Pods-KnightsMaps/Pods-KnightsMaps.release.xcconfig"; sourceTree = "<group>"; };
 		DD9EC0AC53717030D5AD7269 /* Pods-KnightsMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMaps.debug.xcconfig"; path = "Target Support Files/Pods-KnightsMaps/Pods-KnightsMaps.debug.xcconfig"; sourceTree = "<group>"; };
 		FEB73ED0221638B70040A251 /* KMBuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMBuilding.swift; sourceTree = "<group>"; };
+		FEC9A2272217AEE600EBC9B2 /* KMLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMLocation.swift; sourceTree = "<group>"; };
+		FEC9A2292217B15300EBC9B2 /* KMDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMDatabaseHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,8 @@
 				70B9A6932213E7FF003C11EF /* LaunchScreen.storyboard */,
 				70B9A6962213E7FF003C11EF /* Info.plist */,
 				FEB73ED0221638B70040A251 /* KMBuilding.swift */,
+				FEC9A2292217B15300EBC9B2 /* KMDatabaseHelper.swift */,
+				FEC9A2272217AEE600EBC9B2 /* KMLocation.swift */,
 			);
 			path = KnightsMaps;
 			sourceTree = "<group>";
@@ -421,8 +427,10 @@
 				6AD40234221C284B0049237B /* Building.swift in Sources */,
 				FEB73ED1221638B70040A251 /* KMBuilding.swift in Sources */,
 				6AD40231221C28160049237B /* Database.swift in Sources */,
+				FEC9A22A2217B15300EBC9B2 /* KMDatabaseHelper.swift in Sources */,
 				70B9A6892213E7FE003C11EF /* AppDelegate.swift in Sources */,
 				70D794102216005200BC40D2 /* LocationManager.swift in Sources */,
+				FEC9A2282217AEE600EBC9B2 /* KMLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +606,7 @@
 			baseConfigurationReference = DD9EC0AC53717030D5AD7269 /* Pods-KnightsMaps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QU53XSEP4J;
 				INFOPLIST_FILE = KnightsMaps/Info.plist;
@@ -617,6 +626,7 @@
 			baseConfigurationReference = DB8C553EC2EF7B3A602D04AC /* Pods-KnightsMaps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QU53XSEP4J;
 				INFOPLIST_FILE = KnightsMaps/Info.plist;

@@ -16,7 +16,7 @@ class KnightsMapsTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
         // try! should not be used for the main app, but the immediate error log is useful for testing.
-        self.database = try! KNDatabase()
+        self.database = try! KMDatabase()
     }
 
     override func tearDown() {

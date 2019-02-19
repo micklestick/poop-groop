@@ -23,7 +23,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var findLocationButton: UIButton!
     
     var locationManager = LocationManager()
-
+    var buildings = KMDatabaseHelper.makeObjectArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,12 +39,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
         // Set the scene to the view
         sceneView.scene = scene
-        
+
         // Location test lables
         statusLabel.text = "Tap 'Find Location' to Start"
         latitudeLabel.text = "-"
         longitudeLabel.text = "-"
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

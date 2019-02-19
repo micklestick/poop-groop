@@ -16,7 +16,7 @@ protocol Database {
     func newCollection(_ collection: String) throws
 }
 
-class KNDatabase: Database {
+class KMDatabase: Database {
     private var client: MongoClient
     private var database: MongoDatabase
     
