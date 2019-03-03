@@ -1,5 +1,5 @@
 //
-//  testKMLocationObject.swift
+//  TestLocationAndBuildingObject.swift
 //  KnightsMapsTests
 //
 //  Created by Sean Hall on 2/28/19.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import KnightsMaps
 
-class TestKMLocationObject: XCTestCase {
+class TestLocationAndBuildingObject: XCTestCase {
 
     // This tests the creation of a location object using fake data
 
