@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14365569222D8AA200031F4F /* TestDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14365568222D8AA200031F4F /* TestDatabaseHelper.swift */; };
 		148E10092228C61700CC2C08 /* TestLocationAndBuildingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148E10082228C61700CC2C08 /* TestLocationAndBuildingObject.swift */; };
 		6AD40231221C28160049237B /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD40230221C28160049237B /* Database.swift */; };
 		6AD40234221C284B0049237B /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD40233221C284B0049237B /* Building.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		0B71002B3C1C8B6938BB71AB /* libPods-KnightsMaps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KnightsMaps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14365568222D8AA200031F4F /* TestDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDatabaseHelper.swift; sourceTree = "<group>"; };
 		148E10082228C61700CC2C08 /* TestLocationAndBuildingObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLocationAndBuildingObject.swift; sourceTree = "<group>"; };
 		5286F789FE9C6DFFD024E7C4 /* Pods-KnightsMapsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMapsTests.release.xcconfig"; path = "Target Support Files/Pods-KnightsMapsTests/Pods-KnightsMapsTests.release.xcconfig"; sourceTree = "<group>"; };
 		6AD40230221C28160049237B /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				70B9A69F2213E7FF003C11EF /* KnightsMapsTests.swift */,
 				70B9A6A12213E7FF003C11EF /* Info.plist */,
 				148E10082228C61700CC2C08 /* TestLocationAndBuildingObject.swift */,
+				14365568222D8AA200031F4F /* TestDatabaseHelper.swift */,
 			);
 			path = KnightsMapsTests;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70B9A6A02213E7FF003C11EF /* KnightsMapsTests.swift in Sources */,
+				14365569222D8AA200031F4F /* TestDatabaseHelper.swift in Sources */,
 				148E10092228C61700CC2C08 /* TestLocationAndBuildingObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
