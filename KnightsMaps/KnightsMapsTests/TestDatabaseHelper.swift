@@ -23,10 +23,10 @@ class TestDatabaseHelper: XCTestCase {
     // function mimics version data to test if update function returns correct value
     
     func testNeedUpdateTrue() {
-
+        
         let currentVersion = 3.4
         let dbVersion = 3.5
-        let needUpdate: Bool = KMDatabaseHelper().needUpdate(localVersion: currentVersion, dbVersion: dbVersion )
+        let needUpdate: Bool = KMDatabaseHelper.needUpdate(localVersion: currentVersion, dbVersion: dbVersion)
 
         XCTAssert(needUpdate == true, "local needs update")
 
@@ -37,7 +37,7 @@ class TestDatabaseHelper: XCTestCase {
     func testNeedUpdateFalse() {
         let currentVersion = 3.4
         let dbVersion = 3.3
-        let needUpdate: Bool = KMDatabaseHelper.needUpdate(localVersion: currentVersion, dbVersion: dbVersion )
+        let needUpdate: Bool = KMDatabaseHelper.needUpdate(localVersion: currentVersion, dbVersion: dbVersion)
 
         XCTAssert(needUpdate == false, "local does not needs update")
 

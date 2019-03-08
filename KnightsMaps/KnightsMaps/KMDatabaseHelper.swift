@@ -11,13 +11,18 @@ import Foundation
 // Class for connecting to and reading database
 class KMDatabaseHelper {
 
-    func needUpdate() {
+   static func needUpdate(localVersion: Double, dbVersion: Double) -> Bool {
         // check database for version number
-        // if version number is newer, call get() method
+        if(localVersion >= dbVersion) {
+            return false
+        }
+        else {
+            return true
+        }
     }
 
     // get connection to database to recieve JSON
-    func getConnection() {
+    func getData() {
 
         // url request with placeholder url
         let jsonUrlString = "https://jsonplaceholder.typicode.com/users"
