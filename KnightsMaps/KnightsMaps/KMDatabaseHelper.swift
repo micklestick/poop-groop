@@ -10,6 +10,8 @@ import Foundation
 
 // Class for connecting to and reading database
 class KMDatabaseHelper {
+    
+   static var jsonUrlString = "https://jsonplaceholder.typicode.com/users"
 
    static func needUpdate(localVersion: Double, dbVersion: Double) -> Bool {
         // check database for version number
@@ -21,22 +23,24 @@ class KMDatabaseHelper {
         }
     }
 
-    // get connection to database to recieve JSON
-    func getData() {
+    // get connection to database to recieve JSON and run through decode
+    // function returns an array of type KMBuilding with the current databse info
+    static func getData() -> [KMBuilding] {
 
+        var buildingArray = [KMBuilding]()
+        
         // url request with placeholder url
-        let jsonUrlString = "https://jsonplaceholder.typicode.com/users"
+//        let jsonUrlString = "https://jsonplaceholder.typicode.com/users"
 
         // create Url object
         guard let endpoint = URL(string: jsonUrlString) else {
-            print("Error creating endpoint")
-            return
+            fatalError("Error creating endpoint")
         }
 
         // create JSON url session for get request
-       /* URLSession.shared.dataTask(with: endpoint) { (data, response, err) in
+       URLSession.shared.dataTask(with: endpoint) { (data, response, err) in
             // error check here
-
+        
             // create instance of data pulled from get request
             guard let data = data else {
                 print("JSONError: failed to get data")
@@ -45,21 +49,15 @@ class KMDatabaseHelper {
 
             do {
                 // decode the JSON here
+                print("this part worked")
             } catch {
                 // error trap here
+                print("whoops")
             }
 
-        }.resume()*/
-
-    }
-
-    func parseJSON() {
-        // parse JSON from database
-
-        // store information decoded in a KMBuilding object
-        // store KMBuilding object in a KMBuilding array and return array
-
-
+        }.resume()
+        
+        return buildingArray
     }
 
     // function for generating an example test array of type KMBuilding
