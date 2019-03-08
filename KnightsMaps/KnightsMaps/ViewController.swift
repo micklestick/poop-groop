@@ -16,6 +16,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
 
+    var sceneLocationView = SceneLocationView()
+
     // labels for the gps locations
     @IBOutlet var latitudeLabel: UILabel!
     @IBOutlet var longitudeLabel: UILabel!
@@ -24,46 +26,64 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     var locationManager = LocationManager()
     var buildings = KMDatabaseHelper.makeObjectArray()
+    var testPoints = KMDatabaseHelper.aTestPoints()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set the view's delegate
-        sceneView.delegate = self
-
-        // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
-
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-
-        // Set the scene to the view
-        sceneView.scene = scene
-
-        // Location test lables
-        statusLabel.text = "Tap 'Find Location' to Start"
-        latitudeLabel.text = "-"
-        longitudeLabel.text = "-"
-
+        //comment these lines for the debug view
+        sceneLocationView.run()
+        view.addSubview(sceneLocationView)
+        
+        
+        addBuildingTags()
     }
     
+    // TODO: this function is using the testPoints array, when the database is hooked up
+    // we will change the testPoint to buildings
+    func addBuildingTags() {
+        for building in testPoints {
+            let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(building.location.latitude), longitude: CLLocationDegrees(building.location.longitude))
+            let location = CLLocation(coordinate: coordinate, altitude: 25)
+            
+            // TODO: we are using a basic node to display above the loactions
+            // this will be changed to a view with a label and use the buildings name/acro
+            let image = UIImage(named: "pin")!
+            let annotationNode = LocationAnnotationNode(location: location, image: image)
+            annotationNode.scaleRelativeToDistance = true
+            sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
+            
+        }
+    }
+    
+    // this sets the AR View to the size of the phone's screen
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        sceneLocationView.frame = view.bounds
+    }
+    
+    // TODO: Clean this up as we arent using the old view
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
+        //let configuration = ARWorldTrackingConfiguration()
         
         // Run the view's session
-        sceneView.session.run(configuration)
+        //sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        // Pause the view's session
-        sceneView.session.pause()
+        //Stop the scene when the view dissapears
+        sceneLocationView.run()
+
     }
     
+    // TODO: We can kill this code when we are done with testing
+    // Still nice to have to gather data for now
     func updateUI(loc: CLLocation) {
  
         latitudeLabel.text = String(format: "%.8f", loc.coordinate.latitude)

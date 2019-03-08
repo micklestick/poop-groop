@@ -62,7 +62,7 @@ class KMDatabaseHelper {
         return buildingArray
     }
 
-    // function for generating an example test array of type KMBuilding
+    // functions for generating an example test array of type KMBuilding
     // will be removed when database is fully functioning
 
     static func makeObjectArray() -> [KMBuilding] {
@@ -75,5 +75,17 @@ class KMDatabaseHelper {
 
         return [egnbuilding, cb2building, cb1building]
     }
+    
+    static func aTestPoints() -> [KMBuilding] {
+        
+        let testPoint1 = KMBuilding(name: "Far Building", acronym: "fb1", latitude: 28.58799939252419, longitude: -81.21444843213033, info: "Far building")
+        
+        let testPoint2 = KMBuilding(name: "Building Across", acronym: "bbb", latitude: 28.587356572418223, longitude: -81.21317020973589, info: "Building across")
+        
+        let testPoint3 = KMBuilding(name: "The Pool", acronym: "pul", latitude: 28.587804581020393, longitude: -81.21319605320281, info: "Da pool")
+        
+        return [testPoint1, testPoint2, testPoint3]
+    }
+
 
 }
