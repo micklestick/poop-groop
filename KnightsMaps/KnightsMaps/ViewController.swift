@@ -12,7 +12,7 @@ import ARKit
 import ARCL
 import CoreLocation
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
 
@@ -37,6 +37,28 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         
         addBuildingTags()
+    }
+    
+    // TODO: write code to get this, The LNTouchDelegate
+    // is not working, we can use the following
+    /*
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+    }
+    */
+    func locationNodeTouched(node: AnnotationNode) {
+        /* Do stuffs with the node instance
+        
+        // node could have either node.view or node.image
+        if let nodeView = node.view{
+            // Do stuffs with the nodeView
+            // ...
+        }
+        if let nodeImage = node.image{
+            // Do stuffs with the nodeImage
+            // ...
+        }
+         */
     }
     
     // TODO: this function is using the testPoints array, when the database is hooked up
@@ -97,23 +119,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     }
     
-
-    
-    
-    
-
-
-    // MARK: - ARSCNViewDelegate
-
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-
-        return node
-    }
-*/
-
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
 
