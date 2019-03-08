@@ -10,8 +10,16 @@ import Foundation
 
 // Class for connecting to and reading database
 class KMDatabaseHelper {
-    
-   static var jsonUrlString = "https://jsonplaceholder.typicode.com/users"
+
+   static var jsonUrlString = "https://jsonplaceholder.typicode.com/posts"
+
+    // test struct for implementing json decode
+    struct Post: Decodable {
+        let userId: Int
+        let id: Int
+        let title: String
+        let body: String
+    }
 
    static func needUpdate(localVersion: Double, dbVersion: Double) -> Bool {
         // check database for version number
@@ -29,9 +37,6 @@ class KMDatabaseHelper {
 
         var buildingArray = [KMBuilding]()
         
-        // url request with placeholder url
-//        let jsonUrlString = "https://jsonplaceholder.typicode.com/users"
-
         // create Url object
         guard let endpoint = URL(string: jsonUrlString) else {
             fatalError("Error creating endpoint")
@@ -43,18 +48,15 @@ class KMDatabaseHelper {
         
             // create instance of data pulled from get request
             guard let data = data else {
-                print("JSONError: failed to get data")
-                return
+                fatalError("JSONError: failed to get data")
             }
 
             do {
-                // decode the JSON here
-                print("this part worked")
-            } catch {
-                // error trap here
-                print("whoops")
+                let posts = try JSONDecoder().decode([Post].self, from: data)
+                print(posts)
+            } catch let jsonErr {
+                print("error serializing json:",jsonErr)
             }
-
         }.resume()
         
         return buildingArray
