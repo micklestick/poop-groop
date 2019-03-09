@@ -11,14 +11,17 @@ import Foundation
 // Class for connecting to and reading database
 class KMDatabaseHelper {
 
-   static var jsonUrlString = "https://jsonplaceholder.typicode.com/posts"
+   static var jsonUrlString = "https://api.myjson.com/bins/mrh7e"
 
     // test struct for implementing json decode
-    struct Post: Decodable {
-        let userId: Int
-        let id: Int
-        let title: String
-        let body: String
+    struct Building: Decodable {
+        let name: String
+        let acronym: String
+        struct Location: Decodable {
+            let latitude: Float
+            let longitude: Float
+        }
+        let info: String
     }
 
    static func needUpdate(localVersion: Double, dbVersion: Double) -> Bool {
@@ -52,8 +55,8 @@ class KMDatabaseHelper {
             }
 
             do {
-                let posts = try JSONDecoder().decode([Post].self, from: data)
-                print(posts)
+                let building = try JSONDecoder().decode(Building.self, from: data)
+                print(building)
             } catch let jsonErr {
                 print("error serializing json:",jsonErr)
             }
