@@ -22,3 +22,9 @@ of mobile data if we keep a version locally.
 
 On start up the app performs a version check on the database, if it is behind it will asynconously pull the new version by using JSON and 
 store into the persistant storage after parsing the JSON.
+
+### Augmented Reality and Core Location
+
+This app relies on the open-source, MIT-Licensed CocoaPod named ARCL. It handles fixing Augmented Reality tags to specific GPS locations in the real world. ARKit is the built-in iOS library that will be drawing objects to the screen while Core Location is the built-in iOS library that allows us to easily find and track the device.
+
+The GPS coordinates will be stored in a database that is linked in to the app, rather than storing all locations locally on the user's device. The database will hold the name of the location, the acronym for the location, the location's lattitude and longitude, and other information such as hours of operation and a small description. This information will be pulled by the app and used to populate the AR tags floating above each building.
