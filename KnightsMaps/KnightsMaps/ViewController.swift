@@ -70,22 +70,29 @@ class ViewController: UIViewController {
             //changed the altitude to 5 for testing, 25-35 will be needed for buildings
             let location = CLLocation(coordinate: coordinate, altitude: 5)
             
-            // TODO: we are using a basic node to display above the loactions
-            // this will be changed to a view with a label and use the buildings name/acro
+            // we may want images to float so keep this code around for now
             //let image = UIImage(named: "pin")!
             //let annotationNode = LocationAnnotationNode(location: location, image: image)
-            
-            // an ugly view above the buildings
+
+            // TODO: FIX THE WHITE CORNERS, not clipping correctly
+            //create a view with size
             let tagView = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 800, height: 100)))
-            tagView.backgroundColor = UIColor(red: 0, green: 0, blue: 1, alpha: 0.3)
+            tagView.backgroundColor = UIColor.clear
+            tagView.layer.cornerRadius = 40.0
+            tagView.layer.borderWidth = 10.0
+            tagView.layer.masksToBounds = true
+            tagView.layer.borderColor = UIColor(red:0.0, green:0.52, blue:1.0, alpha:1.0).cgColor
+            tagView.layer.backgroundColor = UIColor.clear.cgColor
+            tagView.clipsToBounds = true
             
             let buildingTitle = UILabel(frame: tagView.frame)
-            tagView.addSubview(buildingTitle)
             buildingTitle.text = building.name
-            buildingTitle.backgroundColor = UIColor.clear
+            buildingTitle.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 0.3)
             buildingTitle.textAlignment = NSTextAlignment.center
             buildingTitle.font = UIFont.systemFont(ofSize: 100)
             
+            tagView.addSubview(buildingTitle)
+
             let annotationNode = LocationAnnotationNode(location: location, view: tagView)
             
             annotationNode.scaleRelativeToDistance = true
