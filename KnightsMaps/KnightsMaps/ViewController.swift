@@ -12,10 +12,12 @@ import ARKit
 import ARCL
 import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
 
+    let debug = true
+    
     var sceneLocationView = SceneLocationView()
 
     // labels for the gps locations
@@ -24,19 +26,61 @@ class ViewController: UIViewController {
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var findLocationButton: UIButton!
     
-    var locationManager = LocationManager()
+    //var locationManager = LocationManager()
     var buildings = KMDatabaseHelper.makeObjectArray()
     var testPoints = KMDatabaseHelper.aTestPoints()
+    
+    var locationManager = CLLocationManager()
+    
+    //debug labels
+    var positionLabel = UILabel()
+    var distanceLabel = UILabel()
+    var angleLabel = UILabel()
+
+    //test node, will be set as last node in the list ATM
+    var testNode: LocationAnnotationNode!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //comment these lines for the debug view
+        if debug {
+            createDebugLabels()
+        }
+        
         sceneLocationView.run()
         view.addSubview(sceneLocationView)
-        
+        locationManager.delegate = self
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
         
         addBuildingTags()
+    }
+    
+    //called on location update
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        //round location to display
+        var lat = Double(locations.first?.coordinate.latitude ?? 0)
+        var long = Double(locations.first?.coordinate.longitude ?? 0)
+        lat = (lat*100000000000).rounded()/100000000000
+        long = (long*100000000000).rounded()/100000000000
+
+        positionLabel.text = "Lat: \(lat), Long: \(long)"
+
+        let testlocation = testNode.location
+        //let vectorToTest = testNode.eulerAngles
+        let distanceInMeters = Double(locations.first?.distance(from: testlocation!) ?? 0)
+        
+        distanceLabel.text = "Distance: \(distanceInMeters)m"
+        
+        // TODO: angle needs work
+        //let v = CGPoint(x: testNode.x - cameraPosition.x, y: testNode.y - cameraPosition.y);
+        //let a = atan2(v.y, v.x) // Note: order of arguments
+        //angleLabel.text = "Angle: \(a) deg"
+        angleLabel.text = "X: \(testNode.position.x), Y: \(testNode.position.y), Z: \(testNode.position.z) "
+
+        
     }
     
     // TODO: write code to get this, The LNTouchDelegate
@@ -64,6 +108,7 @@ class ViewController: UIViewController {
     // TODO: this function is using the testPoints array, when the database is hooked up
     // we will change the testPoint to buildings
     func addBuildingTags() {
+        
         for building in testPoints {
             let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(building.location.latitude), longitude: CLLocationDegrees(building.location.longitude))
             
@@ -98,6 +143,8 @@ class ViewController: UIViewController {
             annotationNode.scaleRelativeToDistance = true
             sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
             
+            //last node in list will be a test "selected" node
+            testNode = annotationNode
         }
     }
     
@@ -138,7 +185,7 @@ class ViewController: UIViewController {
     
     //MARK: - Target/Action
     @IBAction func findLocation() {
-        locationManager.findLocation(view: self)
+        //locationManager.findLocation(view: self)
 
     }
     
@@ -155,6 +202,33 @@ class ViewController: UIViewController {
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
 
+    }
+    
+    func createDebugLabels() {
+        
+        let point = CGPoint(x: 10, y: view.frame.height - 200)
+        let size = CGSize(width: 800, height: 100)
+        let rekt = CGRect(origin: point, size: size)
+        positionLabel = UILabel(frame: rekt)
+        positionLabel.textColor = UIColor.green
+        positionLabel.text = "Lat: 12.12121, Long: 12.121212"
+        sceneLocationView.addSubview(positionLabel)
+        
+        let point2 = CGPoint(x: 10, y: view.frame.height - 150)
+        let size2 = CGSize(width: 800, height: 100)
+        let rekt2 = CGRect(origin: point2, size: size2)
+        distanceLabel = UILabel(frame: rekt2)
+        distanceLabel.textColor = UIColor.green
+        distanceLabel.text = "Distance: 12.003m"
+        sceneLocationView.addSubview(distanceLabel)
+        
+        let point3 = CGPoint(x: 10, y: view.frame.height - 100)
+        let size3 = CGSize(width: 800, height: 100)
+        let rekt3 = CGRect(origin: point3, size: size3)
+        angleLabel = UILabel(frame: rekt3)
+        angleLabel.textColor = UIColor.green
+        angleLabel.text = "Angle: 12.12121 deg"
+        sceneLocationView.addSubview(angleLabel)
     }
 
 }
