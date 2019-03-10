@@ -66,12 +66,28 @@ class ViewController: UIViewController {
     func addBuildingTags() {
         for building in testPoints {
             let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(building.location.latitude), longitude: CLLocationDegrees(building.location.longitude))
-            let location = CLLocation(coordinate: coordinate, altitude: 25)
+            
+            //changed the altitude to 5 for testing, 25-35 will be needed for buildings
+            let location = CLLocation(coordinate: coordinate, altitude: 5)
             
             // TODO: we are using a basic node to display above the loactions
             // this will be changed to a view with a label and use the buildings name/acro
-            let image = UIImage(named: "pin")!
-            let annotationNode = LocationAnnotationNode(location: location, image: image)
+            //let image = UIImage(named: "pin")!
+            //let annotationNode = LocationAnnotationNode(location: location, image: image)
+            
+            // an ugly view above the buildings
+            let tagView = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 800, height: 100)))
+            tagView.backgroundColor = UIColor(red: 0, green: 0, blue: 1, alpha: 0.3)
+            
+            let buildingTitle = UILabel(frame: tagView.frame)
+            tagView.addSubview(buildingTitle)
+            buildingTitle.text = building.name
+            buildingTitle.backgroundColor = UIColor.clear
+            buildingTitle.textAlignment = NSTextAlignment.center
+            buildingTitle.font = UIFont.systemFont(ofSize: 100)
+            
+            let annotationNode = LocationAnnotationNode(location: location, view: tagView)
+            
             annotationNode.scaleRelativeToDistance = true
             sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
             

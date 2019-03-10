@@ -4,6 +4,7 @@ inhibit_all_warnings!
 target 'KnightsMaps' do
 	pod 'ARCL'
 	pod 'MongoSwift'
+	pod 'SnapKit'
 	target 'KnightsMapsTests' do
 		inherit! :search_paths
 	end
