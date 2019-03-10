@@ -23,6 +23,7 @@
 | 7 | Tap on the "End Navigation" button | Navigation should stop completely.|
 
 ### Acceptance Test for User Story ID: 002
+| Step | Action | Observation |
 |-|-|-|
 | 1 | Open the application | The application should be open to its main screen and displaying what the camera sees.|
 | 2 | Point your phone at a building in view | A UCF building should be in view of the camera on-screen. |
