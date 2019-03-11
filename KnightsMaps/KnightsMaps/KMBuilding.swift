@@ -13,12 +13,14 @@ class KMBuilding {
     let acronym: String
     let location: KMLocation
     let info: String
+    let type: String
 
     init(name: String, acronym: String, latitude: Float,
-         longitude: Float, info: String) {
+         longitude: Float, info: String, type: String) {
         self.name = name
         self.acronym = acronym
         self.location = KMLocation(latitude: latitude, longitude: longitude)
         self.info = info
+        self.type = type
     }
 }
