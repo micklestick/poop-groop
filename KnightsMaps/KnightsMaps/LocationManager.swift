@@ -85,7 +85,6 @@ extension LocationManager : CLLocationManagerDelegate {
         location = locations.last!
         print("Got the location! locationManager-didUpdateLocations: \(String(describing: location))")
         stopLocationManager()
-        parent.updateUI(loc: locations.last!)
 
     }
     

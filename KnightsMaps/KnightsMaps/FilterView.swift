@@ -7,6 +7,9 @@
 //
 
 import UIKit
+protocol FilterViewDelegate {
+    func complete(buildingName: String)
+}
 
 class FilterView: UIViewController {
 
@@ -30,14 +33,24 @@ class FilterView: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func itemSelected(bName: String) {
+        print("Selected the cell is: \(bName)")
+        delegate?.complete(buildingName: bName)
+        dismiss(animated: true) {
+            // when the view has completely dismissed
+        }
+    }
     //This is called when you tap on a specific row in the search
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if searching {
-            print("Selected the cell is: \(filteredBuildings[indexPath.row].name)")
+            itemSelected(bName: filteredBuildings[indexPath.row].name)
         } else {
-            print("Selected the cell is: \(buildingArr2[indexPath.row].name)")
+            itemSelected(bName: buildingArr2[indexPath.row].name)
+
         }
     }
+    
+    var delegate: FilterViewDelegate?
     
 }   //end of FilterView
 

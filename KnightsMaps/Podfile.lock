@@ -4,11 +4,15 @@ PODS:
   - MongoSwift (0.0.9):
     - mongo-embedded-c-driver (~> 1.13.0-4.0.0)
   - SnapKit (4.2.0)
+  - SwiftLocation (3.2.3):
+    - SwiftyJSON (~> 4.0.0-alpha.1)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - ARCL
   - MongoSwift
   - SnapKit
+  - SwiftLocation
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -16,13 +20,17 @@ SPEC REPOS:
     - mongo-embedded-c-driver
     - MongoSwift
     - SnapKit
+    - SwiftLocation
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   ARCL: 8b0a375942c575472c3cdbec80262d8400f1ec42
   mongo-embedded-c-driver: b46360baa15fc142baae80628822f26663220bde
   MongoSwift: c7420b38a7e223439667f8c50aefada29c270df8
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 090cdbde3f0f5066b8dc6aaa201ebbba36693ca4
+PODFILE CHECKSUM: 4898c663fafc0f1b8d3b0397e17a3695866d96c1
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.6.0

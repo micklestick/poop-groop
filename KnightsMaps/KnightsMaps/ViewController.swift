@@ -11,26 +11,20 @@ import SceneKit
 import ARKit
 import ARCL
 import CoreLocation
+import SwiftLocation
+import CoreMotion
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
-
-    @IBOutlet var sceneView: ARSCNView!
 
     let debug = true
     
     var sceneLocationView = SceneLocationView()
 
-    // labels for the gps locations
-    @IBOutlet var latitudeLabel: UILabel!
-    @IBOutlet var longitudeLabel: UILabel!
-    @IBOutlet var statusLabel: UILabel!
-    @IBOutlet var findLocationButton: UIButton!
-    
+    private let manager = CMMotionManager()
+
     //var locationManager = LocationManager()
     var buildings = KMDatabaseHelper.makeObjectArray()
     var testPoints = KMDatabaseHelper.aTestPoints()
-    
-    var locationManager = CLLocationManager()
     
     //debug labels
     var positionLabel = UILabel()
@@ -40,6 +34,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //test node, will be set as last node in the list ATM
     var testNode: LocationAnnotationNode!
     
+    private let motionQueue = OperationQueue()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,22 +43,44 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             createDebugLabels()
         }
         
+        let searchButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 250, y: 10), size: CGSize(width: 300, height: 100)))
+        searchButton.setTitle("Search image here", for: .normal)
+        searchButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        
+        sceneLocationView.addSubview(searchButton)
+        
         sceneLocationView.run()
         view.addSubview(sceneLocationView)
-        locationManager.delegate = self
-        locationManager.distanceFilter = kCLDistanceFilterNone
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        
+
         addBuildingTags()
+        
+        manager.deviceMotionUpdateInterval = 1
+        manager.startDeviceMotionUpdates(to: motionQueue) { data, error in
+            guard let data = data, error == nil else { return }
+            // use data here
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "filterSegue" {
+            (segue.destination as? FilterView)?.delegate = self
+        }
+    }
+    
+    @objc func buttonAction(sender: UIButton!) {
+        performSegue(withIdentifier: "filterSegue", sender: sender)
+    }
+    
+    var hasMotion: Bool {
+        return manager.isAccelerometerAvailable && manager.isDeviceMotionActive
     }
     
     //called on location update
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         //round location to display
-        var lat = Double(locations.first?.coordinate.latitude ?? 0)
-        var long = Double(locations.first?.coordinate.longitude ?? 0)
+        let location = locations.first
+        var lat = Double(location?.coordinate.latitude ?? 0)
+        var long = Double(location?.coordinate.longitude ?? 0)
         lat = (lat*100000000000).rounded()/100000000000
         long = (long*100000000000).rounded()/100000000000
 
@@ -70,17 +88,59 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
         let testlocation = testNode.location
         //let vectorToTest = testNode.eulerAngles
-        let distanceInMeters = Double(locations.first?.distance(from: testlocation!) ?? 0)
+        let distanceInMeters = Double(location?.distance(from: testlocation!) ?? 0)
         
         distanceLabel.text = "Distance: \(distanceInMeters)m"
         
         // TODO: angle needs work
         //let v = CGPoint(x: testNode.x - cameraPosition.x, y: testNode.y - cameraPosition.y);
         //let a = atan2(v.y, v.x) // Note: order of arguments
-        //angleLabel.text = "Angle: \(a) deg"
-        angleLabel.text = "X: \(testNode.position.x), Y: \(testNode.position.y), Z: \(testNode.position.z) "
-
         
+        //angleLabel.text = "X: \(testNode.position.x), Y: \(testNode.position.y), Z: \(testNode.position.z) "
+        
+        let a = getBearingBetweenTwoPoints(point1: location!, point2: testNode.location)
+        angleLabel.text = "Angle: \(a) deg"
+       
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        
+    }
+    
+    func trackLocation() {
+        
+        Locator.subscribePosition(accuracy: .room, onUpdate: { location in
+            
+        }, onFail: { error, _ in
+            //log.error(error.localizedDescription)
+        })
+    }
+    
+    func degreesToRadians(degrees: Double) -> Double {
+        return degrees * .pi / 180.0
+        
+    }
+    
+    func radiansToDegrees(radians: Double) -> Double {
+        return radians * 180.0 / .pi
+        
+    }
+    
+    func getBearingBetweenTwoPoints(point1 : CLLocation, point2 : CLLocation) -> Double {
+        
+        let lat1 = degreesToRadians(degrees: point1.coordinate.latitude)
+        let lon1 = degreesToRadians(degrees: point1.coordinate.longitude)
+        
+        let lat2 = degreesToRadians(degrees: point2.coordinate.latitude)
+        let lon2 = degreesToRadians(degrees: point2.coordinate.longitude)
+        
+        let dLon = lon2 - lon1
+        
+        let y = sin(dLon) * cos(lat2)
+        let x = cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(dLon)
+        let radiansBearing = atan2(y, x)
+        
+        return radiansToDegrees(radians: radiansBearing)
     }
     
     // TODO: write code to get this, The LNTouchDelegate
@@ -174,36 +234,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     }
     
-    // TODO: We can kill this code when we are done with testing
-    // Still nice to have to gather data for now
-    func updateUI(loc: CLLocation) {
- 
-        latitudeLabel.text = String(format: "%.8f", loc.coordinate.latitude)
-        longitudeLabel.text = String(format: "%.8f", loc.coordinate.longitude)
-        statusLabel.text = "New Location Detected!"
-    }
-    
-    //MARK: - Target/Action
-    @IBAction func findLocation() {
-        //locationManager.findLocation(view: self)
-
-    }
-    
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-
-    }
-
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-
-    }
-
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-
-    }
-    
     func createDebugLabels() {
         
         let point = CGPoint(x: 10, y: view.frame.height - 200)
@@ -231,4 +261,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         sceneLocationView.addSubview(angleLabel)
     }
 
+}
+
+extension ViewController : FilterViewDelegate {
+    
+    func complete(buildingName: String) {
+        print(buildingName)
+        
+    }
 }
