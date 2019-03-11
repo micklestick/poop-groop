@@ -30,6 +30,15 @@ class FilterView: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //This is called when you tap on a specific row in the search
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if searching {
+            print("Selected the cell is: \(filteredBuildings[indexPath.row].name)")
+        } else {
+            print("Selected the cell is: \(buildingArr2[indexPath.row].name)")
+        }
+    }
+    
 }   //end of FilterView
 
 extension FilterView: UITableViewDataSource, UITableViewDelegate {
@@ -42,7 +51,7 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FilterViewTableCell
         if searching {
             cell?.textLabel?.text = filteredBuildings[indexPath.row].name
             cell?.detailTextLabel?.text = filteredBuildings[indexPath.row].acronym
