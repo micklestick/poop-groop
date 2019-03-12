@@ -14,7 +14,7 @@ import CoreLocation
 import SwiftLocation
 import CoreMotion
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController {
 
     let debug = true
     
@@ -54,13 +54,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         view.addSubview(sceneLocationView)
 
         addBuildingTags()
-        
+        /*
         manager.deviceMotionUpdateInterval = 1
         manager.startDeviceMotionUpdates(to: motionQueue) { data, error in
             guard let data = data, error == nil else { return }
             // use data here
         }
+        */
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "filterSegue" {
             (segue.destination as? FilterView)?.delegate = self
@@ -73,39 +75,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var hasMotion: Bool {
         return manager.isAccelerometerAvailable && manager.isDeviceMotionActive
-    }
-    
-    //called on location update
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        //round location to display
-        let location = locations.first
-        var lat = Double(location?.coordinate.latitude ?? 0)
-        var long = Double(location?.coordinate.longitude ?? 0)
-        lat = (lat*100000000000).rounded()/100000000000
-        long = (long*100000000000).rounded()/100000000000
-
-        positionLabel.text = "Lat: \(lat), Long: \(long)"
-
-        let testlocation = testNode.location
-        //let vectorToTest = testNode.eulerAngles
-        let distanceInMeters = Double(location?.distance(from: testlocation!) ?? 0)
-        
-        distanceLabel.text = "Distance: \(distanceInMeters)m"
-        
-        // TODO: angle needs work
-        //let v = CGPoint(x: testNode.x - cameraPosition.x, y: testNode.y - cameraPosition.y);
-        //let a = atan2(v.y, v.x) // Note: order of arguments
-        
-        //angleLabel.text = "X: \(testNode.position.x), Y: \(testNode.position.y), Z: \(testNode.position.z) "
-        
-        let a = getBearingBetweenTwoPoints(point1: location!, point2: testNode.location)
-        angleLabel.text = "Angle: \(a) deg"
-       
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        
     }
     
     func trackLocation() {
@@ -264,10 +233,58 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
 }
 
+extension ViewController : CLLocationManagerDelegate {
+
+    //called on location update
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        //round location to display
+        let location = locations.first
+        var lat = Double(location?.coordinate.latitude ?? 0)
+        var long = Double(location?.coordinate.longitude ?? 0)
+        lat = lat.roundTo(places: 9)
+        long = long.roundTo(places: 9)
+        
+        positionLabel.text = "Lat: \(lat), Long: \(long)"
+        
+        let testlocation = testNode.location
+        //let vectorToTest = testNode.eulerAngles
+        let distanceInMeters = Double(location?.distance(from: testlocation!) ?? 0)
+        
+        distanceLabel.text = "Distance: \(distanceInMeters)m"
+        
+        // TODO: angle needs work
+        //let v = CGPoint(x: testNode.x - cameraPosition.x, y: testNode.y - cameraPosition.y);
+        //let a = atan2(v.y, v.x) // Note: order of arguments
+        
+        //angleLabel.text = "X: \(testNode.position.x), Y: \(testNode.position.y), Z: \(testNode.position.z) "
+        
+        let a = getBearingBetweenTwoPoints(point1: location!, point2: testNode.location)
+        angleLabel.text = "Angle: \(a) deg"
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        
+    }
+}
+
 extension ViewController : FilterViewDelegate {
     
     func complete(buildingName: String) {
         print(buildingName)
         
     }
+    
+}
+
+
+extension Double {
+    
+    /// Rounds the double to decimal places value
+    func roundTo(places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+    
 }
