@@ -61,6 +61,14 @@ class ViewController: UIViewController {
             // use data here
         }
         */
+       /* let newarray = [KMBuilding]()
+        
+        KMDatabaseHelper.getData {
+            (array) in
+            
+            let newarray = array
+        }*/
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -11,7 +11,7 @@ import Foundation
 // Class for connecting to and reading database
 class KMDatabaseHelper {
 
-   static var jsonUrlString = "https://api.myjson.com/bins/iwhci"
+   static var jsonUrlString = "https://api.myjson.com/bins/13kfr6"
 
     // test struct for implementing json decode
     struct Building: Decodable {
@@ -39,7 +39,7 @@ class KMDatabaseHelper {
 
     // get connection to database to recieve JSON and run through decode
     // function returns an array of type KMBuilding with the current databse info
-    static func getData() -> [KMBuilding] {
+    static func getData(completionHandler: @escaping (_ buildings: [KMBuilding]) -> ()) {
 
         var buildingArray = [KMBuilding]()
         
@@ -60,12 +60,12 @@ class KMDatabaseHelper {
             do {
                 var building = try JSONDecoder().decode([Building].self, from: data)
                 buildingArray = createBuilding(input: building)
+                completionHandler(buildingArray)
             } catch let jsonErr {
                 print("error serializing json:", jsonErr)
             }
         }.resume()
         
-        return buildingArray
     }
 
     // functions for generating an example test array of type KMBuilding
