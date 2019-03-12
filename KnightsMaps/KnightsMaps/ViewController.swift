@@ -267,6 +267,7 @@ extension ViewController : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         
     }
+
 }
 
 extension ViewController : FilterViewDelegate {

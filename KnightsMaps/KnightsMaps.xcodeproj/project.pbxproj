@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14365569222D8AA200031F4F /* TestDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14365568222D8AA200031F4F /* TestDatabaseHelper.swift */; };
+		145650FC22381C7300BF304E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145650FB22381C7200BF304E /* GoogleService-Info.plist */; };
 		148E10092228C61700CC2C08 /* TestLocationAndBuildingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148E10082228C61700CC2C08 /* TestLocationAndBuildingObject.swift */; };
 		6AD40231221C28160049237B /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD40230221C28160049237B /* Database.swift */; };
 		6AD40234221C284B0049237B /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD40233221C284B0049237B /* Building.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		0B71002B3C1C8B6938BB71AB /* libPods-KnightsMaps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KnightsMaps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14365568222D8AA200031F4F /* TestDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDatabaseHelper.swift; sourceTree = "<group>"; };
+		145650FB22381C7200BF304E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		148E10082228C61700CC2C08 /* TestLocationAndBuildingObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLocationAndBuildingObject.swift; sourceTree = "<group>"; };
 		5286F789FE9C6DFFD024E7C4 /* Pods-KnightsMapsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMapsTests.release.xcconfig"; path = "Target Support Files/Pods-KnightsMapsTests/Pods-KnightsMapsTests.release.xcconfig"; sourceTree = "<group>"; };
 		6AD40230221C28160049237B /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				FEA83B7A2232420C00C5BEAA /* SearchBuilding.swift */,
 				FEC9A2292217B15300EBC9B2 /* KMDatabaseHelper.swift */,
 				FEC9A2272217AEE600EBC9B2 /* KMLocation.swift */,
+				145650FB22381C7200BF304E /* GoogleService-Info.plist */,
 			);
 			path = KnightsMaps;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			files = (
 				70B9A68B2213E7FE003C11EF /* art.scnassets in Resources */,
 				70B9A6952213E7FF003C11EF /* LaunchScreen.storyboard in Resources */,
+				145650FC22381C7300BF304E /* GoogleService-Info.plist in Resources */,
 				70B9A6922213E7FF003C11EF /* Assets.xcassets in Resources */,
 				70B9A6902213E7FE003C11EF /* Main.storyboard in Resources */,
 			);

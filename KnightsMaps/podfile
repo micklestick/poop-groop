@@ -7,6 +7,7 @@ target 'KnightsMaps' do
 	pod 'SnapKit'
 	pod 'SwiftLocation'
 	pod 'SwiftyBeaver'
+	pod 'Firebase/Core'
 
 	target 'KnightsMapsTests' do
 		inherit! :search_paths

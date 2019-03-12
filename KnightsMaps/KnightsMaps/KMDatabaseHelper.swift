@@ -11,22 +11,25 @@ import Foundation
 // Class for connecting to and reading database
 class KMDatabaseHelper {
 
-   static var jsonUrlString = "https://api.myjson.com/bins/mrh7e"
+   static var jsonUrlString = "https://api.myjson.com/bins/iwhci"
 
     // test struct for implementing json decode
     struct Building: Decodable {
         let name: String
         let acronym: String
-        struct Location: Decodable {
-            let latitude: Float
-            let longitude: Float
-        }
+        let location: Location
         let info: String
+        let type: String
+    }
+    
+    struct Location: Decodable {
+        let latitude: Float
+        let longitude: Float
     }
 
    static func needUpdate(localVersion: Double, dbVersion: Double) -> Bool {
         // check database for version number
-        if(localVersion >= dbVersion) {
+        if localVersion >= dbVersion {
             return false
         }
         else {
@@ -55,10 +58,10 @@ class KMDatabaseHelper {
             }
 
             do {
-                let building = try JSONDecoder().decode(Building.self, from: data)
-                print(building)
+                var building = try JSONDecoder().decode([Building].self, from: data)
+                buildingArray = createBuilding(input: building)
             } catch let jsonErr {
-                print("error serializing json:",jsonErr)
+                print("error serializing json:", jsonErr)
             }
         }.resume()
         
@@ -90,5 +93,19 @@ class KMDatabaseHelper {
         return [testPoint1, testPoint2, testPoint3]
     }
 
+    // Turns a building struct array into an array of building objects this should be
+    // temporary until I can solve an issue using decoable with custom object
+    static func createBuilding(input: [Building]) -> [KMBuilding] {
+        
+        var buildingObj: KMBuilding
+        var buildingArray = [KMBuilding]()
+        
+        for building in input {
+            buildingObj = KMBuilding(name: building.name, acronym: building.acronym, latitude: building.location.latitude, longitude: building.location.longitude, info: building.info, type: building.type)
+            buildingArray.append(buildingObj)
+        }
+        
+        return buildingArray
+    }
 
 }
