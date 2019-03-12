@@ -11,21 +11,21 @@ import Foundation
 // Class for connecting to and reading database
 class KMDatabaseHelper {
 
-   static var jsonUrlString = "https://api.myjson.com/bins/13kfr6"
+   static var jsonUrlString = "https://api.myjson.com/bins/y1bjm"
 
     // test struct for implementing json decode
-    struct Building: Decodable {
-        let name: String
-        let acronym: String
-        let location: Location
-        let info: String
-        let type: String
-    }
-    
-    struct Location: Decodable {
-        let latitude: Float
-        let longitude: Float
-    }
+//    struct Building: Decodable {
+//        let name: String
+//        let acronym: String
+//        let location: Location
+//        let info: String
+//        let type: String
+//    }
+//    
+//    struct Location: Decodable {
+//        let latitude: Float
+//        let longitude: Float
+//    }
 
    static func needUpdate(localVersion: Double, dbVersion: Double) -> Bool {
         // check database for version number
@@ -41,7 +41,7 @@ class KMDatabaseHelper {
     // function returns an array of type KMBuilding with the current databse info
     static func getData(completionHandler: @escaping (_ buildings: [KMBuilding]) -> ()) {
 
-        var buildingArray = [KMBuilding]()
+       // var buildingArray = [KMBuilding]()
         
         // create Url object
         guard let endpoint = URL(string: jsonUrlString) else {
@@ -58,9 +58,9 @@ class KMDatabaseHelper {
             }
 
             do {
-                var building = try JSONDecoder().decode([Building].self, from: data)
-                buildingArray = createBuilding(input: building)
-                completionHandler(buildingArray)
+                var building = try JSONDecoder().decode([KMBuilding].self, from: data)
+                //buildingArray = createBuilding(input: building)
+                completionHandler(building)
             } catch let jsonErr {
                 print("error serializing json:", jsonErr)
             }
@@ -95,17 +95,17 @@ class KMDatabaseHelper {
 
     // Turns a building struct array into an array of building objects this should be
     // temporary until I can solve an issue using decoable with custom object
-    static func createBuilding(input: [Building]) -> [KMBuilding] {
-        
-        var buildingObj: KMBuilding
-        var buildingArray = [KMBuilding]()
-        
-        for building in input {
-            buildingObj = KMBuilding(name: building.name, acronym: building.acronym, latitude: building.location.latitude, longitude: building.location.longitude, info: building.info, type: building.type)
-            buildingArray.append(buildingObj)
-        }
-        
-        return buildingArray
-    }
+//    static func createBuilding(input: [Building]) -> [KMBuilding] {
+//
+//        var buildingObj: KMBuilding
+//        var buildingArray = [KMBuilding]()
+//
+//        for building in input {
+//            buildingObj = KMBuilding(name: building.name, acronym: building.acronym, latitude: building.location.latitude, longitude: building.location.longitude, info: building.info, type: building.type)
+//            buildingArray.append(buildingObj)
+//        }
+//
+//        return buildingArray
+//    }
 
 }

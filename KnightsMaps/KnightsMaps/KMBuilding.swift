@@ -8,10 +8,11 @@
 
 import Foundation
 
-class KMBuilding {
+class KMBuilding: Decodable {
     let name: String
     let acronym: String
-    let location: KMLocation
+    let latitude: Float
+    let longitude: Float
     let info: String
     let type: String
 
@@ -19,7 +20,8 @@ class KMBuilding {
          longitude: Float, info: String, type: String) {
         self.name = name
         self.acronym = acronym
-        self.location = KMLocation(latitude: latitude, longitude: longitude)
+        self.latitude = latitude
+        self.longitude = longitude
         self.info = info
         self.type = type
     }
