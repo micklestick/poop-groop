@@ -43,8 +43,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             createDebugLabels()
         }
         
-        let searchButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 250, y: 10), size: CGSize(width: 300, height: 100)))
-        searchButton.setTitle("Search image here", for: .normal)
+        let searchButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 100, y: 10), size: CGSize(width: 100, height: 100)))
+        //searchButton.setTitle("Search image here", for: .normal)
+        searchButton.setImage(UIImage(named: "search.png"), for: .normal)
         searchButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
         sceneLocationView.addSubview(searchButton)

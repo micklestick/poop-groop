@@ -6,6 +6,7 @@ PODS:
   - SnapKit (4.2.0)
   - SwiftLocation (3.2.3):
     - SwiftyJSON (~> 4.0.0-alpha.1)
+  - SwiftyBeaver (1.6.2)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - MongoSwift
   - SnapKit
   - SwiftLocation
+  - SwiftyBeaver
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -21,6 +23,7 @@ SPEC REPOS:
     - MongoSwift
     - SnapKit
     - SwiftLocation
+    - SwiftyBeaver
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -29,8 +32,9 @@ SPEC CHECKSUMS:
   MongoSwift: c7420b38a7e223439667f8c50aefada29c270df8
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
+  SwiftyBeaver: 8e67ab3cd94389cbbb7a9c7cc02748d98bfee68e
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 4898c663fafc0f1b8d3b0397e17a3695866d96c1
+PODFILE CHECKSUM: f65e29b2fe404505c8f858ddb54343a4c53666fe
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.6.1
