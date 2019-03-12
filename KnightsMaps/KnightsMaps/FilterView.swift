@@ -80,7 +80,7 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate {
 extension FilterView: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searching = true
-        filteredBuildings = buildingArr2.filter({$0.name.prefix(searchText.count) == searchText || $0.acronym.prefix(searchText.count) == searchText})
+        filteredBuildings = buildingArr2.filter({$0.name.lowercased().prefix(searchText.count) == searchText.lowercased() || $0.acronym.lowercased().prefix(searchText.count) == searchText.lowercased()})
         
         tbView.reloadData()
         
