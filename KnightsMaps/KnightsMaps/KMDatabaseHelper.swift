@@ -11,7 +11,7 @@ import Foundation
 // Class for connecting to and reading database
 class KMDatabaseHelper {
 
-   static var jsonUrlString = "https://api.myjson.com/bins/y1bjm"
+    static var jsonUrlString = "https://firebasestorage.googleapis.com/v0/b/knightsmaps.appspot.com/o/csvjson-2.json?alt=media&token=eceaa62f-5c0b-4f5c-96a4-20ada513b354"
 
     // test struct for implementing json decode
 //    struct Building: Decodable {
