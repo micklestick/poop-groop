@@ -82,6 +82,14 @@ extension FilterView: UISearchBarDelegate {
         tbView.reloadData()
     }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchBar.text = ""
+        tbView.reloadData()
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 //test building array
