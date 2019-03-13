@@ -61,6 +61,15 @@ class ViewController: UIViewController {
             // use data here
         }
         */
+       let newarray = [KMBuilding]()
+        
+        KMDatabaseHelper.getData {
+            (array) in
+            
+            let newarray = array
+            print(array[0].name)
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -140,7 +149,7 @@ class ViewController: UIViewController {
     func addBuildingTags() {
         
         for building in testPoints {
-            let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(building.location.latitude), longitude: CLLocationDegrees(building.location.longitude))
+            let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(building.latitude), longitude: CLLocationDegrees(building.longitude))
             
             //changed the altitude to 5 for testing, 25-35 will be needed for buildings
             let location = CLLocation(coordinate: coordinate, altitude: 5)
