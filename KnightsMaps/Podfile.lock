@@ -67,6 +67,7 @@ PODS:
     - SwiftyJSON (~> 4.0.0-alpha.1)
   - SwiftyBeaver (1.6.2)
   - SwiftyJSON (4.0.0)
+  - SwiftyTimer (2.1.0)
 
 DEPENDENCIES:
   - ARCL
@@ -77,6 +78,7 @@ DEPENDENCIES:
   - SnapKit
   - SwiftLocation
   - SwiftyBeaver
+  - SwiftyTimer
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -98,6 +100,7 @@ SPEC REPOS:
     - SwiftLocation
     - SwiftyBeaver
     - SwiftyJSON
+    - SwiftyTimer
 
 SPEC CHECKSUMS:
   ARCL: 8b0a375942c575472c3cdbec80262d8400f1ec42
@@ -118,7 +121,8 @@ SPEC CHECKSUMS:
   SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
   SwiftyBeaver: 8e67ab3cd94389cbbb7a9c7cc02748d98bfee68e
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
 
-PODFILE CHECKSUM: a63d58e381b60aa22e5852ca28011bd923817204
+PODFILE CHECKSUM: 4fb40d3a9167dab1f35f3b066a355cec03f7fb47
 
 COCOAPODS: 1.6.1

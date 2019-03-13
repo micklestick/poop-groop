@@ -14,6 +14,7 @@ import CoreLocation
 import SwiftLocation
 import CoreMotion
 import Async
+import SwiftyTimer
 
 class ViewController: UIViewController {
 
@@ -37,9 +38,10 @@ class ViewController: UIViewController {
     
     private let motionQueue = OperationQueue()
     
-    //let scene = SCNScene(named: "art.scnassets/ship.scn")!
+    let scene = SCNScene(named: "art.scnassets/ship.scn")!
     var loc = CLLocation()
-    
+    private var timer: Timer?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +59,9 @@ class ViewController: UIViewController {
         sceneLocationView.run()
         view.addSubview(sceneLocationView)
 
+        //SCNLookAtConstraint()
+        sceneLocationView.scene = scene
+        
         /*
         let sceneView = ARSCNView(frame: view.frame)
     
@@ -79,6 +84,9 @@ class ViewController: UIViewController {
             guard let data = data, error == nil else { return }
             Async.main {
                 self.angleLabel.text = "Heading: \(data.heading.roundTo(places: 5))"
+                
+         
+
                 /*
                 print("x: \(self.testNode.position.x)  y: \(self.testNode.position.y)")
                 self.angleLabel.text = "x: \(self.testNode.worldPosition.x)  y: \(self.testNode.worldPosition.y)"
@@ -89,6 +97,7 @@ class ViewController: UIViewController {
         }
         
         
+        
         KMDatabaseHelper.getData {
             (array) in
             
@@ -97,6 +106,35 @@ class ViewController: UIViewController {
         }
         
         trackLocation()
+        
+        timer = Timer.every(1/100) {
+            /*
+            let cameraPosVec = (self.sceneLocationView.pointOfView)!
+            let arrowPosVec = SCNVector3(x: cameraPosVec.x, y: cameraPosVec.y - 1.5, z: cameraPosVec.z - 1.5)
+            
+            self.scene.rootNode.childNodes.first?.position = arrowPosVec
+            */
+            
+
+            let camera = self.sceneLocationView.pointOfView
+            let arrowNode = self.scene.rootNode.childNodes.first
+            let position = SCNVector3(x: 0, y: -1.5, z: -2.5)
+            let referenceNodeTransform = matrix_float4x4(camera!.transform)
+            
+            // Setup a translation matrix with the desired position
+            var translationMatrix = matrix_identity_float4x4
+            translationMatrix.columns.3.x = position.x
+            translationMatrix.columns.3.y = position.y
+            translationMatrix.columns.3.z = position.z
+            
+            // Combine the configured translation matrix with the referenceNode's transform to get the desired position AND orientation
+            let updatedTransform = matrix_multiply(referenceNodeTransform, translationMatrix)
+            arrowNode!.transform = SCNMatrix4(updatedTransform)
+            
+            self.scene.rootNode.childNodes.first?.look(at: self.testNode.worldPosition)
+
+        }
+        
 
     }
     
@@ -265,7 +303,7 @@ class ViewController: UIViewController {
         positionLabel = UILabel(frame: rekt)
         positionLabel.textColor = UIColor.green
         positionLabel.text = "Lat: 12.12121, Long: 12.121212"
-        sceneLocationView.addSubview(positionLabel)
+        //sceneLocationView.addSubview(positionLabel)
         
         let point2 = CGPoint(x: 10, y: view.frame.height - 125)
         let size2 = CGSize(width: 800, height: 100)
