@@ -16,14 +16,8 @@ class FilterView: UIViewController {
     @IBOutlet var searchBarView: UISearchBar!
     @IBOutlet var tbView: UITableView!
     
-    let buildingArr2 = [KMBuilding(name: "Engineering 1", acronym: "ENG1", latitude: 100, longitude: 100, info: "blah", type:"building"),
-                        KMBuilding(name: "Engineering 2", acronym: "ENG2", latitude: 100, longitude: 100, info: "blah", type:"building"),
-                        KMBuilding(name: "Business Administration 1", acronym: "BA1", latitude: 100, longitude: 100, info: "blah", type:"building"),
-                        KMBuilding(name: "Classroom Building 1", acronym: "CB1", latitude: 100, longitude: 100, info: "blah", type:"building"),
-                        KMBuilding(name: "Classroom Building 2", acronym: "CB2", latitude: 100, longitude: 100, info: "blah", type:"building"),
-                        KMBuilding(name: "Harrison Engineering Center", acronym: "HEC", latitude: 100, longitude: 100, info: "blah", type:"building"),
-                        KMBuilding(name: "Visual Arts Building", acronym: "VAB", latitude: 100, longitude: 100, info: "blah", type:"building")]
-    
+    var buildingArray: [KMBuilding]!
+
     var searching = false
     var filteredBuildings = [KMBuilding]()
     
@@ -40,12 +34,13 @@ class FilterView: UIViewController {
             // when the view has completely dismissed
         }
     }
+    
     //This is called when you tap on a specific row in the search
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if searching {
             itemSelected(bName: filteredBuildings[indexPath.row].name)
         } else {
-            itemSelected(bName: buildingArr2[indexPath.row].name)
+            itemSelected(bName: buildingArray[indexPath.row].name)
 
         }
     }
@@ -55,11 +50,12 @@ class FilterView: UIViewController {
 }   //end of FilterView
 
 extension FilterView: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching {
            return filteredBuildings.count
         } else {
-            return buildingArr2.count
+            return buildingArray.count
         }
     }
     
@@ -69,8 +65,8 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate {
             cell?.textLabel?.text = filteredBuildings[indexPath.row].name
             cell?.detailTextLabel?.text = filteredBuildings[indexPath.row].acronym
         } else {
-            cell?.textLabel?.text = buildingArr2[indexPath.row].name
-            cell?.detailTextLabel?.text = buildingArr2[indexPath.row].acronym
+            cell?.textLabel?.text = buildingArray[indexPath.row].name
+            cell?.detailTextLabel?.text = buildingArray[indexPath.row].acronym
         }
         return cell!
     }
@@ -78,11 +74,23 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension FilterView: UISearchBarDelegate {
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searching = true
-        filteredBuildings = buildingArr2.filter({$0.name.lowercased().prefix(searchText.count) == searchText.lowercased() || $0.acronym.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        filteredBuildings = buildingArray.filter({$0.name.lowercased().prefix(searchText.count) == searchText.lowercased() || $0.acronym.lowercased().prefix(searchText.count) == searchText.lowercased()})
         
         tbView.reloadData()
-        
     }
+    
 }
+
+//test building array
+/*
+ let buildingArr2 = [KMBuilding(name: "Engineering 1", acronym: "ENG1", latitude: 100, longitude: 100, info: "blah", type:"building"),
+ KMBuilding(name: "Engineering 2", acronym: "ENG2", latitude: 100, longitude: 100, info: "blah", type:"building"),
+ KMBuilding(name: "Business Administration 1", acronym: "BA1", latitude: 100, longitude: 100, info: "blah", type:"building"),
+ KMBuilding(name: "Classroom Building 1", acronym: "CB1", latitude: 100, longitude: 100, info: "blah", type:"building"),
+ KMBuilding(name: "Classroom Building 2", acronym: "CB2", latitude: 100, longitude: 100, info: "blah", type:"building"),
+ KMBuilding(name: "Harrison Engineering Center", acronym: "HEC", latitude: 100, longitude: 100, info: "blah", type:"building"),
+ KMBuilding(name: "Visual Arts Building", acronym: "VAB", latitude: 100, longitude: 100, info: "blah", type:"building")]
+ */
