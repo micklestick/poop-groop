@@ -12,8 +12,6 @@ import XCTest
 class TestBuildingObject: XCTestCase {
 
     // This tests the creation of a building object using fake data
-    // MUST RUN AFTER LOCATION TEST as it is dependent on the location
-    // object being created
 
     func testBuildingCreate() {
 
