@@ -13,6 +13,8 @@ import ARCL
 import CoreLocation
 import SwiftLocation
 import CoreMotion
+import Async
+import SwiftyTimer
 
 class ViewController: UIViewController {
 
@@ -23,7 +25,7 @@ class ViewController: UIViewController {
     private let manager = CMMotionManager()
 
     //var locationManager = LocationManager()
-    var buildings = KMDatabaseHelper.makeObjectArray()
+    var buildings : [KMBuilding] = []
     var testPoints = KMDatabaseHelper.aTestPoints()
     
     //debug labels
@@ -36,6 +38,10 @@ class ViewController: UIViewController {
     
     private let motionQueue = OperationQueue()
     
+    let scene = SCNScene(named: "art.scnassets/ship.scn")!
+    var loc = CLLocation()
+    private var timer: Timer?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,38 +49,100 @@ class ViewController: UIViewController {
             createDebugLabels()
         }
         
-        let searchButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 100, y: 10), size: CGSize(width: 100, height: 100)))
-        //searchButton.setTitle("Search image here", for: .normal)
+        let searchButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 60, y: 40), size: CGSize(width: 50, height: 50)))
         searchButton.setImage(UIImage(named: "search.png"), for: .normal)
         searchButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
-        sceneLocationView.addSubview(searchButton)
         
+
+        sceneLocationView.addSubview(searchButton)
         sceneLocationView.run()
         view.addSubview(sceneLocationView)
 
-        addBuildingTags()
+        //SCNLookAtConstraint()
+        sceneLocationView.scene = scene
+        
         /*
-        manager.deviceMotionUpdateInterval = 1
-        manager.startDeviceMotionUpdates(to: motionQueue) { data, error in
-            guard let data = data, error == nil else { return }
-            // use data here
-        }
+        let sceneView = ARSCNView(frame: view.frame)
+    
+        // Create a session configuration
+        let configuration = ARWorldTrackingConfiguration()
+        
+        // Run the view's session
+        sceneView.session.run(configuration)
+        
+        sceneView.scene = scene
+        sceneView.backgroundColor = UIColor.clear
+        view.addSubview(sceneView)
         */
-       let newarray = [KMBuilding]()
+        
+        addBuildingTags()
+        
+        
+        manager.deviceMotionUpdateInterval = 1/30
+        manager.startDeviceMotionUpdates(using: .xTrueNorthZVertical, to: motionQueue) { data, error in
+            guard let data = data, error == nil else { return }
+            Async.main {
+                self.angleLabel.text = "Heading: \(data.heading.roundTo(places: 5))"
+                
+         
+
+                /*
+                print("x: \(self.testNode.position.x)  y: \(self.testNode.position.y)")
+                self.angleLabel.text = "x: \(self.testNode.worldPosition.x)  y: \(self.testNode.worldPosition.y)"
+                sceneView.scene.rootNode.childNodes.first?.look(at: self.testNode.worldPosition)
+                 */
+            }
+         
+        }
+        
+        
         
         KMDatabaseHelper.getData {
             (array) in
             
-            let newarray = array
+            self.buildings.append(contentsOf: array)
             print(array[0].name)
         }
         
+        trackLocation()
+        
+        timer = Timer.every(1/100) {
+            /*
+            let cameraPosVec = (self.sceneLocationView.pointOfView)!
+            let arrowPosVec = SCNVector3(x: cameraPosVec.x, y: cameraPosVec.y - 1.5, z: cameraPosVec.z - 1.5)
+            
+            self.scene.rootNode.childNodes.first?.position = arrowPosVec
+            */
+            
+
+            let camera = self.sceneLocationView.pointOfView
+            let arrowNode = self.scene.rootNode.childNodes.first
+            let position = SCNVector3(x: 0, y: -1.5, z: -2.5)
+            let referenceNodeTransform = matrix_float4x4(camera!.transform)
+            
+            // Setup a translation matrix with the desired position
+            var translationMatrix = matrix_identity_float4x4
+            translationMatrix.columns.3.x = position.x
+            translationMatrix.columns.3.y = position.y
+            translationMatrix.columns.3.z = position.z
+            
+            // Combine the configured translation matrix with the referenceNode's transform to get the desired position AND orientation
+            let updatedTransform = matrix_multiply(referenceNodeTransform, translationMatrix)
+            arrowNode!.transform = SCNMatrix4(updatedTransform)
+            
+            self.scene.rootNode.childNodes.first?.look(at: self.testNode.worldPosition)
+
+        }
+        
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "filterSegue" {
-            (segue.destination as? FilterView)?.delegate = self
+            let destinationVC = segue.destination as? FilterView
+            destinationVC?.delegate = self
+            destinationVC?.buildingArray = buildings
         }
     }
     
@@ -89,6 +157,20 @@ class ViewController: UIViewController {
     func trackLocation() {
         
         Locator.subscribePosition(accuracy: .room, onUpdate: { location in
+            
+            self.loc = location
+            var lat = Double(location.coordinate.latitude)
+            var long = Double(location.coordinate.longitude)
+            lat = lat.roundTo(places: 9)
+            long = long.roundTo(places: 9)
+            
+            self.positionLabel.text = "Lat: \(lat), Long: \(long)"
+            
+            let testlocation = self.testNode.location
+            //let vectorToTest = testNode.eulerAngles
+            let distanceInMeters = Double(location.distance(from: testlocation!))
+            
+            self.distanceLabel.text = "Distance: \(distanceInMeters)m"
             
         }, onFail: { error, _ in
             //log.error(error.localizedDescription)
@@ -215,15 +297,15 @@ class ViewController: UIViewController {
     
     func createDebugLabels() {
         
-        let point = CGPoint(x: 10, y: view.frame.height - 200)
+        let point = CGPoint(x: 10, y: view.frame.height - 150)
         let size = CGSize(width: 800, height: 100)
         let rekt = CGRect(origin: point, size: size)
         positionLabel = UILabel(frame: rekt)
         positionLabel.textColor = UIColor.green
         positionLabel.text = "Lat: 12.12121, Long: 12.121212"
-        sceneLocationView.addSubview(positionLabel)
+        //sceneLocationView.addSubview(positionLabel)
         
-        let point2 = CGPoint(x: 10, y: view.frame.height - 150)
+        let point2 = CGPoint(x: 10, y: view.frame.height - 125)
         let size2 = CGSize(width: 800, height: 100)
         let rekt2 = CGRect(origin: point2, size: size2)
         distanceLabel = UILabel(frame: rekt2)
@@ -242,6 +324,7 @@ class ViewController: UIViewController {
 
 }
 
+/*
 extension ViewController : CLLocationManagerDelegate {
 
     //called on location update
@@ -278,7 +361,7 @@ extension ViewController : CLLocationManagerDelegate {
     }
 
 }
-
+*/
 extension ViewController : FilterViewDelegate {
     
     func complete(buildingName: String) {

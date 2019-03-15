@@ -36,25 +36,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MbD-ED-AX8">
-                                <rect key="frame" x="0.0" y="64" width="414" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="eWJ-5Q-7l9"/>
-                                </constraints>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="barTintColor" red="1" green="0.792156862745098" blue="0.019607843137254902" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="sGS-DX-vH8" id="B8I-aW-a8y"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kMz-ae-h0g">
-                                <rect key="frame" x="0.0" y="130" width="414" height="732"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" clipsSubviews="YES" contentMode="redraw" placeholder="Search Your Building" showsCancelButton="YES" id="MbD-ED-AX8">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="375" id="eWJ-5Q-7l9"/>
+                                    </constraints>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="barTintColor" red="1" green="0.792156862745098" blue="0.019607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <scopeButtonTitles>
+                                        <string>Title</string>
+                                        <string>Title</string>
+                                    </scopeButtonTitles>
+                                    <connections>
+                                        <outlet property="delegate" destination="sGS-DX-vH8" id="B8I-aW-a8y"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="bwr-oX-WHe" detailTextLabel="eu1-ow-juE" style="IBUITableViewCellStyleSubtitle" id="Ne0-Y9-bbF" customClass="FilterViewTableCell" customModule="KnightsMaps" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="84" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ne0-Y9-bbF" id="oDm-A1-JfD">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -85,9 +90,6 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="MbD-ED-AX8" firstAttribute="top" secondItem="nop-yH-pSX" secondAttribute="top" constant="20" id="2L4-et-D2m"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nop-yH-pSX"/>
                     </view>
                     <connections>
@@ -97,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFN-Mq-Dzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="890" y="102"/>
+            <point key="canvasLocation" x="889.85507246376824" y="101.78571428571428"/>
         </scene>
     </scenes>
 </document>
