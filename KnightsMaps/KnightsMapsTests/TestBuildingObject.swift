@@ -12,6 +12,8 @@ import XCTest
 class TestBuildingObject: XCTestCase {
 
     // This tests the creation of a building object using fake data
+    // Test will pass if each member of the building object is created and
+    // if they match the given strings
 
     func testBuildingCreate() {
 

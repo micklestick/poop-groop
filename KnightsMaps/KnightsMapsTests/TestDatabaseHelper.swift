@@ -21,6 +21,7 @@ class TestDatabaseHelper: XCTestCase {
     }
 
     // function mimics version data to test if update function returns correct value
+    // test passes if function returns true because 3.4 < 3.5
     
     func testNeedUpdateTrue() {
         
@@ -33,6 +34,7 @@ class TestDatabaseHelper: XCTestCase {
     }
     
     // function mimics version data to test if update function returns correct value
+    // test passes if function returns false because 3.4 > 3.3
     
     func testNeedUpdateFalse() {
         let currentVersion: Float = 3.4
@@ -44,8 +46,9 @@ class TestDatabaseHelper: XCTestCase {
     }
     
     // tests that the function actually pulls and returns data in an array
-    // run through the manual test described in the documentation and bellow to
-    // check correctness
+    // run through the manual test described in the documentation and below to
+    // check correctness. Test succeeds if the array is populated
+    
     func testGetData() {
         var buildings : [KMBuilding] = []
         
