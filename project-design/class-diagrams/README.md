@@ -19,3 +19,15 @@ This class implements the Decodable protocol and is able to be instantiated to m
 
 ## KMDatabaseHelper
 
+### Members
+- one global value named jsonUrlString
+  - this string contains the url string for the json request and is global so it can be easily accessed and changed
+
+### Functions
+
+- needUpdate
+  - This function takes two parameters, localVersion, and dbVersion
+    - localVersion denotes the version of the local storage for the database and the dbVersion is the version that is pulled on start up
+  - This function compares the two and returns a boolean value if the dbVersion is greater than the current local version
+
+- getData
