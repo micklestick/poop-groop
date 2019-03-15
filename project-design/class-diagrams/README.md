@@ -31,3 +31,9 @@ This class implements the Decodable protocol and is able to be instantiated to m
   - This function compares the two and returns a boolean value if the dbVersion is greater than the current local version
 
 - getData
+
+- makeObjectArray
+  - temporary function for creating an array of building objects to use for testing and development
+
+- aTestPoints
+  - temporary function for creating another specific array of building objects modeled off a specfic location for testing the floating tag points
