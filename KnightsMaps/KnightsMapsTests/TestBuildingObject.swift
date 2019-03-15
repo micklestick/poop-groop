@@ -1,5 +1,5 @@
 //
-//  TestLocationAndBuildingObject.swift
+//  TestBuildingObject.swift
 //  KnightsMapsTests
 //
 //  Created by Sean Hall on 2/28/19.
