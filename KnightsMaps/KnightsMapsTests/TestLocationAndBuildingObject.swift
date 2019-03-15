@@ -36,16 +36,17 @@ class TestLocationAndBuildingObject: XCTestCase {
         let latitude: Float = 40.56
         let longitude: Float = -80.49
         let info = "Test string for information field"
+        let type = "building"
 
 
-        let building = KMBuilding(name: buildingName, acronym: acronym, latitude: latitude,
-                                  longitude: longitude, info: info)
+        let building = KMBuilding(name: buildingName, acronym: acronym, latitude: latitude, longitude: longitude, info: info, type: type)
 
         XCTAssert(building.name == buildingName, "Building name")
         XCTAssert(building.acronym == acronym, "Acronym")
-        XCTAssert(building.location.latitude == latitude, "Latitidue created")
-        XCTAssert(building.location.longitude == longitude, "longitude created")
+        XCTAssert(building.latitude == latitude, "Latitidue created")
+        XCTAssert(building.longitude == longitude, "longitude created")
         XCTAssert(building.info == info, "info ")
+        XCTAssert(building.type == type, "type")
 
     }
 

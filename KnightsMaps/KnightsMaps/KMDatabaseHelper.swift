@@ -14,7 +14,7 @@ class KMDatabaseHelper {
     static var jsonUrlString = "https://firebasestorage.googleapis.com/v0/b/knightsmaps.appspot.com/o/csvjson-2.json?alt=media&token=eceaa62f-5c0b-4f5c-96a4-20ada513b354"
     
 
-   static func needUpdate(localVersion: Double, dbVersion: Double) -> Bool {
+   static func needUpdate(localVersion: Float, dbVersion: Float) -> Bool {
         // check database for version number
         if localVersion >= dbVersion {
             return false
