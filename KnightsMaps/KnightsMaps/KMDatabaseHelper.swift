@@ -12,20 +12,7 @@ import Foundation
 class KMDatabaseHelper {
 
     static var jsonUrlString = "https://firebasestorage.googleapis.com/v0/b/knightsmaps.appspot.com/o/csvjson-2.json?alt=media&token=eceaa62f-5c0b-4f5c-96a4-20ada513b354"
-
-    // test struct for implementing json decode
-//    struct Building: Decodable {
-//        let name: String
-//        let acronym: String
-//        let location: Location
-//        let info: String
-//        let type: String
-//    }
-//    
-//    struct Location: Decodable {
-//        let latitude: Float
-//        let longitude: Float
-//    }
+    
 
    static func needUpdate(localVersion: Double, dbVersion: Double) -> Bool {
         // check database for version number
@@ -41,9 +28,8 @@ class KMDatabaseHelper {
     // function returns an array of type KMBuilding with the current databse info
     static func getData(completionHandler: @escaping (_ buildings: [KMBuilding]) -> ()) {
 
-       // var buildingArray = [KMBuilding]()
         
-        // create Url object
+        // create Url endpoint
         guard let endpoint = URL(string: jsonUrlString) else {
             fatalError("Error creating endpoint")
         }
@@ -57,9 +43,11 @@ class KMDatabaseHelper {
                 fatalError("JSONError: failed to get data")
             }
 
+            // decode the json into an array named building
             do {
                 var building = try JSONDecoder().decode([KMBuilding].self, from: data)
-                //buildingArray = createBuilding(input: building)
+                
+                // call the completion handler to escape the URL session
                 completionHandler(building)
             } catch let jsonErr {
                 print("error serializing json:", jsonErr)
@@ -92,20 +80,4 @@ class KMDatabaseHelper {
         
         return [testPoint1, testPoint2, testPoint3]
     }
-
-    // Turns a building struct array into an array of building objects this should be
-    // temporary until I can solve an issue using decoable with custom object
-//    static func createBuilding(input: [Building]) -> [KMBuilding] {
-//
-//        var buildingObj: KMBuilding
-//        var buildingArray = [KMBuilding]()
-//
-//        for building in input {
-//            buildingObj = KMBuilding(name: building.name, acronym: building.acronym, latitude: building.location.latitude, longitude: building.location.longitude, info: building.info, type: building.type)
-//            buildingArray.append(buildingObj)
-//        }
-//
-//        return buildingArray
-//    }
-
 }
