@@ -53,8 +53,10 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching {
+            print(filteredBuildings.count)
            return filteredBuildings.count
         } else {
+            print(buildingArray.count)
             return buildingArray.count
         }
     }
