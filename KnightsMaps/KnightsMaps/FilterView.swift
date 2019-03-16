@@ -53,8 +53,10 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching {
+            print(filteredBuildings.count)
            return filteredBuildings.count
         } else {
+            print(buildingArray.count)
             return buildingArray.count
         }
     }
@@ -92,13 +94,4 @@ extension FilterView: UISearchBarDelegate {
     
 }
 
-//test building array
-/*
- let buildingArr2 = [KMBuilding(name: "Engineering 1", acronym: "ENG1", latitude: 100, longitude: 100, info: "blah", type:"building"),
- KMBuilding(name: "Engineering 2", acronym: "ENG2", latitude: 100, longitude: 100, info: "blah", type:"building"),
- KMBuilding(name: "Business Administration 1", acronym: "BA1", latitude: 100, longitude: 100, info: "blah", type:"building"),
- KMBuilding(name: "Classroom Building 1", acronym: "CB1", latitude: 100, longitude: 100, info: "blah", type:"building"),
- KMBuilding(name: "Classroom Building 2", acronym: "CB2", latitude: 100, longitude: 100, info: "blah", type:"building"),
- KMBuilding(name: "Harrison Engineering Center", acronym: "HEC", latitude: 100, longitude: 100, info: "blah", type:"building"),
- KMBuilding(name: "Visual Arts Building", acronym: "VAB", latitude: 100, longitude: 100, info: "blah", type:"building")]
- */
+

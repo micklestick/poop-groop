@@ -1,0 +1,911 @@
+[ {
+  "acronym" : "ADP",
+  "info" : "",
+  "latitude" : 28.6045455,
+  "longitude" : -81.20578217,
+  "name" : "Alpha Delta Pi - Sorority",
+  "type" : "building"
+}, {
+  "acronym" : "G409",
+  "info" : "",
+  "latitude" : 28.60570454,
+  "longitude" : -81.20396363,
+  "name" : "Alpha Epsilon Phi - Sorority",
+  "type" : "building"
+}, {
+  "acronym" : "ATO",
+  "info" : "",
+  "latitude" : 28.60678539,
+  "longitude" : -81.20525109,
+  "name" : "Alpha Tau Omega - Fraternity",
+  "type" : "building"
+}, {
+  "acronym" : "AZD",
+  "info" : "",
+  "latitude" : 28.603856,
+  "longitude" : -81.20588946,
+  "name" : "Alpha Xi Delta - Sorority",
+  "type" : "building"
+}, {
+  "acronym" : "ARF",
+  "info" : "",
+  "latitude" : 28.59136986,
+  "longitude" : -81.19172739,
+  "name" : "AMPAC Research Facility",
+  "type" : "building"
+}, {
+  "acronym" : "ADRF",
+  "info" : "",
+  "latitude" : 28.59134631,
+  "longitude" : -81.19120168,
+  "name" : "Ara Dr. Research Facility",
+  "type" : "building"
+}, {
+  "acronym" : "ARB",
+  "info" : "",
+  "latitude" : 28.60059684,
+  "longitude" : -81.19684773,
+  "name" : "Arboretum",
+  "type" : "building"
+}, {
+  "acronym" : "ART",
+  "info" : "",
+  "latitude" : 28.60278218,
+  "longitude" : -81.20365786,
+  "name" : "Art Gallery",
+  "type" : "building"
+}, {
+  "acronym" : "BAND",
+  "info" : "",
+  "latitude" : 28.5924014,
+  "longitude" : -81.20135116,
+  "name" : "Band Storage",
+  "type" : "building"
+}, {
+  "acronym" : "BYC",
+  "info" : "",
+  "latitude" : 28.59542531,
+  "longitude" : -81.20264935,
+  "name" : "Barbara Ying Center",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.5891513,
+  "longitude" : -81.19817542,
+  "name" : "Bennett Research II",
+  "type" : "building"
+}, {
+  "acronym" : "CMMS",
+  "info" : "",
+  "latitude" : 28.59501118,
+  "longitude" : -81.20257918,
+  "name" : "Barbara Ying Center - Center for Multilingual Multicultural Studies",
+  "type" : "building"
+}, {
+  "acronym" : "BIO",
+  "info" : "",
+  "latitude" : 28.59999869,
+  "longitude" : -81.19857776,
+  "name" : "Biological Sciences",
+  "type" : "building"
+}, {
+  "acronym" : "BTG",
+  "info" : "",
+  "latitude" : 28.59130862,
+  "longitude" : -81.19214582,
+  "name" : "Biological Transgenic Greenhouse",
+  "type" : "building"
+}, {
+  "acronym" : "BFRC",
+  "info" : "",
+  "latitude" : 28.59144051,
+  "longitude" : -81.19112658,
+  "name" : "Biology Field Research Center",
+  "type" : "building"
+}, {
+  "acronym" : "BMRA",
+  "info" : "",
+  "latitude" : 28.58882629,
+  "longitude" : -81.19213509,
+  "name" : "Biomolecular Research Annex",
+  "type" : "building"
+}, {
+  "acronym" : "ERC",
+  "info" : "",
+  "latitude" : 28.59521807,
+  "longitude" : -81.2036364,
+  "name" : "Education Research Center",
+  "type" : "building"
+}, {
+  "acronym" : "SS",
+  "info" : "",
+  "latitude" : 28.60856559,
+  "longitude" : -81.19346547,
+  "name" : "Spectrum Stadium",
+  "type" : "building"
+}, {
+  "acronym" : "BHC",
+  "info" : "",
+  "latitude" : 28.60226882,
+  "longitude" : -81.20245623,
+  "name" : "Burnett Honors College",
+  "type" : "building"
+}, {
+  "acronym" : "PRS",
+  "info" : "",
+  "latitude" : 28.59611298,
+  "longitude" : -81.20505261,
+  "name" : "Burnett House",
+  "type" : "building"
+}, {
+  "acronym" : "BA1",
+  "info" : "",
+  "latitude" : 28.60101131,
+  "longitude" : -81.19921612,
+  "name" : "Business Administration",
+  "type" : "building"
+}, {
+  "acronym" : "BA2",
+  "info" : "",
+  "latitude" : 28.60069575,
+  "longitude" : -81.1986314,
+  "name" : "Business Administration II",
+  "type" : "building"
+}, {
+  "acronym" : "CSEL",
+  "info" : "",
+  "latitude" : 28.605286,
+  "longitude" : -81.199026,
+  "name" : "Career Services and Experiential Learning",
+  "type" : "building"
+}, {
+  "acronym" : "ARNA",
+  "info" : "",
+  "latitude" : 28.60676114,
+  "longitude" : -81.19768592,
+  "name" : "CFE Arena",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.59364489,
+  "longitude" : -81.20467173,
+  "name" : "Challenge Course",
+  "type" : "building"
+}, {
+  "acronym" : "CHEM",
+  "info" : "",
+  "latitude" : 28.5998362,
+  "longitude" : -81.19985985,
+  "name" : "Chemistry",
+  "type" : "building"
+}, {
+  "acronym" : "G416",
+  "info" : "",
+  "latitude" : 28.603745,
+  "longitude" : -81.206778,
+  "name" : "Chi Omega - Sorority",
+  "type" : "building"
+}, {
+  "acronym" : "CB1",
+  "info" : "",
+  "latitude" : 28.60349053,
+  "longitude" : -81.20042043,
+  "name" : "Classroom Building I",
+  "type" : "building"
+}, {
+  "acronym" : "CB2",
+  "info" : "",
+  "latitude" : 28.604306,
+  "longitude" : -81.200111,
+  "name" : "Classroom Building II",
+  "type" : "building"
+}, {
+  "acronym" : "CAH",
+  "info" : "",
+  "latitude" : 28.60440232,
+  "longitude" : -81.20266544,
+  "name" : "College of Arts & Humanities",
+  "type" : "building"
+}, {
+  "acronym" : "CSB",
+  "info" : "",
+  "latitude" : 28.60102308,
+  "longitude" : -81.20031315,
+  "name" : "College of Sciences",
+  "type" : "building"
+}, {
+  "acronym" : "CAPS",
+  "info" : "",
+  "latitude" : 28.59934166,
+  "longitude" : -81.19881111,
+  "name" : "Counseling and Psychological Services",
+  "type" : "building"
+}, {
+  "acronym" : "CSC1",
+  "info" : "",
+  "latitude" : 28.59697962,
+  "longitude" : -81.1975156,
+  "name" : "Creative School for Children",
+  "type" : "building"
+}, {
+  "acronym" : "CSC2",
+  "info" : "",
+  "latitude" : 28.59709455,
+  "longitude" : -81.19736003,
+  "name" : "Creative School for Children 1st Grade",
+  "type" : "building"
+}, {
+  "acronym" : "CSC3",
+  "info" : "",
+  "latitude" : 28.59725776,
+  "longitude" : -81.19714855,
+  "name" : "Creative School for Children Module 2",
+  "type" : "building"
+}, {
+  "acronym" : "CROL",
+  "info" : "",
+  "latitude" : 28.6011997,
+  "longitude" : -81.19747269,
+  "name" : "CREOL",
+  "type" : "building"
+}, {
+  "acronym" : "DDD",
+  "info" : "",
+  "latitude" : 28.60534425,
+  "longitude" : -81.20590555,
+  "name" : "Delta Delta Delta - Sorority",
+  "type" : "building"
+}, {
+  "acronym" : "UWC",
+  "info" : "",
+  "latitude" : 28.5979593,
+  "longitude" : -81.20267081,
+  "name" : "Duke Energy UCF Welcome Center",
+  "type" : "building"
+}, {
+  "acronym" : "ED",
+  "info" : "",
+  "latitude" : 28.60005521,
+  "longitude" : -81.2038778,
+  "name" : "Education Complex & Gym",
+  "type" : "building"
+}, {
+  "acronym" : "EOC",
+  "info" : "",
+  "latitude" : 28.592499,
+  "longitude" : -81.196643,
+  "name" : "Emergency Operation Center",
+  "type" : "building"
+}, {
+  "acronym" : "ESTB",
+  "info" : "",
+  "latitude" : 28.61168322,
+  "longitude" : -81.190912,
+  "name" : "Emergency Services Training Building",
+  "type" : "building"
+}, {
+  "acronym" : "ERL",
+  "info" : "",
+  "latitude" : 28.59167791,
+  "longitude" : -81.18866968,
+  "name" : "Engine Research Lab",
+  "type" : "building"
+}, {
+  "acronym" : "ENG1",
+  "info" : "",
+  "latitude" : 28.60140693,
+  "longitude" : -81.19850802,
+  "name" : "Engineering I",
+  "type" : "building"
+}, {
+  "acronym" : "ENG2",
+  "info" : "",
+  "latitude" : 28.60198153,
+  "longitude" : -81.19868504,
+  "name" : "Engineering II",
+  "type" : "building"
+}, {
+  "acronym" : "FSC",
+  "info" : "",
+  "latitude" : 28.59153001,
+  "longitude" : -81.19622814,
+  "name" : "Facilities & Safety",
+  "type" : "building"
+}, {
+  "acronym" : "ALUM",
+  "info" : "",
+  "latitude" : 28.60567393,
+  "longitude" : -81.1988728,
+  "name" : "FAIRWINDS Alumni Center",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.59788,
+  "longitude" : -81.200042,
+  "name" : "Ferrell Commons",
+  "type" : "building"
+}, {
+  "acronym" : "FS65",
+  "info" : "",
+  "latitude" : 28.61153723,
+  "longitude" : -81.19152891,
+  "name" : "Fire Station #65",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.60646514,
+  "longitude" : -81.19296121,
+  "name" : "Football Practice Field",
+  "type" : "building"
+}, {
+  "acronym" : "G415",
+  "info" : "",
+  "latitude" : 28.603421,
+  "longitude" : -81.206664,
+  "name" : "Fraternity and Sorority Life",
+  "type" : "building"
+}, {
+  "acronym" : "GB",
+  "info" : "",
+  "latitude" : 28.60476485,
+  "longitude" : -81.19806469,
+  "name" : "Global UCF",
+  "type" : "building"
+}, {
+  "acronym" : "HEC",
+  "info" : "",
+  "latitude" : 28.60064206,
+  "longitude" : -81.19771408,
+  "name" : "Harris Corporation Engineering Center",
+  "type" : "building"
+}, {
+  "acronym" : "HPA1",
+  "info" : "",
+  "latitude" : 28.60289522,
+  "longitude" : -81.19881915,
+  "name" : "Health & Public Affairs I",
+  "type" : "building"
+}, {
+  "acronym" : "HPA2",
+  "info" : "",
+  "latitude" : 28.60315896,
+  "longitude" : -81.19821834,
+  "name" : "Health & Public Affairs II",
+  "type" : "building"
+}, {
+  "acronym" : "HC",
+  "info" : "",
+  "latitude" : 28.59937228,
+  "longitude" : -81.19929122,
+  "name" : "Health Center & Pharmacy",
+  "type" : "building"
+}, {
+  "acronym" : "HPH",
+  "info" : "",
+  "latitude" : 28.600283,
+  "longitude" : -81.202776,
+  "name" : "Howard Phillips Hall",
+  "type" : "building"
+}, {
+  "acronym" : "IC",
+  "info" : "",
+  "latitude" : 28.589768,
+  "longitude" : -81.199751,
+  "name" : "Innovative Center",
+  "type" : "building"
+}, {
+  "acronym" : "JBF",
+  "info" : "",
+  "latitude" : 28.60941329,
+  "longitude" : -81.19611549,
+  "name" : "Jay Bergman Field - Baseball Stadium",
+  "type" : "building"
+}, {
+  "acronym" : "JTWC",
+  "info" : "",
+  "latitude" : 28.60084175,
+  "longitude" : -81.20213437,
+  "name" : "John T. Washington Center",
+  "type" : "building"
+}, {
+  "acronym" : "G411",
+  "info" : "",
+  "latitude" : 28.60636153,
+  "longitude" : -81.2057768,
+  "name" : "Kappa Alpha Theta - Sorority",
+  "type" : "building"
+}, {
+  "acronym" : "KD",
+  "info" : "",
+  "latitude" : 28.60525948,
+  "longitude" : -81.20488631,
+  "name" : "Kappa Delta - Sorority",
+  "type" : "building"
+}, {
+  "acronym" : "G417",
+  "info" : "",
+  "latitude" : 28.604178,
+  "longitude" : -81.206764,
+  "name" : "Kappa Kappa Gamma - Sorority",
+  "type" : "building"
+}, {
+  "acronym" : "KS",
+  "info" : "",
+  "latitude" : 28.60657817,
+  "longitude" : -81.20429086,
+  "name" : "Kappa Sigma - Fraternity",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.606889,
+  "longitude" : -81.19842219,
+  "name" : "Knight's Plaza",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.606856,
+  "longitude" : -81.203283,
+  "name" : "Lake Claire Recreational Area",
+  "type" : "building"
+}, {
+  "acronym" : "LPS",
+  "info" : "",
+  "latitude" : 28.59551951,
+  "longitude" : -81.1982398,
+  "name" : "Leisure Pool Services",
+  "type" : "building"
+}, {
+  "acronym" : "LIB",
+  "info" : "",
+  "latitude" : 28.60011692,
+  "longitude" : -81.20169594,
+  "name" : "Library (John C. Hitt Library)",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.59788865,
+  "longitude" : -81.20042848,
+  "name" : "Live Oak Ballroom/Garden Room",
+  "type" : "building"
+}, {
+  "acronym" : "MSB",
+  "info" : "",
+  "latitude" : 28.59960777,
+  "longitude" : -81.20073962,
+  "name" : "Mathematical Sciences Building",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.60469336,
+  "longitude" : -81.19880152,
+  "name" : "Memory Mall",
+  "type" : "building"
+}, {
+  "acronym" : "MH",
+  "info" : "",
+  "latitude" : 28.599106,
+  "longitude" : -81.202319,
+  "name" : "Millican Hall",
+  "type" : "building"
+}, {
+  "acronym" : "MMAE",
+  "info" : "",
+  "latitude" : 28.59197635,
+  "longitude" : -81.1884549,
+  "name" : "MMAE Lab",
+  "type" : "building"
+}, {
+  "acronym" : "MIRC",
+  "info" : "",
+  "latitude" : 28.59850874,
+  "longitude" : -81.20461526,
+  "name" : "Morgridge International Reading Center",
+  "type" : "building"
+}, {
+  "acronym" : "NFH",
+  "info" : "",
+  "latitude" : 28.60703971,
+  "longitude" : -81.19423794,
+  "name" : "Nicholson Fieldhouse",
+  "type" : "building"
+}, {
+  "acronym" : "NSC",
+  "info" : "",
+  "latitude" : 28.60386071,
+  "longitude" : -81.20325821,
+  "name" : "Nicholson School of Communication",
+  "type" : "building"
+}, {
+  "acronym" : "OCPS",
+  "info" : "",
+  "latitude" : 28.60433286,
+  "longitude" : -81.20203244,
+  "name" : "Orange County School System",
+  "type" : "building"
+}, {
+  "acronym" : "OTC3",
+  "info" : "",
+  "latitude" : 28.588424,
+  "longitude" : -81.19532,
+  "name" : "Orlando Tech Center",
+  "type" : "building"
+}, {
+  "acronym" : "OTC5",
+  "info" : "",
+  "latitude" : 28.5896977,
+  "longitude" : -81.1958419,
+  "name" : "Orlando Tech Center - Bldg. 500",
+  "type" : "building"
+}, {
+  "acronym" : "OTC6",
+  "info" : "",
+  "latitude" : 28.59008395,
+  "longitude" : -81.19653391,
+  "name" : "Orlando Tech Center - Bldg. 600",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.59723396,
+  "longitude" : -81.19981157,
+  "name" : "Parking & Transportation Services",
+  "type" : "building"
+}, {
+  "acronym" : "P2",
+  "info" : "",
+  "latitude" : 28.585822,
+  "longitude" : -81.199235,
+  "name" : "Partnership II",
+  "type" : "building"
+}, {
+  "acronym" : "P1",
+  "info" : "",
+  "latitude" : 28.58602594,
+  "longitude" : -81.19744318,
+  "name" : "Partnership I",
+  "type" : "building"
+}, {
+  "acronym" : "P3",
+  "info" : "",
+  "latitude" : 28.58504,
+  "longitude" : -81.199329,
+  "name" : "Partnership III",
+  "type" : "building"
+}, {
+  "acronym" : "PAC",
+  "info" : "",
+  "latitude" : 28.602062,
+  "longitude" : -81.204527,
+  "name" : "Performing Arts Center",
+  "type" : "building"
+}, {
+  "acronym" : "PAC",
+  "info" : "",
+  "latitude" : 28.602062,
+  "longitude" : -81.204527,
+  "name" : "Performing Arts Center Music",
+  "type" : "building"
+}, {
+  "acronym" : "PAC",
+  "info" : "",
+  "latitude" : 28.602613,
+  "longitude" : -81.204484,
+  "name" : "Performing Arts Center Theatre",
+  "type" : "building"
+}, {
+  "acronym" : "PSB",
+  "info" : "",
+  "latitude" : 28.59976791,
+  "longitude" : -81.19789111,
+  "name" : "Physical Sciences",
+  "type" : "building"
+}, {
+  "acronym" : "PBP",
+  "info" : "",
+  "latitude" : 28.60583405,
+  "longitude" : -81.20535302,
+  "name" : "Pi Beta Phi - Sorority",
+  "type" : "building"
+}, {
+  "acronym" : "PRNT",
+  "info" : "",
+  "latitude" : 28.59733287,
+  "longitude" : -81.19639444,
+  "name" : "Print Shop",
+  "type" : "building"
+}, {
+  "acronym" : "PSY",
+  "info" : "",
+  "latitude" : 28.604586,
+  "longitude" : -81.19945752,
+  "name" : "Psychology Building",
+  "type" : "building"
+}, {
+  "acronym" : "UPD",
+  "info" : "",
+  "latitude" : 28.591984,
+  "longitude" : -81.195912,
+  "name" : "Public Safety Building - Police",
+  "type" : "building"
+}, {
+  "acronym" : "RFM",
+  "info" : "",
+  "latitude" : 28.595815,
+  "longitude" : -81.199379,
+  "name" : "Recreation Services Field Maintenance",
+  "type" : "building"
+}, {
+  "acronym" : "RWC",
+  "info" : "",
+  "latitude" : 28.59380503,
+  "longitude" : -81.20439815,
+  "name" : "Recreation and Wellness Center",
+  "type" : "building"
+}, {
+  "acronym" : "RC",
+  "info" : "",
+  "latitude" : 28.5916666,
+  "longitude" : -81.19797694,
+  "name" : "Recycling Center",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.59960306,
+  "longitude" : -81.20195734,
+  "name" : "Reflecting Pond",
+  "type" : "building"
+}, {
+  "acronym" : "KSK",
+  "info" : "",
+  "latitude" : 28.59931105,
+  "longitude" : -81.20136189,
+  "name" : "Reflections Kiosk",
+  "type" : "building"
+}, {
+  "acronym" : "RH",
+  "info" : "",
+  "latitude" : 28.601478,
+  "longitude" : -81.202136,
+  "name" : "Rehearsal Hall",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.602314,
+  "longitude" : -81.197144,
+  "name" : "Research I",
+  "type" : "building"
+}, {
+  "acronym" : "PVL",
+  "info" : "",
+  "latitude" : 28.58662652,
+  "longitude" : -81.19568097,
+  "name" : "Research Pavilion",
+  "type" : "building"
+}, {
+  "acronym" : "OBSV",
+  "info" : "",
+  "latitude" : 28.59172784,
+  "longitude" : -81.19062769,
+  "name" : "Robinson Observatory",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.59262749,
+  "longitude" : -81.2001388,
+  "name" : "RWC Park",
+  "type" : "building"
+}, {
+  "acronym" : "SEC",
+  "info" : "",
+  "latitude" : 28.59177511,
+  "longitude" : -81.18867621,
+  "name" : "Siemens Energy Center",
+  "type" : "building"
+}, {
+  "acronym" : "SX",
+  "info" : "",
+  "latitude" : 28.607162,
+  "longitude" : -81.206192,
+  "name" : "Sigma Chi - Fraternity",
+  "type" : "building"
+}, {
+  "acronym" : "STTC",
+  "info" : "",
+  "latitude" : 28.58856722,
+  "longitude" : -81.19730639,
+  "name" : "Simulation, Training and Technology Center",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.61008203,
+  "longitude" : -81.19365858,
+  "name" : "Soccer Practice Field",
+  "type" : "building"
+}, {
+  "acronym" : "SBS",
+  "info" : "",
+  "latitude" : 28.60467077,
+  "longitude" : -81.19013416,
+  "name" : "Softball Stadium",
+  "type" : "building"
+}, {
+  "acronym" : "FC-E",
+  "info" : "",
+  "latitude" : 28.5976409,
+  "longitude" : -81.1994307,
+  "name" : "SRC Auditorium",
+  "type" : "building"
+}, {
+  "acronym" : "SWRL",
+  "info" : "",
+  "latitude" : 28.5916666,
+  "longitude" : -81.18933486,
+  "name" : "Storm Water Research Lab",
+  "type" : "building"
+}, {
+  "acronym" : "STUN",
+  "info" : "",
+  "latitude" : 28.6016695,
+  "longitude" : -81.20052772,
+  "name" : "Student Union",
+  "type" : "building"
+}, {
+  "acronym" : "TA",
+  "info" : "",
+  "latitude" : 28.59923569,
+  "longitude" : -81.20396363,
+  "name" : "Teaching Academy",
+  "type" : "building"
+}, {
+  "acronym" : "TC1",
+  "info" : "",
+  "latitude" : 28.60033789,
+  "longitude" : -81.20046744,
+  "name" : "Technology Commons I",
+  "type" : "building"
+}, {
+  "acronym" : "TC2",
+  "info" : "",
+  "latitude" : 28.60059447,
+  "longitude" : -81.20051367,
+  "name" : "Technology Commons II",
+  "type" : "building"
+}, {
+  "acronym" : "IRIF",
+  "info" : "",
+  "latitude" : 28.5896506,
+  "longitude" : -81.19819688,
+  "name" : "Technology Incubator",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.60791568,
+  "longitude" : -81.19696307,
+  "name" : "The Venue",
+  "type" : "building"
+}, {
+  "acronym" : "TH",
+  "info" : "",
+  "latitude" : 28.600532,
+  "longitude" : -81.199669,
+  "name" : "Theatre",
+  "type" : "building"
+}, {
+  "acronym" : "TRNP",
+  "info" : "",
+  "latitude" : 28.60223114,
+  "longitude" : -81.19400727,
+  "name" : "Timothy R. Newman Nature Pavilion",
+  "type" : "building"
+}, {
+  "acronym" : "TS",
+  "info" : "",
+  "latitude" : 28.6076802,
+  "longitude" : -81.19522499,
+  "name" : "Track & Soccer Stadium",
+  "type" : "building"
+}, {
+  "acronym" : "UCF/LYNX",
+  "info" : "",
+  "latitude" : 28.600673,
+  "longitude" : -81.205051,
+  "name" : "Transit Center",
+  "type" : "building"
+}, {
+  "acronym" : "TCH",
+  "info" : "",
+  "latitude" : 28.601918,
+  "longitude" : -81.203578,
+  "name" : "Trevor Colbourn Hall",
+  "type" : "building"
+}, {
+  "acronym" : "UTC",
+  "info" : "",
+  "latitude" : 28.58934914,
+  "longitude" : -81.19389462,
+  "name" : "University Tech Center",
+  "type" : "building"
+}, {
+  "acronym" : "UTWR",
+  "info" : "",
+  "latitude" : 28.58791483,
+  "longitude" : -81.1990981,
+  "name" : "University Tower",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.60360565,
+  "longitude" : -81.19944319,
+  "name" : "Veterans Commemorative Site",
+  "type" : "building"
+}, {
+  "acronym" : "VPI",
+  "info" : "",
+  "latitude" : 28.59665463,
+  "longitude" : -81.20328235,
+  "name" : "Visitor and Parking Information",
+  "type" : "building"
+}, {
+  "acronym" : "VAB",
+  "info" : "",
+  "latitude" : 28.60273038,
+  "longitude" : -81.20347011,
+  "name" : "Visual Arts Building",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.59783684,
+  "longitude" : -81.19688796,
+  "name" : "Water Tower",
+  "type" : "building"
+}, {
+  "acronym" : "",
+  "info" : "",
+  "latitude" : 28.607487,
+  "longitude" : -81.191288,
+  "name" : "Wayne Densch Center for Student-Athlete Leadership",
+  "type" : "building"
+}, {
+  "acronym" : "WD1",
+  "info" : "",
+  "latitude" : 28.59579976,
+  "longitude" : -81.20157647,
+  "name" : "Wayne Densch Center I",
+  "type" : "building"
+}, {
+  "acronym" : "WD2",
+  "info" : "",
+  "latitude" : 28.59575501,
+  "longitude" : -81.20057332,
+  "name" : "Wayne Densch Center II",
+  "type" : "building"
+}, {
+  "acronym" : "WDSC",
+  "info" : "",
+  "latitude" : 28.60616373,
+  "longitude" : -81.1942594,
+  "name" : "Wayne Densch Sport Center",
+  "type" : "building"
+}, {
+  "acronym" : "ZTA",
+  "info" : "",
+  "latitude" : 28.60492981,
+  "longitude" : -81.20646345,
+  "name" : "Zeta Tau Alpha - Sorority",
+  "type" : "building"
+} ]
