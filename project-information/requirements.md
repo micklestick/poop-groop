@@ -10,13 +10,14 @@
 | 004 | 005 | 003 | Users are provided 'quick-start' functionality for favorite destinations. | Low | Product Backlog |
 | 005 | 005 | 000 | The user will be informed which building they are viewing. | High | Product Backlog |
 | 006 | 006 | 000 | A list of information is displayed for the building searched. | Low | Product Backlog |
-| 007 | XXX | 004 | Store and retrieve building data in a database. | High | Product Backlog |
+| 007 | XXX | 004 | Store and retrieve building data in a database. | High | DONE |
 | 008 | XXX | 004 | The application builds and runs in iOS. | High | DONE |
 | 009 | XXX | 004 | The application will interface with Core Location to retrieve location data. | High | DONE |
 | 010 | 010 | 007 | The user will have an icon for the app. | High | DONE |
 | 011 | 011 | 006 | The user will have a launch screen for the app. | High | DONE |
 | 012 | 012 | 000 | The user can search for restuarants around campus. | Low | Product Backlog |
 | 013 | 013 | 005 | The user can search for stores around campus. | Low | Product Backlog |
+| 014 | 001 | 001.0 | The user can search for buildings around campus. | High | Done |
 
 Note: Priority is provisional and should be further discussed.
 
