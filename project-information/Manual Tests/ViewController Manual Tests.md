@@ -32,3 +32,16 @@
 | 2 | Move the phone and camera around. | Different building tags are located above buildings around UCF containing the names of buildings.|
 | 3 | Point the phone at the Reflection Pond. | A node appears above the Reflection pond in 3D space.|
 | 4 | Walk 100 meters away from the Reflection Pond. | The node disappears off of the screen once you are over 100 meters away.|
+
+### Manual Test for getBearingBetweenTwoPoints()
+
+| Step | Action | Observation |
+|-|-|-|
+| 1 | Launch the application from the home screen. | The application opens to the main Augmented Reality View.|
+| 2 | Move the phone and camera around. | Different building tags are located above buildings around UCF containing the names of buildings.|
+| 3 | Tap on the magnifying glass icon in the top right corner.| The search view opens up.|
+| 4 | Press on the search bar. | The search bar is now the active window, highlighted slightly in blue.|
+| 5 | Type in "ENG1" in the search bar. | The results filter out as you type, leaving you with just the "Engineering 1" cell.|
+| 6 | Tap on the "Engineering 1" cell. | The search view dismisses and the app transitions back to the main Augmented Reality View.|
+| 7 | Point the phone's camera at the "Engineering 1" building. | The spaceship is pointing towards the "Engineering 1" building.|
+| 8 | Point the phone's camera away from the "Engineering 1" building. | The spaceship turns to always face the "Engineering 1" building when the phone is not pointed directly at it.|
