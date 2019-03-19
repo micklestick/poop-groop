@@ -54,9 +54,6 @@ PODS:
   - GoogleUtilities/UserDefaults (5.5.0):
     - GoogleUtilities/Logger
   - leveldb-library (1.20)
-  - mongo-embedded-c-driver (1.13.0-4.0.4)
-  - MongoSwift (0.0.9):
-    - mongo-embedded-c-driver (~> 1.13.0-4.0.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -74,7 +71,6 @@ DEPENDENCIES:
   - AsyncSwift
   - Firebase/Core
   - Firebase/Database
-  - MongoSwift
   - SnapKit
   - SwiftLocation
   - SwiftyBeaver
@@ -93,8 +89,6 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUtilities
     - leveldb-library
-    - mongo-embedded-c-driver
-    - MongoSwift
     - nanopb
     - SnapKit
     - SwiftLocation
@@ -114,8 +108,6 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 6cf307834da065863f9faf4c0de0a936d81dd832
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
-  mongo-embedded-c-driver: b46360baa15fc142baae80628822f26663220bde
-  MongoSwift: c7420b38a7e223439667f8c50aefada29c270df8
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
@@ -123,6 +115,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
 
-PODFILE CHECKSUM: 4fb40d3a9167dab1f35f3b066a355cec03f7fb47
+PODFILE CHECKSUM: 39e7386d24b4ef612e20a7f8ce9be1120429988b
 
 COCOAPODS: 1.6.1

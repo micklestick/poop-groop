@@ -3,7 +3,6 @@ inhibit_all_warnings!
 
 target 'KnightsMaps' do
 	pod 'ARCL'
-	pod 'MongoSwift'
 	pod 'SnapKit'
 	pod 'SwiftLocation'
 	pod 'SwiftyBeaver'

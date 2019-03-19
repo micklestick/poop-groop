@@ -6,7 +6,6 @@
 | 001 | 006 | 003 | Building names and abbreviations can be used interchangeably. | Low | DONE |
 | 002 | 003 | 001.1 | The user will be informed of the time left to their destination. | Low | Product Backlog |
 | 003 | 003 | 001.1 | The user will be informed of the distance left to their destination | Low | DONE |
-| 003 | 005 | 003 | The user can designate destinations as favorites. | Low | Product Backlog |
 | 004 | 005 | 003 | Users are provided 'quick-start' functionality for favorite destinations. | Low | Product Backlog |
 | 005 | 005 | 000 | The user will be informed which building they are viewing. | High | DONE |
 | 006 | 006 | 000 | A list of information is displayed for the building searched. | Low | Product Backlog |
