@@ -30,9 +30,8 @@ class FilterView: UIViewController {
     func itemSelected(bName: String) {
         print("Selected the cell is: \(bName)")
         delegate?.complete(buildingName: bName)
-        dismiss(animated: true) {
-            // when the view has completely dismissed
-        }
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
     //This is called when you tap on a specific row in the search

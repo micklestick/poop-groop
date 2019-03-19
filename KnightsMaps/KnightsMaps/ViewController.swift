@@ -20,11 +20,13 @@ class ViewController: UIViewController {
 
     let debug = true
     
+    // In meters
+    let renderDistance = 100.0
+    
     var sceneLocationView = SceneLocationView()
 
     private let manager = CMMotionManager()
 
-    //var locationManager = LocationManager()
     var buildings : [KMBuilding] = []
     var testPoints = KMDatabaseHelper.aTestPoints()
     
@@ -33,14 +35,16 @@ class ViewController: UIViewController {
     var distanceLabel = UILabel()
     var angleLabel = UILabel()
 
-    //test node, will be set as last node in the list ATM
-    var testNode: LocationAnnotationNode!
+    var destinationNode: LocationAnnotationNode!
+    
+    var buildingNodes : [LocationAnnotationNode] = []
     
     private let motionQueue = OperationQueue()
     
     let scene = SCNScene(named: "art.scnassets/ship.scn")!
     var loc = CLLocation()
-    private var timer: Timer?
+    private var arrowUpdateTimer: Timer?
+    private var nodeUpdateTimer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,88 +57,68 @@ class ViewController: UIViewController {
         searchButton.setImage(UIImage(named: "search.png"), for: .normal)
         searchButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
-        
-
         sceneLocationView.addSubview(searchButton)
         sceneLocationView.run()
         view.addSubview(sceneLocationView)
 
-        //SCNLookAtConstraint()
-        sceneLocationView.scene = scene
-        
-        /*
-        let sceneView = ARSCNView(frame: view.frame)
-    
-        // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
-        
-        // Run the view's session
-        sceneView.session.run(configuration)
-        
-        sceneView.scene = scene
-        sceneView.backgroundColor = UIColor.clear
-        view.addSubview(sceneView)
-        */
-        
-        addBuildingTags()
-        
-        
-        manager.deviceMotionUpdateInterval = 1/30
+        manager.deviceMotionUpdateInterval = 1/15
         manager.startDeviceMotionUpdates(using: .xTrueNorthZVertical, to: motionQueue) { data, error in
             guard let data = data, error == nil else { return }
             Async.main {
                 self.angleLabel.text = "Heading: \(data.heading.roundTo(places: 5))"
                 
-         
 
-                /*
-                print("x: \(self.testNode.position.x)  y: \(self.testNode.position.y)")
-                self.angleLabel.text = "x: \(self.testNode.worldPosition.x)  y: \(self.testNode.worldPosition.y)"
-                sceneView.scene.rootNode.childNodes.first?.look(at: self.testNode.worldPosition)
-                 */
             }
          
         }
         
-        
-        
+        // TODO: we are reloading data from the DB every run
         KMDatabaseHelper.getData {
             (array) in
             
             self.buildings.append(contentsOf: array)
-            print(array[0].name)
+            // THIS IS TESTING DATA FOR ALEC
+            self.buildings.append(contentsOf: self.testPoints)
+            self.addBuildingTags()
         }
         
         trackLocation()
         
-        timer = Timer.every(1/100) {
-            /*
-            let cameraPosVec = (self.sceneLocationView.pointOfView)!
-            let arrowPosVec = SCNVector3(x: cameraPosVec.x, y: cameraPosVec.y - 1.5, z: cameraPosVec.z - 1.5)
-            
-            self.scene.rootNode.childNodes.first?.position = arrowPosVec
-            */
-            
-
-            let camera = self.sceneLocationView.pointOfView
+        sceneLocationView.scene = scene
+        arrowUpdateTimer = Timer.every(1/100) {
             let arrowNode = self.scene.rootNode.childNodes.first
-            let position = SCNVector3(x: 0, y: -1.5, z: -2.5)
-            let referenceNodeTransform = matrix_float4x4(camera!.transform)
-            
-            // Setup a translation matrix with the desired position
-            var translationMatrix = matrix_identity_float4x4
-            translationMatrix.columns.3.x = position.x
-            translationMatrix.columns.3.y = position.y
-            translationMatrix.columns.3.z = position.z
-            
-            // Combine the configured translation matrix with the referenceNode's transform to get the desired position AND orientation
-            let updatedTransform = matrix_multiply(referenceNodeTransform, translationMatrix)
-            arrowNode!.transform = SCNMatrix4(updatedTransform)
-            
-            self.scene.rootNode.childNodes.first?.look(at: self.testNode.worldPosition)
+
+            if self.destinationNode != nil {
+                
+                arrowNode?.isHidden = false
+                
+                let camera = self.sceneLocationView.pointOfView
+                let position = SCNVector3(x: 0, y: -1.5, z: -2.5)
+                let referenceNodeTransform = matrix_float4x4(camera!.transform)
+                
+                // Setup a translation matrix with the desired position
+                var translationMatrix = matrix_identity_float4x4
+                translationMatrix.columns.3.x = position.x
+                translationMatrix.columns.3.y = position.y
+                translationMatrix.columns.3.z = position.z
+                
+                // Combine the configured translation matrix with the referenceNode's transform to get the desired position AND orientation
+                let updatedTransform = matrix_multiply(referenceNodeTransform, translationMatrix)
+                arrowNode!.transform = SCNMatrix4(updatedTransform)
+                
+                if self.destinationNode != nil {
+                    arrowNode!.look(at: self.destinationNode.worldPosition)
+                    
+                }
+
+            }
+            else {
+                arrowNode?.isHidden = true
+            }
 
         }
         
+
 
     }
     
@@ -166,11 +150,14 @@ class ViewController: UIViewController {
             
             self.positionLabel.text = "Lat: \(lat), Long: \(long)"
             
-            let testlocation = self.testNode.location
-            //let vectorToTest = testNode.eulerAngles
-            let distanceInMeters = Double(location.distance(from: testlocation!))
-            
-            self.distanceLabel.text = "Distance: \(distanceInMeters)m"
+            if self.destinationNode != nil {
+                let testlocation = self.destinationNode.location
+                //let vectorToTest = testNode.eulerAngles
+                let distanceInMeters = Double(location.distance(from: testlocation!))
+                
+                self.distanceLabel.text = "Distance: \(distanceInMeters)m"
+                
+            }
             
         }, onFail: { error, _ in
             //log.error(error.localizedDescription)
@@ -230,43 +217,66 @@ class ViewController: UIViewController {
     // we will change the testPoint to buildings
     func addBuildingTags() {
         
-        for building in testPoints {
-            let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(building.latitude), longitude: CLLocationDegrees(building.longitude))
-            
-            //changed the altitude to 5 for testing, 25-35 will be needed for buildings
-            let location = CLLocation(coordinate: coordinate, altitude: 5)
-            
-            // we may want images to float so keep this code around for now
-            //let image = UIImage(named: "pin")!
-            //let annotationNode = LocationAnnotationNode(location: location, image: image)
+        Async.main {
+            //update nodes every 1 second
 
-            // TODO: FIX THE WHITE CORNERS, not clipping correctly
-            //create a view with size
-            let tagView = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 800, height: 100)))
-            tagView.backgroundColor = UIColor.clear
-            tagView.layer.cornerRadius = 40.0
-            tagView.layer.borderWidth = 10.0
-            tagView.layer.masksToBounds = true
-            tagView.layer.borderColor = UIColor(red:0.0, green:0.52, blue:1.0, alpha:1.0).cgColor
-            tagView.layer.backgroundColor = UIColor.clear.cgColor
-            tagView.clipsToBounds = true
-            
-            let buildingTitle = UILabel(frame: tagView.frame)
-            buildingTitle.text = building.name
-            buildingTitle.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 0.3)
-            buildingTitle.textAlignment = NSTextAlignment.center
-            buildingTitle.font = UIFont.systemFont(ofSize: 100)
-            
-            tagView.addSubview(buildingTitle)
+            for building in self.buildings {
 
-            let annotationNode = LocationAnnotationNode(location: location, view: tagView)
+                self.drawBuildingNode(building: building)
+
+            }
             
-            annotationNode.scaleRelativeToDistance = true
-            sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
-            
-            //last node in list will be a test "selected" node
-            testNode = annotationNode
+            //this will hide nodes too far away
+            self.nodeUpdateTimer = Timer.every(1) {
+                for building in self.buildingNodes {
+                    
+                    let distanceInMeters = Double(self.loc.distance(from: building.location))
+
+                    // if distance is greater then render distance hide it and not the destination
+                    if (distanceInMeters > self.renderDistance) && (building != self.destinationNode) {
+                        building.isHidden = true
+                        
+                    }
+                    else {
+                        building.isHidden = false
+
+                    }
+                }
+            }
         }
+    }
+    
+    func drawBuildingNode(building: KMBuilding) {
+        let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(building.latitude), longitude: CLLocationDegrees(building.longitude))
+        //changed the altitude to 5 for testing, 25-35 will be needed for buildings
+        let location = CLLocation(coordinate: coordinate, altitude: 30)
+        
+        // TODO: FIX THE WHITE CORNERS, not clipping correctly
+        //create a view with size
+        let tagView = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 800, height: 100)))
+        tagView.backgroundColor = UIColor.clear
+        tagView.layer.cornerRadius = 40.0
+        tagView.layer.borderWidth = 10.0
+        tagView.layer.masksToBounds = true
+        tagView.layer.borderColor = UIColor(red:0.0, green:0.52, blue:1.0, alpha:1.0).cgColor
+        tagView.layer.backgroundColor = UIColor.clear.cgColor
+        tagView.clipsToBounds = true
+        
+        let buildingTitle = UILabel(frame: tagView.frame)
+        buildingTitle.text = building.name
+        buildingTitle.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 0.3)
+        buildingTitle.textAlignment = NSTextAlignment.center
+        buildingTitle.font = UIFont.systemFont(ofSize: 100)
+        
+        tagView.addSubview(buildingTitle)
+        
+        let annotationNode = LocationAnnotationNode(location: location, view: tagView)
+        annotationNode.tag = building.name
+        annotationNode.scaleRelativeToDistance = true
+        
+        self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
+        
+        self.buildingNodes.append(annotationNode)
     }
     
     // this sets the AR View to the size of the phone's screen
@@ -279,19 +289,15 @@ class ViewController: UIViewController {
     // TODO: Clean this up as we arent using the old view
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Create a session configuration
-        //let configuration = ARWorldTrackingConfiguration()
-        
-        // Run the view's session
-        //sceneView.session.run(configuration)
+        sceneLocationView.run()
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         //Stop the scene when the view dissapears
-        sceneLocationView.run()
+        sceneLocationView.pause()
 
     }
     
@@ -303,14 +309,14 @@ class ViewController: UIViewController {
         positionLabel = UILabel(frame: rekt)
         positionLabel.textColor = UIColor.green
         positionLabel.text = "Lat: 12.12121, Long: 12.121212"
-        //sceneLocationView.addSubview(positionLabel)
+        sceneLocationView.addSubview(positionLabel)
         
         let point2 = CGPoint(x: 10, y: view.frame.height - 125)
         let size2 = CGSize(width: 800, height: 100)
         let rekt2 = CGRect(origin: point2, size: size2)
         distanceLabel = UILabel(frame: rekt2)
         distanceLabel.textColor = UIColor.green
-        distanceLabel.text = "Distance: 12.003m"
+        distanceLabel.text = "Distance: 0.0m"
         sceneLocationView.addSubview(distanceLabel)
         
         let point3 = CGPoint(x: 10, y: view.frame.height - 100)
@@ -324,52 +330,18 @@ class ViewController: UIViewController {
 
 }
 
-/*
-extension ViewController : CLLocationManagerDelegate {
-
-    //called on location update
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        //round location to display
-        let location = locations.first
-        var lat = Double(location?.coordinate.latitude ?? 0)
-        var long = Double(location?.coordinate.longitude ?? 0)
-        lat = lat.roundTo(places: 9)
-        long = long.roundTo(places: 9)
-        
-        positionLabel.text = "Lat: \(lat), Long: \(long)"
-        
-        let testlocation = testNode.location
-        //let vectorToTest = testNode.eulerAngles
-        let distanceInMeters = Double(location?.distance(from: testlocation!) ?? 0)
-        
-        distanceLabel.text = "Distance: \(distanceInMeters)m"
-        
-        // TODO: angle needs work
-        //let v = CGPoint(x: testNode.x - cameraPosition.x, y: testNode.y - cameraPosition.y);
-        //let a = atan2(v.y, v.x) // Note: order of arguments
-        
-        //angleLabel.text = "X: \(testNode.position.x), Y: \(testNode.position.y), Z: \(testNode.position.z) "
-        
-        let a = getBearingBetweenTwoPoints(point1: location!, point2: testNode.location)
-        angleLabel.text = "Angle: \(a) deg"
-        
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        
-    }
-
-}
-*/
 extension ViewController : FilterViewDelegate {
     
     func complete(buildingName: String) {
-        print(buildingName)
-        
+        for building in self.buildingNodes {
+            if building.tag == buildingName {
+                destinationNode = building
+            }
+        }
     }
     
 }
+    
 
 
 extension Double {
@@ -381,3 +353,7 @@ extension Double {
     }
     
 }
+
+// we may want images to float so keep this code around for now
+//let image = UIImage(named: "pin")!
+//let annotationNode = LocationAnnotationNode(location: location, image: image)
