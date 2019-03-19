@@ -1,7 +1,5 @@
 # System Architecture
   
-  ** This is a work in progress not final document or sub titles **
-  
 ### Description of overall architecture
 Our App consists of a Firebase database, a database communication class using JSON, classes for handling the backend calculations for the Augmented Reality, and a GUI that has both normal UI and Augmented Reality. The overall system runs on any iOS device that supports AR.
   
