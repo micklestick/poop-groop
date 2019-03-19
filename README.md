@@ -38,6 +38,7 @@ Unlike the current Google Maps, which does offer walking instructions, KnightsMa
     - [System Architecture](https://github.com/micklestick/poop-groop/tree/master/project-design/system-architecture)
     - [Class Diagrams](https://github.com/micklestick/poop-groop/tree/master/project-design/class-diagrams)
     - [Sequence Diagrams](https://github.com/micklestick/poop-groop/blob/master/project-design/sequence-diagrams/sequenceDiagram.png)
+    - [UI Diagram](https://github.com/micklestick/poop-groop/tree/master/project-design/ui-diagrams)
 - [Source Code](https://github.com/micklestick/poop-groop/blob/master/KnightsMaps/KnightsMaps)
 - Test Cases
     - [Automated Test Cases](https://github.com/micklestick/poop-groop/blob/master/KnightsMaps/KnightsMapsTests)
