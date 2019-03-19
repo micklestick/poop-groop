@@ -21,7 +21,8 @@ class ViewController: UIViewController {
     let debug = true
     
     // In meters
-    let renderDistance = 100.0
+    let renderDistance = 200.0
+    let tagHeight = 45.0
     
     var sceneLocationView = SceneLocationView()
 
@@ -249,7 +250,7 @@ class ViewController: UIViewController {
     func drawBuildingNode(building: KMBuilding) {
         let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(building.latitude), longitude: CLLocationDegrees(building.longitude))
         //changed the altitude to 5 for testing, 25-35 will be needed for buildings
-        let location = CLLocation(coordinate: coordinate, altitude: 30)
+        let location = CLLocation(coordinate: coordinate, altitude: tagHeight)
         
         // TODO: FIX THE WHITE CORNERS, not clipping correctly
         //create a view with size
