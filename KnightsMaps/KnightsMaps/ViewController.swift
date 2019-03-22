@@ -78,6 +78,7 @@ class ViewController: UIViewController {
             (array) in
             
             self.buildings.append(contentsOf: array)
+            print(array.first?.name)
             // THIS IS TESTING DATA FOR ALEC
             self.buildings.append(contentsOf: self.testPoints)
             self.addBuildingTags()
