@@ -756,7 +756,7 @@
   "type" : "Building"
 }, {
   "acronym" : "STUN",
-  "info" : "",
+  "info" : "SGA, Qdoba, Huey magoos, Stake n shake, panda express, Cafe bustelo, Chilis, Knightstop, Which wich",
   "latitude" : 28.6016695,
   "longitude" : -81.20052772,
   "name" : "Student Union",
@@ -913,69 +913,328 @@
     "info" : "",
     "latitude" : 28.599825,
     "longitude" : -81.205578,
-    "name" : "Parking Garage A",
+    "name" : "Garage A",
     "type" : "Garage"
 }, {
     "acronym" : "B",
     "info" : "Parking services",
     "latitude" : 28.596886,
     "longitude" : -81.200354,
-    "name" : "Parking Garage B",
+    "name" : "Garage B",
     "type" : "Garage"
 }, {
     "acronym" : "C",
     "info" : "",
     "latitude" : 28.602319,
     "longitude" : -81.195936,
-    "name" : "Parking Garage C",
+    "name" : "Garage C",
     "type" : "Garage"
 }, {
     "acronym" : "D",
     "info" : "",
     "latitude" : 28.604922,
     "longitude" : -81.197196,
-    "name" : "Parking Garage D",
+    "name" : "Garage D",
     "type" : "Garage"
 }, {
     "acronym" : "E",
     "info" : "",
     "latitude" : 28.606541,
     "longitude" : -81.19525,
-    "name" : "Parking Garage E",
+    "name" : "Garage E",
     "type" : "Garage"
 }, {
     "acronym" : "F",
     "info" : "",
     "latitude" : 28.608678,
     "longitude" : -81.196526,
-    "name" : "Parking Garage F",
+    "name" : "Garage F",
     "type" : "Garage"
 }, {
     "acronym" : "G",
     "info" : "",
     "latitude" : 28.60878,
     "longitude" : -81.197771,
-    "name" : "Parking Garage G",
+    "name" : "Garage G",
     "type" : "Garage"
 }, {
     "acronym" : "H",
     "info" : "",
     "latitude" : 28.605011,
     "longitude" : -81.201239,
-    "name" : "Parking Garage H",
+    "name" : "Garage H",
     "type" : "Garage"
 }, {
     "acronym" : "I",
     "info" : "",
     "latitude" : 28.601149,
     "longitude" : -81.204903,
-    "name" : "Parking Garage I",
+    "name" : "Garage I",
     "type" : "Garage"
 }, {
     "acronym" : "",
     "info" : "",
     "latitude" : 28.596166,
     "longitude" : -81.196647,
-    "name" : "Parking Garage Libra",
+    "name" : "Libra",
     "type" : "Garage"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.60129,
+    "longitude" : -81.201469,
+    "name" : "Chickfila",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.607073,
+    "longitude" : -81.198476,
+    "name" : "Dominos",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.600923,
+    "longitude" : -81.19934,
+    "name" : "Einsteins bagels(BA)",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.606805,
+    "longitude" : -81.197105,
+    "name" : "Jimmy Johns",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.601591,
+    "longitude" : -81.200418,
+    "name" : "Smoothie King(Union)",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.595817,
+    "longitude" : -81.199366,
+    "name" : "Smoothie King(Rec. and Wellness)",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.606843,
+    "longitude" : -81.198629,
+    "name" : "Subway",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.601106,
+    "longitude" : -81.20141,
+    "name" : "Dominos(Breezeway)",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.60696,
+    "longitude" : -81.19669,
+    "name" : "Burger U",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.597856,
+    "longitude" : -81.19979,
+    "name" : "63 South",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.602985,
+    "longitude" : -81.198717,
+    "name" : "Starbucks(HPA)",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.606786,
+    "longitude" : -81.198637,
+    "name" : "Dunkin Donuts",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.59935,
+    "longitude" : -81.201346,
+    "name" : "Toppers Creamery",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.6073,
+    "longitude" : -81.196734,
+    "name" : "Knightro's",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.596071,
+    "longitude" : -81.198766,
+    "name" : "Pollo Tropical",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.60711,
+    "longitude" : -81.198471,
+    "name" : "Gringos Locos",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.6011392,
+    "longitude" : -81.201868,
+    "name" : "UCF Bookstore",
+    "type" : "Store"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.6064908,
+    "longitude" : -81.1968888,
+    "name" : "Barnes & Noble",
+    "type" : "Store"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.606932,
+    "longitude" : -81.198562,
+    "name" : "Princeton Review",
+    "type" : "Store"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.600661,
+    "longitude" : -81.200331,
+    "name" : "UCF Computer Store",
+    "type" : "Store"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.601789,
+    "longitude" : -81.201055,
+    "name" : "UCF Bike N Gold",
+    "type" : "Store"
+}, {
+    "acronym" : "",
+    "info" : "Contains the Pharmacy as well as Health Services. Takes Walk ins",
+    "latitude" : 28.607252,
+    "longitude" : -81.198373,
+    "name" : "Health Services Pharmacy",
+    "type" : "Store"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.600923,
+    "longitude" : -81.201861,
+    "name" : "CFE(Breezeway)",
+    "type" : "Store"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.607083,
+    "longitude" : -81.196973,
+    "name" : "CFE(Plaza)",
+    "type" : "Store"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.606914,
+    "longitude" : -81.1967,
+    "name" : "Amazon@UCF",
+    "type" : "Store"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.601024,
+    "longitude" : -81.201634,
+    "name" : "The Spot",
+    "type" : "Store"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.601734,
+    "longitude" : -81.200957,
+    "name" : "College Optical",
+    "type" : "Store"
+}, {
+    "acronym" : "",
+    "info" : "",
+    "latitude" : 28.600914,
+    "longitude" : -81.201886,
+    "name" : "Fairwinds Credit Union",
+    "type" : "Store"
+}, {
+    "acronym" : "",
+    "info" : "Inside Student Union",
+    "latitude" : 28.6016695,
+    "longitude" : -81.20052772,
+    "name" : "Qdoba",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "Inside Student Union",
+    "latitude" : 28.6016695,
+    "longitude" : -81.20052772,
+    "name" : "Huey Magoos",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "Inside Student Union",
+    "latitude" : 28.6016695,
+    "longitude" : -81.20052772,
+    "name" : "Stake n Shake",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "Inside Student Union",
+    "latitude" : 28.6016695,
+    "longitude" : -81.20052772,
+    "name" : "Panda Express",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "Inside Student Union",
+    "latitude" : 28.6016695,
+    "longitude" : -81.20052772,
+    "name" : "Cafe Bustelo",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "Inside Student Union",
+    "latitude" : 28.6016695,
+    "longitude" : -81.20052772,
+    "name" : "Chili's",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "Inside Student Union",
+    "latitude" : 28.6016695,
+    "longitude" : -81.20052772,
+    "name" : "Knightstop & Sushi",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "Inside Student Union",
+    "latitude" : 28.6016695,
+    "longitude" : -81.20052772,
+    "name" : "Mrs. Fields Bakery",
+    "type" : "Restaurant"
+}, {
+    "acronym" : "",
+    "info" : "Inside Student Union",
+    "latitude" : 28.6016695,
+    "longitude" : -81.20052772,
+    "name" : "Which Wich",
+    "type" : "Restaurant"
 }]
