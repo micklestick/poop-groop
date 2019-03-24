@@ -20,6 +20,7 @@
 		9D6633289001B9CA54913DF8 /* libPods-KnightsMapsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A9A32EC7E3455193187BFF /* libPods-KnightsMapsTests.a */; };
 		F4A46511223C647E00284FD9 /* FilterViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A46510223C647E00284FD9 /* FilterViewTableCell.swift */; };
 		F4F1CDDD2235B0FA00F7B438 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F1CDDC2235B0FA00F7B438 /* FilterView.swift */; };
+		FE3C463122473C940059F32B /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3C463022473C940059F32B /* InfoView.swift */; };
 		FEA83B7B2232420C00C5BEAA /* SearchBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA83B7A2232420C00C5BEAA /* SearchBuilding.swift */; };
 		FEB73ED1221638B70040A251 /* KMBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73ED0221638B70040A251 /* KMBuilding.swift */; };
 		FEC9A22A2217B15300EBC9B2 /* KMDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9A2292217B15300EBC9B2 /* KMDatabaseHelper.swift */; };
@@ -68,6 +69,7 @@
 		DD9EC0AC53717030D5AD7269 /* Pods-KnightsMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMaps.debug.xcconfig"; path = "Target Support Files/Pods-KnightsMaps/Pods-KnightsMaps.debug.xcconfig"; sourceTree = "<group>"; };
 		F4A46510223C647E00284FD9 /* FilterViewTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewTableCell.swift; sourceTree = "<group>"; };
 		F4F1CDDC2235B0FA00F7B438 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		FE3C463022473C940059F32B /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		FEA83B7A2232420C00C5BEAA /* SearchBuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBuilding.swift; sourceTree = "<group>"; };
 		FEB73ED0221638B70040A251 /* KMBuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMBuilding.swift; sourceTree = "<group>"; };
 		FEC9A2292217B15300EBC9B2 /* KMDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMDatabaseHelper.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				F4A46510223C647E00284FD9 /* FilterViewTableCell.swift */,
 				F4F1CDDC2235B0FA00F7B438 /* FilterView.swift */,
 				70B9A68E2213E7FE003C11EF /* Main.storyboard */,
+				FE3C463022473C940059F32B /* InfoView.swift */,
 				70B9A6912213E7FF003C11EF /* Assets.xcassets */,
 				70B9A6932213E7FF003C11EF /* LaunchScreen.storyboard */,
 				70B9A6962213E7FF003C11EF /* Info.plist */,
@@ -382,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE3C463122473C940059F32B /* InfoView.swift in Sources */,
 				70B9A68D2213E7FE003C11EF /* ViewController.swift in Sources */,
 				FEB73ED1221638B70040A251 /* KMBuilding.swift in Sources */,
 				FEC9A22A2217B15300EBC9B2 /* KMDatabaseHelper.swift in Sources */,
