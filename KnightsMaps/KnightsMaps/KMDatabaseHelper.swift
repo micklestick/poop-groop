@@ -11,7 +11,7 @@ import Foundation
 // Class for connecting to and reading database
 class KMDatabaseHelper {
 
-    static var jsonUrlString = "https://firebasestorage.googleapis.com/v0/b/knightsmaps.appspot.com/o/knightsmaps_buildings.json?alt=media&token=f22ddcbb-d52a-44b5-8b76-b263de9dbfdd"
+    static var jsonUrlString = "https://firebasestorage.googleapis.com/v0/b/knightsmaps.appspot.com/o/knightsmaps_buildings.json?alt=media&token=7db72ca6-5d8d-4ac3-bc79-99eac33d5b32"
     
 
    static func needUpdate(localVersion: Float, dbVersion: Float) -> Bool {
