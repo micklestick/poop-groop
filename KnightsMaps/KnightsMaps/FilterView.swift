@@ -101,19 +101,19 @@ extension FilterView: UISearchBarDelegate {
             searching = true
             break
         case 1:
-            pickedScope = "building"
+            pickedScope = "Building"
             searching = true
             break
         case 2:
-            pickedScope = "store"
+            pickedScope = "Store"
             searching = true
             break
         case 3:
-            pickedScope = "restaurant"
+            pickedScope = "Restaurant"
             searching = true
             break
         case 4:
-            pickedScope = "garage"
+            pickedScope = "Garage"
             searching = true
             break
         default:
