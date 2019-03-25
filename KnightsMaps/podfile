@@ -8,8 +8,9 @@ target 'KnightsMaps' do
 	pod 'SwiftyBeaver'
 	pod 'Firebase/Core'
 	pod 'Firebase/Database'
+  	pod 'CodableFirebase'
 	pod 'AsyncSwift'
-  pod 'SwiftyTimer'
+  	pod 'SwiftyTimer'
   
 	target 'KnightsMapsTests' do
 		inherit! :search_paths

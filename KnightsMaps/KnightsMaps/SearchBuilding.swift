@@ -6,21 +6,6 @@
 //  Copyright © 2019 Alec. All rights reserved.
 //
 
-
-
-// Really basic search using either building name or acronym as an input string
-// Example of how to use and error trap the search
-//
-//    let input = "Classroom building 2"
-//    let array = KMDatabaseHelper.makeObjectArray()
-//
-//    if let building = SearchBuilding.searchArray(input: input, buildingArray: array) {
-//        print(building.name)
-//    }
-//    else {
-//        print("error with your typing")
-//    }
-
 import Foundation
 
 class SearchBuilding {

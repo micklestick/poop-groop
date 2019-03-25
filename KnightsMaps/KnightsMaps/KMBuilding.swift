@@ -8,7 +8,7 @@
 
 import Foundation
 
-class KMBuilding: Decodable {
+class KMBuilding: Codable {
     let name: String
     let acronym: String
     let latitude: Float
