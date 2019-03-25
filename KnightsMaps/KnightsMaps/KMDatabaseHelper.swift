@@ -12,8 +12,6 @@ import CodableFirebase
 
 // Class for connecting to and reading database
 class KMDatabaseHelper {
-
-    static var jsonUrlString = "https://firebasestorage.googleapis.com/v0/b/knightsmaps.appspot.com/o/knightsmaps_buildings.json?alt=media&token=7db72ca6-5d8d-4ac3-bc79-99eac33d5b32"
     
     static var databaseRef: DatabaseReference = Database.database().reference()
 
@@ -30,7 +28,6 @@ class KMDatabaseHelper {
     // get connection to database to recieve JSON and run through decode
     // function returns an array of type KMBuilding with the current databse info
     static func getData(completionHandler: @escaping (_ buildings: [KMBuilding]) -> ()) {
-
         Database.database().reference().child("buildings").observeSingleEvent(of: .value, with: { snapshot in
             var buildings: [KMBuilding] = []
             for case let child as DataSnapshot in snapshot.children {
