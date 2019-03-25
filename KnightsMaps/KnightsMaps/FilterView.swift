@@ -17,12 +17,20 @@ class FilterView: UIViewController {
     @IBOutlet var tbView: UITableView!
     
     var buildingArray: [KMBuilding]!
+    
+    private let searchController = UISearchController(searchResultsController: nil)
+
 
     var searching = false
     var filteredBuildings = [KMBuilding]()
+    var pickedScope = ""
+    var masterSearchText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchController.searchBar.scopeButtonTitles = ["All", "Building", "Restaurant", "Store", "Garage"]
+        searchController.searchBar.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -78,8 +86,41 @@ extension FilterView: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searching = true
-        filteredBuildings = buildingArray.filter({$0.name.lowercased().prefix(searchText.count) == searchText.lowercased() || $0.acronym.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        masterSearchText = searchText
+        filteredBuildings = buildingArray.filter({($0.type == pickedScope || pickedScope == "") && ($0.name.lowercased().prefix(searchText.count) == searchText.lowercased() || $0.acronym.lowercased().prefix(searchText.count) == searchText.lowercased())})
+
         
+        tbView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        
+        switch selectedScope {
+        case 0:
+            pickedScope = ""
+            searching = true
+            break
+        case 1:
+            pickedScope = "Building"
+            searching = true
+            break
+        case 2:
+            pickedScope = "Store"
+            searching = true
+            break
+        case 3:
+            pickedScope = "Restaurant"
+            searching = true
+            break
+        case 4:
+            pickedScope = "Garage"
+            searching = true
+            break
+        default:
+            pickedScope = ""
+        }
+        filteredBuildings = buildingArray.filter({($0.type == pickedScope || pickedScope == "") && ($0.name.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased() || $0.acronym.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased())})
+        print(pickedScope)
         tbView.reloadData()
     }
     
@@ -90,6 +131,21 @@ extension FilterView: UISearchBarDelegate {
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
+    
+//    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+//        filteredBuildings = buildingArray.filter({( building : KMBuilding) -> Bool in
+//            let doesCategoryMatch = (scope == "All") || (building.type == scope)
+//
+//            if searching {
+//                return doesCategoryMatch && building.name.lowercased().contains(searchText.lowercased())
+//            } else {
+//                return doesCategoryMatch
+//            }
+//        })
+//        tbView.reloadData()
+//    }
+    
+
     
 }
 

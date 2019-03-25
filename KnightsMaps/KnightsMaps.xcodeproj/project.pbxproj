@@ -16,12 +16,11 @@
 		70B9A6902213E7FE003C11EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B9A68E2213E7FE003C11EF /* Main.storyboard */; };
 		70B9A6922213E7FF003C11EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70B9A6912213E7FF003C11EF /* Assets.xcassets */; };
 		70B9A6952213E7FF003C11EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B9A6932213E7FF003C11EF /* LaunchScreen.storyboard */; };
-		70B9A6A02213E7FF003C11EF /* KnightsMapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B9A69F2213E7FF003C11EF /* KnightsMapsTests.swift */; };
 		70B9A6AB2213E7FF003C11EF /* KnightsMapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B9A6AA2213E7FF003C11EF /* KnightsMapsUITests.swift */; };
-		70D794102216005200BC40D2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D7940F2216005200BC40D2 /* LocationManager.swift */; };
 		9D6633289001B9CA54913DF8 /* libPods-KnightsMapsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A9A32EC7E3455193187BFF /* libPods-KnightsMapsTests.a */; };
 		F4A46511223C647E00284FD9 /* FilterViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A46510223C647E00284FD9 /* FilterViewTableCell.swift */; };
 		F4F1CDDD2235B0FA00F7B438 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F1CDDC2235B0FA00F7B438 /* FilterView.swift */; };
+		FE3C463122473C940059F32B /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3C463022473C940059F32B /* InfoView.swift */; };
 		FEA83B7B2232420C00C5BEAA /* SearchBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA83B7A2232420C00C5BEAA /* SearchBuilding.swift */; };
 		FEB73ED1221638B70040A251 /* KMBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73ED0221638B70040A251 /* KMBuilding.swift */; };
 		FEC9A22A2217B15300EBC9B2 /* KMDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9A2292217B15300EBC9B2 /* KMDatabaseHelper.swift */; };
@@ -60,18 +59,17 @@
 		70B9A6942213E7FF003C11EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70B9A6962213E7FF003C11EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70B9A69B2213E7FF003C11EF /* KnightsMapsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KnightsMapsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		70B9A69F2213E7FF003C11EF /* KnightsMapsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnightsMapsTests.swift; sourceTree = "<group>"; };
 		70B9A6A12213E7FF003C11EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70B9A6A62213E7FF003C11EF /* KnightsMapsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KnightsMapsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B9A6AA2213E7FF003C11EF /* KnightsMapsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnightsMapsUITests.swift; sourceTree = "<group>"; };
 		70B9A6AC2213E7FF003C11EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		70D7940F2216005200BC40D2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C5A9A32EC7E3455193187BFF /* libPods-KnightsMapsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KnightsMapsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAADB87BF87E9CEFA915644F /* Pods-KnightsMapsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMapsTests.debug.xcconfig"; path = "Target Support Files/Pods-KnightsMapsTests/Pods-KnightsMapsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB8C553EC2EF7B3A602D04AC /* Pods-KnightsMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMaps.release.xcconfig"; path = "Target Support Files/Pods-KnightsMaps/Pods-KnightsMaps.release.xcconfig"; sourceTree = "<group>"; };
 		DD9EC0AC53717030D5AD7269 /* Pods-KnightsMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMaps.debug.xcconfig"; path = "Target Support Files/Pods-KnightsMaps/Pods-KnightsMaps.debug.xcconfig"; sourceTree = "<group>"; };
 		F4A46510223C647E00284FD9 /* FilterViewTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewTableCell.swift; sourceTree = "<group>"; };
 		F4F1CDDC2235B0FA00F7B438 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		FE3C463022473C940059F32B /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		FEA83B7A2232420C00C5BEAA /* SearchBuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBuilding.swift; sourceTree = "<group>"; };
 		FEB73ED0221638B70040A251 /* KMBuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMBuilding.swift; sourceTree = "<group>"; };
 		FEC9A2292217B15300EBC9B2 /* KMDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMDatabaseHelper.swift; sourceTree = "<group>"; };
@@ -149,13 +147,13 @@
 		70B9A6872213E7FE003C11EF /* KnightsMaps */ = {
 			isa = PBXGroup;
 			children = (
-				70D7940F2216005200BC40D2 /* LocationManager.swift */,
 				70B9A6882213E7FE003C11EF /* AppDelegate.swift */,
 				70B9A68A2213E7FE003C11EF /* art.scnassets */,
 				70B9A68C2213E7FE003C11EF /* ViewController.swift */,
 				F4A46510223C647E00284FD9 /* FilterViewTableCell.swift */,
 				F4F1CDDC2235B0FA00F7B438 /* FilterView.swift */,
 				70B9A68E2213E7FE003C11EF /* Main.storyboard */,
+				FE3C463022473C940059F32B /* InfoView.swift */,
 				70B9A6912213E7FF003C11EF /* Assets.xcassets */,
 				70B9A6932213E7FF003C11EF /* LaunchScreen.storyboard */,
 				70B9A6962213E7FF003C11EF /* Info.plist */,
@@ -170,7 +168,6 @@
 		70B9A69E2213E7FF003C11EF /* KnightsMapsTests */ = {
 			isa = PBXGroup;
 			children = (
-				70B9A69F2213E7FF003C11EF /* KnightsMapsTests.swift */,
 				70B9A6A12213E7FF003C11EF /* Info.plist */,
 				148E10082228C61700CC2C08 /* TestBuildingObject.swift */,
 				14365568222D8AA200031F4F /* TestDatabaseHelper.swift */,
@@ -388,11 +385,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE3C463122473C940059F32B /* InfoView.swift in Sources */,
 				70B9A68D2213E7FE003C11EF /* ViewController.swift in Sources */,
 				FEB73ED1221638B70040A251 /* KMBuilding.swift in Sources */,
 				FEC9A22A2217B15300EBC9B2 /* KMDatabaseHelper.swift in Sources */,
 				70B9A6892213E7FE003C11EF /* AppDelegate.swift in Sources */,
-				70D794102216005200BC40D2 /* LocationManager.swift in Sources */,
 				F4A46511223C647E00284FD9 /* FilterViewTableCell.swift in Sources */,
 				F4F1CDDD2235B0FA00F7B438 /* FilterView.swift in Sources */,
 				FEA83B7B2232420C00C5BEAA /* SearchBuilding.swift in Sources */,
@@ -403,7 +400,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70B9A6A02213E7FF003C11EF /* KnightsMapsTests.swift in Sources */,
 				14365569222D8AA200031F4F /* TestDatabaseHelper.swift in Sources */,
 				148E10092228C61700CC2C08 /* TestBuildingObject.swift in Sources */,
 			);

@@ -40,15 +40,18 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <searchBar key="tableHeaderView" clipsSubviews="YES" contentMode="redraw" placeholder="Search Your Building" showsCancelButton="YES" id="MbD-ED-AX8">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <searchBar key="tableHeaderView" clipsSubviews="YES" contentMode="redraw" text="" placeholder="Search Your Building" showsCancelButton="YES" showsScopeBar="YES" id="MbD-ED-AX8">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="barTintColor" red="1" green="0.792156862745098" blue="0.019607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <scopeButtonTitles>
-                                        <string>Title</string>
-                                        <string>Title</string>
+                                        <string>All</string>
+                                        <string>Building</string>
+                                        <string>Store</string>
+                                        <string>Restuarant</string>
+                                        <string>Garage</string>
                                     </scopeButtonTitles>
                                     <connections>
                                         <outlet property="delegate" destination="sGS-DX-vH8" id="B8I-aW-a8y"/>
@@ -97,6 +100,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFN-Mq-Dzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="889.85507246376824" y="101.78571428571428"/>
+        </scene>
+        <!--Info View-->
+        <scene sceneID="ot2-Qo-dWD">
+            <objects>
+                <viewController id="WLf-sg-I42" customClass="InfoView" customModule="KnightsMaps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Azl-Un-JJD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8HF-ym-6Lc">
+                                <rect key="frame" x="186" y="290" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="qoe-d8-FsH"/>
+                    </view>
+                    <connections>
+                        <outlet property="testLabel" destination="8HF-ym-6Lc" id="DXT-jW-7FH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x3d-ps-hfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1854" y="96"/>
         </scene>
     </scenes>
 </document>

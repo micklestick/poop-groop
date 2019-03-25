@@ -32,5 +32,3 @@
 | 005 | The application should store location data on stores around campus. | 013 |
 | 006 | The application should have a launch splash screen to cover the loading time. | 011 |
 | 007 | The application should have an icon to be easily identified. | 010 |
-
-TODO: Turn this all into a database and generate the view with a shell script (including cross references).

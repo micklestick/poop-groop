@@ -13,7 +13,7 @@ import CodableFirebase
 // Class for connecting to and reading database
 class KMDatabaseHelper {
 
-    static var jsonUrlString = "https://firebasestorage.googleapis.com/v0/b/knightsmaps.appspot.com/o/csvjson-2.json?alt=media&token=eceaa62f-5c0b-4f5c-96a4-20ada513b354"
+    static var jsonUrlString = "https://firebasestorage.googleapis.com/v0/b/knightsmaps.appspot.com/o/knightsmaps_buildings.json?alt=media&token=7db72ca6-5d8d-4ac3-bc79-99eac33d5b32"
     
     static var databaseRef: DatabaseReference = Database.database().reference()
 

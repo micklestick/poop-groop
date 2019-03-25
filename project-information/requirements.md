@@ -17,6 +17,3 @@
 | 012 | 012 | 000 | The user can search for restuarants around campus. | Low | Product Backlog |
 | 013 | 013 | 005 | The user can search for stores around campus. | Low | Product Backlog |
 | 014 | 001 | 001.0 | The user can search for buildings around campus. | High | Done |
-
-Note: Priority is provisional and should be further discussed.
-
