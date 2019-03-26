@@ -7,27 +7,60 @@
 //
 
 import UIKit
+import MapKit
 
 class InfoView: UIViewController {
-
+    
+    // building for segue data transfer temp data right now
+    var building: KMBuilding?
+    
     @IBOutlet weak var testLabel: UILabel!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var infoLabel: UILabel!
+    
+    @IBOutlet weak var mapDisplay: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.testLabel.text = "true"
+        mapDisplay.layer.cornerRadius = 10.0
+        self.infoLabel.numberOfLines = 5
+        
+        building = makeFakeBuilding()
+        
+        self.nameLabel.text = building?.name
+        self.infoLabel.text = building?.info
+        
+        setCenter(latitude: building!.latitude, longitude: building!.longitude)
+        setPin(latitude: building!.latitude, longitude: building!.longitude)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func navigateButton(_ sender: Any) {
+        // segue back to original view sending data back
     }
-    */
-
+    
+    @IBAction func backButton(_ sender: Any) {
+        // normal naviagtion back to home screen??
+        dismiss(animated: true)
+    }
+    
+    func setCenter(latitude: Float, longitude: Float) {
+        let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude))
+        let region = MKCoordinateRegion(center: location, latitudinalMeters: CLLocationDistance(exactly: 800)!, longitudinalMeters: CLLocationDistance(exactly:800)!)
+        mapDisplay.setRegion(mapDisplay.regionThatFits(region), animated: true)
+    }
+    
+    func setPin(latitude: Float, longitude: Float) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude))
+        mapDisplay.addAnnotation(annotation)
+    }
+    
+    func makeFakeBuilding() -> KMBuilding {
+        
+        let building = KMBuilding(name: "Engineering 2", acronym: "EGN2", latitude: 28.60198153, longitude: -81.19868504, info: "Engineering Building 2. Contatins: EPC, Academic advising services, Computer labs, and classrooms.", type: "Building" )
+        
+        return building
+    }
 }

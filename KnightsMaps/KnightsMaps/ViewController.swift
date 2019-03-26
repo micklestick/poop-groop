@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     let tagHeight = 45.0
     
     var sceneLocationView = SceneLocationView()
+    var sceneLocationViewInfo = SceneLocationView()
 
     private let manager = CMMotionManager()
 
@@ -35,6 +36,9 @@ class ViewController: UIViewController {
     var positionLabel = UILabel()
     var distanceLabel = UILabel()
     var angleLabel = UILabel()
+    
+    // temporary for data testing
+    var buildingInfo = KMBuilding(name: "Engineering 2", acronym: "EGN2", latitude: 28.60198153, longitude: -81.19868504, info: "Engineering Building 2. Contatins: EPC, Academic advising services, Computer labs, and classrooms.", type: "Building" )
 
     var destinationNode: LocationAnnotationNode!
     
@@ -61,7 +65,16 @@ class ViewController: UIViewController {
         sceneLocationView.addSubview(searchButton)
         sceneLocationView.run()
         view.addSubview(sceneLocationView)
-
+        
+//        let infoButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 60, y: 90), size: CGSize(width: 50, height: 50)))
+//        infoButton.setTitle("Info", for: .normal)
+//        infoButton.addTarget(self, action: #selector(buttonInfoAction), for: .touchUpInside)
+//        infoButton.setTitleColor(.white, for: .normal)
+//        
+//        sceneLocationViewInfo.addSubview(infoButton)
+//        sceneLocationViewInfo.run()
+//        view.addSubview(sceneLocationViewInfo)
+        
         manager.deviceMotionUpdateInterval = 1/15
         manager.startDeviceMotionUpdates(using: .xTrueNorthZVertical, to: motionQueue) { data, error in
             guard let data = data, error == nil else { return }
@@ -124,16 +137,26 @@ class ViewController: UIViewController {
 
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "filterSegue" {
             let destinationVC = segue.destination as? FilterView
             destinationVC?.delegate = self
             destinationVC?.buildingArray = buildings
         }
+        else {
+            let destinationVC = segue.destination as? InfoView
+            destinationVC?.building = buildingInfo
+        }
     }
     
     @objc func buttonAction(sender: UIButton!) {
         performSegue(withIdentifier: "filterSegue", sender: sender)
+    }
+    
+    @objc func buttonInfoAction(sender: UIButton!) {
+        print("hello")
+        performSegue(withIdentifier: "infoSegue", sender: sender)
     }
     
     var hasMotion: Bool {
@@ -343,7 +366,6 @@ extension ViewController : FilterViewDelegate {
     }
     
 }
-    
 
 
 extension Double {
