@@ -22,6 +22,7 @@
                     </view>
                     <connections>
                         <segue destination="sGS-DX-vH8" kind="show" identifier="filterSegue" id="Yjn-h2-gUL"/>
+                        <segue destination="WLf-sg-I42" kind="show" identifier="infoSegue" id="P9a-v3-IhW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>

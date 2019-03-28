@@ -66,14 +66,12 @@ class ViewController: UIViewController {
         sceneLocationView.run()
         view.addSubview(sceneLocationView)
         
-//        let infoButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 60, y: 90), size: CGSize(width: 50, height: 50)))
-//        infoButton.setTitle("Info", for: .normal)
-//        infoButton.addTarget(self, action: #selector(buttonInfoAction), for: .touchUpInside)
-//        infoButton.setTitleColor(.white, for: .normal)
-//        
-//        sceneLocationViewInfo.addSubview(infoButton)
-//        sceneLocationViewInfo.run()
-//        view.addSubview(sceneLocationViewInfo)
+        let infoButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 60, y: 130), size: CGSize(width: 50, height: 50)))
+        infoButton.setTitle("Info", for: .normal)
+        infoButton.addTarget(self, action: #selector(buttonInfoAction), for: .touchUpInside)
+        infoButton.setTitleColor(.white, for: .normal)
+
+        view.addSubview(infoButton)
         
         manager.deviceMotionUpdateInterval = 1/15
         manager.startDeviceMotionUpdates(using: .xTrueNorthZVertical, to: motionQueue) { data, error in
@@ -146,6 +144,7 @@ class ViewController: UIViewController {
         }
         else {
             let destinationVC = segue.destination as? InfoView
+           // destinationVC?.delegate = self
             destinationVC?.building = buildingInfo
         }
     }
