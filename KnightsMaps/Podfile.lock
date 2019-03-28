@@ -64,7 +64,7 @@ PODS:
   - SnapKit (4.2.0)
   - SwiftLocation (3.2.3):
     - SwiftyJSON (~> 4.0.0-alpha.1)
-  - SwiftyBeaver (1.6.2)
+  - SwiftyBeaver (1.7.0)
   - SwiftyJSON (4.0.0)
   - SwiftyTimer (2.1.0)
 
@@ -116,7 +116,7 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
-  SwiftyBeaver: 8e67ab3cd94389cbbb7a9c7cc02748d98bfee68e
+  SwiftyBeaver: 4cc0080d2e23f980652e28978db11a5c9da39165
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
 
