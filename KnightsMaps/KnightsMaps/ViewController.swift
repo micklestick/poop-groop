@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     // In meters
     let renderDistance = 200.0
     let tagHeight = 45.0
+    let averageWalkSpeed = 1.4 //1.4 meters per second
     
     var sceneLocationView = SceneLocationView()
     var sceneLocationViewInfo = SceneLocationView()
@@ -36,6 +37,7 @@ class ViewController: UIViewController {
     var positionLabel = UILabel()
     var distanceLabel = UILabel()
     var angleLabel = UILabel()
+    var timeLeftLabel = UILabel()
     
     // temporary for data testing
     var buildingInfo = KMBuilding(name: "Engineering 2", acronym: "EGN2", latitude: 28.60198153, longitude: -81.19868504, info: "Engineering Building 2. Contatins: EPC, Academic advising services, Computer labs, and classrooms.", type: "Building" )
@@ -89,7 +91,6 @@ class ViewController: UIViewController {
             (array) in
             
             self.buildings.append(contentsOf: array)
-            print(array.first?.name)
             // THIS IS TESTING DATA FOR ALEC
             self.buildings.append(contentsOf: self.testPoints)
             self.addBuildingTags()
@@ -181,11 +182,21 @@ class ViewController: UIViewController {
                 
                 self.distanceLabel.text = "Distance: \(distanceInMeters)m"
                 
+                self.timeLeftLabel.text = "Time Left: \(self.timeLeft(distance: distanceInMeters))s"
+                
             }
             
         }, onFail: { error, _ in
             //log.error(error.localizedDescription)
         })
+    }
+    
+    func timeLeft(distance: Double) -> Double {
+        var time: Double
+        
+        time = distance / averageWalkSpeed
+        
+        return time
     }
     
     func degreesToRadians(degrees: Double) -> Double {
@@ -235,6 +246,9 @@ class ViewController: UIViewController {
             // ...
         }
          */
+        
+        // performs the info segue. When node is touched it finds the building object and
+        // passes to the prepareForSegue. Then calls the segue transitioning to the InfoView
         var nodeBuilding: KMBuilding
         for building in buildings {
             if building.name == node.name {
@@ -357,6 +371,14 @@ class ViewController: UIViewController {
         angleLabel.textColor = UIColor.green
         angleLabel.text = "Angle: 12.12121 deg"
         sceneLocationView.addSubview(angleLabel)
+        
+        let point4 = CGPoint(x: 10, y: view.frame.height - 175)
+        let size4 = CGSize(width: 800, height: 100)
+        let rekt4 = CGRect(origin: point4, size: size4)
+        timeLeftLabel = UILabel(frame: rekt4)
+        timeLeftLabel.textColor = UIColor.green
+        timeLeftLabel.text = "Time Left: 0.0"
+        sceneLocationView.addSubview(timeLeftLabel)
     }
 
 }
