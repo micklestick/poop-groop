@@ -45,3 +45,22 @@ Unlike the current Google Maps, which does offer walking instructions, KnightsMa
     - [Automated UI Test Cases](https://github.com/micklestick/poop-groop/tree/master/KnightsMaps/KnightsMapsUITests)
     - [Manual Test Cases](https://github.com/micklestick/poop-groop/tree/master/project-information/Manual%20Tests)
 - [Product Demonstration](https://www.youtube.com/watch?v=MqSoqntVUj0)
+
+# Sprint 3
+
+- [Product Backlog](https://trello.com/b/OslTPyHi/poop-group-project)
+- [Sprint Backlog](https://trello.com/b/OslTPyHi/poop-group-project)
+- [Burndown Chart](https://github.com/micklestick/poop-groop/blob/master/project-information/burndown-chart.png)
+- [User Stories](https://github.com/micklestick/poop-groop/blob/master/project-information/user-stories.md)
+- [Requirements](https://github.com/micklestick/poop-groop/blob/master/project-information/requirements.md)
+- [Design Documents](https://github.com/micklestick/poop-groop/blob/master/project-design/)
+    - [System Architecture](https://github.com/micklestick/poop-groop/tree/master/project-design/system-architecture)
+    - [Class Diagrams](https://github.com/micklestick/poop-groop/tree/master/project-design/class-diagrams)
+    - [Sequence Diagrams](https://github.com/micklestick/poop-groop/blob/master/project-design/sequence-diagrams/sequenceDiagram.png)
+    - [UI Diagram](https://github.com/micklestick/poop-groop/tree/master/project-design/ui-diagrams)
+- [Source Code](https://github.com/micklestick/poop-groop/blob/master/KnightsMaps/KnightsMaps)
+- Test Cases
+    - [Automated Test Cases](https://github.com/micklestick/poop-groop/blob/master/KnightsMaps/KnightsMapsTests)
+    - [Automated UI Test Cases](https://github.com/micklestick/poop-groop/tree/master/KnightsMaps/KnightsMapsUITests)
+    - [Manual Test Cases](https://github.com/micklestick/poop-groop/tree/master/project-information/Manual%20Tests)
+- [Product Demonstration]()
