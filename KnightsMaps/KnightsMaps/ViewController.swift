@@ -154,7 +154,6 @@ class ViewController: UIViewController {
     }
     
     @objc func buttonInfoAction(sender: UIButton!) {
-        print("hello")
         performSegue(withIdentifier: "infoSegue", sender: sender)
     }
     
