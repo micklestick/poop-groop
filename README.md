@@ -63,4 +63,4 @@ Unlike the current Google Maps, which does offer walking instructions, KnightsMa
     - [Automated Test Cases](https://github.com/micklestick/poop-groop/blob/master/KnightsMaps/KnightsMapsTests)
     - [Automated UI Test Cases](https://github.com/micklestick/poop-groop/tree/master/KnightsMaps/KnightsMapsUITests)
     - [Manual Test Cases](https://github.com/micklestick/poop-groop/tree/master/project-information/Manual%20Tests)
-- [Product Demonstration](https://www.youtube.com/watch?v=MqSoqntVUj0)
+- [Product Demonstration]()
