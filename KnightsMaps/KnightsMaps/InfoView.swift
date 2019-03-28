@@ -14,6 +14,8 @@ class InfoView: UIViewController {
     // building for segue data transfer temp data right now
     var building: KMBuilding?
     
+    var delegate: FilterViewDelegate?
+    
     @IBOutlet weak var testLabel: UILabel!
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -27,17 +29,20 @@ class InfoView: UIViewController {
         mapDisplay.layer.cornerRadius = 10.0
         self.infoLabel.numberOfLines = 5
         
-        building = makeFakeBuilding()
-        
         self.nameLabel.text = building?.name
         self.infoLabel.text = building?.info
         
         setCenter(latitude: building!.latitude, longitude: building!.longitude)
         setPin(latitude: building!.latitude, longitude: building!.longitude)
+        
     }
     
     @IBAction func navigateButton(_ sender: Any) {
         // segue back to original view sending data back
+        let bname = building!.name
+        delegate?.complete(buildingName: bname)
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -57,10 +62,4 @@ class InfoView: UIViewController {
         mapDisplay.addAnnotation(annotation)
     }
     
-    func makeFakeBuilding() -> KMBuilding {
-        
-        let building = KMBuilding(name: "Engineering 2", acronym: "EGN2", latitude: 28.60198153, longitude: -81.19868504, info: "Engineering Building 2. Contatins: EPC, Academic advising services, Computer labs, and classrooms.", type: "Building" )
-        
-        return building
-    }
 }
