@@ -145,7 +145,7 @@ class ViewController: UIViewController {
         else {
             let destinationVC = segue.destination as? InfoView
            // destinationVC?.delegate = self
-            destinationVC?.building = buildingInfo
+            destinationVC?.building = sender as! KMBuilding
         }
     }
     
@@ -154,7 +154,8 @@ class ViewController: UIViewController {
     }
     
     @objc func buttonInfoAction(sender: UIButton!) {
-        performSegue(withIdentifier: "infoSegue", sender: sender)
+        let tempBuilding = buildingInfo
+        performSegue(withIdentifier: "infoSegue", sender: tempBuilding)
     }
     
     var hasMotion: Bool {
@@ -234,6 +235,13 @@ class ViewController: UIViewController {
             // ...
         }
          */
+        var nodeBuilding: KMBuilding
+        for building in buildings {
+            if building.name == node.name {
+                nodeBuilding = building
+                performSegue(withIdentifier: "infoSegue", sender: nodeBuilding)
+            }
+        }
     }
     
     // TODO: this function is using the testPoints array, when the database is hooked up
