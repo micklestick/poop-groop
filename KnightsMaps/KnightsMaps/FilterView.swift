@@ -70,9 +70,13 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FilterViewTableCell
+//        let favoriteButton = UIButton(frame: CGRect(origin: CGPoint(x: 100, y: 100), size: CGSize(width: 50, height: 50)))
+//        favoriteButton.titleLabel?.text = "Favorite"
+//        cell?.addSubview(favoriteButton)
         if searching {
             cell?.textLabel?.text = filteredBuildings[indexPath.row].name
             cell?.detailTextLabel?.text = filteredBuildings[indexPath.row].acronym
+            cell?.button
         } else {
             cell?.textLabel?.text = buildingArray[indexPath.row].name
             cell?.detailTextLabel?.text = buildingArray[indexPath.row].acronym

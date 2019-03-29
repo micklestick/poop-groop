@@ -10,6 +10,7 @@ import UIKit
 
 class FilterViewTableCell: UITableViewCell {
 
+    @IBOutlet var button: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
