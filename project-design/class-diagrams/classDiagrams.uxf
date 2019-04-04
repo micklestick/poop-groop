@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>306</x>
-      <y>48</y>
+      <x>300</x>
+      <y>60</y>
       <w>192</w>
       <h>108</h>
     </coordinates>
@@ -23,8 +23,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>312</x>
-      <y>174</y>
+      <x>306</x>
+      <y>186</y>
       <w>228</w>
       <h>102</h>
     </coordinates>
@@ -45,8 +45,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>384</x>
-      <y>294</y>
+      <x>156</x>
+      <y>378</y>
       <w>168</w>
       <h>108</h>
     </coordinates>
@@ -68,8 +68,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>582</x>
-      <y>114</y>
+      <x>576</x>
+      <y>126</y>
       <w>330</w>
       <h>282</h>
     </coordinates>
@@ -111,8 +111,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>66</x>
-      <y>318</y>
+      <x>60</x>
+      <y>330</y>
       <w>300</w>
       <h>30</h>
     </coordinates>
@@ -126,8 +126,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>6</x>
-      <y>174</y>
+      <x>0</x>
+      <y>186</y>
       <w>270</w>
       <h>102</h>
     </coordinates>
@@ -149,8 +149,8 @@ filteredBuildings: KMBuilding[0..n]
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>606</x>
-      <y>6</y>
+      <x>600</x>
+      <y>18</y>
       <w>276</w>
       <h>102</h>
     </coordinates>
@@ -170,8 +170,8 @@ filteredBuildings: KMBuilding[0..n]
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
-      <y>150</y>
+      <x>330</x>
+      <y>162</y>
       <w>18</w>
       <h>36</h>
     </coordinates>
@@ -181,8 +181,8 @@ filteredBuildings: KMBuilding[0..n]
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>312</x>
-      <y>270</y>
+      <x>306</x>
+      <y>282</y>
       <w>18</w>
       <h>60</h>
     </coordinates>
@@ -192,8 +192,8 @@ filteredBuildings: KMBuilding[0..n]
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>534</x>
-      <y>210</y>
+      <x>528</x>
+      <y>222</y>
       <w>60</w>
       <h>24</h>
     </coordinates>
@@ -204,8 +204,8 @@ m1=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>66</x>
-      <y>108</y>
+      <x>60</x>
+      <y>120</y>
       <w>216</w>
       <h>36</h>
     </coordinates>
@@ -220,8 +220,8 @@ m1=0..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>492</x>
-      <y>78</y>
+      <x>486</x>
+      <y>90</y>
       <w>126</w>
       <h>24</h>
     </coordinates>
@@ -232,13 +232,48 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>204</y>
+      <x>264</x>
+      <y>216</y>
       <w>54</w>
       <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>366</x>
+      <y>318</y>
+      <w>204</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>InfoView
+--
+-building: KMBuilding
+-nameLabel: UILabel
+-infoLabel: UILabel
+-mapDisplay: MKMapView
+--
+#viewDidLoad(): Void
+#navigateButton(sender: Any)
+#backButton(sender: Any)
+#setCenter(latitude:Float, longitude: Float)
+#setPin(latitude:Float, longitude:Float)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>282</y>
+      <w>30</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
 </diagram>
