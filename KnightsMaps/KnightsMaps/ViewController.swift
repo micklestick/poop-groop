@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     var timeLeftLabel = UILabel()
     
     // temporary for data testing
-    var buildingInfo = KMBuilding(name: "Engineering 2", acronym: "EGN2", latitude: 28.60198153, longitude: -81.19868504, info: "Engineering Building 2. Contatins: EPC, Academic advising services, Computer labs, and classrooms.", type: "Building" )
+    var buildingInfo = KMBuilding(name: "Engineering 2", acronym: "EGN2", latitude: 28.60198153, longitude: -81.19868504, info: "Faculty Center For Teaching and Learning Room 207 Contact: 407-823-3544\nOffice of Instructional Resources Room 203 Contact: 407-823-2571\nTech Commons Computer Lab Hours: Mon-Fri 8am-5pm ", type: "Building" )
 
     var destinationNode: LocationAnnotationNode!
     

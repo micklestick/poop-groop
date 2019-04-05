@@ -27,7 +27,7 @@ class InfoView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mapDisplay.layer.cornerRadius = 10.0
-        self.infoLabel.numberOfLines = 5
+        self.infoLabel.numberOfLines = 7
         
         self.nameLabel.text = building?.name
         self.infoLabel.text = building?.info
