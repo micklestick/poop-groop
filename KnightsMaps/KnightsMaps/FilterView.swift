@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Disk
 protocol FilterViewDelegate {
     func complete(buildingName: String)
 }
@@ -20,21 +21,23 @@ class FilterView: UIViewController {
     
     private let searchController = UISearchController(searchResultsController: nil)
 
-
     var searching = false
     var filteredBuildings = [KMBuilding]()
     var pickedScope = ""
     var masterSearchText = ""
     var favoritesArray = [KMBuilding]()
+    var userDefaults = UserDefaults.standard
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchController.searchBar.scopeButtonTitles = ["All", "Building", "Restaurant", "Store", "Garage"]
+        searchController.searchBar.scopeButtonTitles = ["All", "Building", "Restaurant", "Store", "Garage", "Favorites"]
         searchController.searchBar.delegate = self
-
+        
         // Do any additional setup after loading the view.
     }
+    
     
     func itemSelected(bName: String) {
         print("Selected the cell is: \(bName)")
@@ -42,6 +45,19 @@ class FilterView: UIViewController {
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
+    
+    func saveFavorites() {
+        try! Disk.save(favoritesArray, to: .documents, as: "kmfavorites.json")
+        print("Attempting to save favorites....")
+    }
+
+    func loadFavorites() {
+        let retreivedFavorites = try! Disk.retrieve("kmfavorites.json", from: .documents, as: [KMBuilding].self)
+        favoritesArray = retreivedFavorites
+        print("Attempting to load favorites.......")
+    }
+    
+    
     
     //This is called when you tap on a specific row in the search
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -92,18 +108,45 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate, FilterViewCell
     }
     
     func didPressButton(_ tag: Int) {
+        
         if searching {
             print("The button pressed is \(filteredBuildings[tag].name)")
             
-            favoritesArray.append(filteredBuildings[tag])
-
-        } else
-        {
+            //Making sure we can't add duplicates
+            if favoritesArray.contains(where: {$0.name == filteredBuildings[tag].name}) {
+                print("Already there. Removing")
+                favoritesArray.removeAll(where: {$0.name == filteredBuildings[tag].name})
+                
+                if(pickedScope == "Favorites") {
+                    filteredBuildings = favoritesArray
+                    tbView.reloadData()
+                }
+            }
+            else {
+                favoritesArray.append(filteredBuildings[tag])
+            }
+            
+        } else {
             print("The button pressed is \(buildingArray[tag].name)")
-            favoritesArray.append(buildingArray[tag])
+            
+            if favoritesArray.contains(where: {$0.name == buildingArray[tag].name}) {
+                print("Already there. Removing.")
+                favoritesArray.removeAll(where: {$0.name == buildingArray[tag].name})
+                if(pickedScope == "Favorites") {
+                    filteredBuildings = favoritesArray
+                    tbView.reloadData()
+                }
+                
+            }
+            else {
+                favoritesArray.append(buildingArray[tag])
+            }
         }
         
+        saveFavorites()
+        
     }
+    
     
 }
 
@@ -112,8 +155,13 @@ extension FilterView: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searching = true
         masterSearchText = searchText
-        filteredBuildings = buildingArray.filter({($0.type == pickedScope || pickedScope == "") && ($0.name.lowercased().prefix(searchText.count) == searchText.lowercased() || $0.acronym.lowercased().prefix(searchText.count) == searchText.lowercased())})
+        
+        if pickedScope == "Favorites" {
+            filteredBuildings = favoritesArray.filter({($0.name.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased() || $0.acronym.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased())})
 
+        } else {
+            filteredBuildings = buildingArray.filter({($0.type == pickedScope || pickedScope == "") && ($0.name.lowercased().prefix(searchText.count) == searchText.lowercased() || $0.acronym.lowercased().prefix(searchText.count) == searchText.lowercased())})
+        }
         
         tbView.reloadData()
     }
@@ -150,10 +198,13 @@ extension FilterView: UISearchBarDelegate {
         }
         
         if(selectedScope < 5) {
-           filteredBuildings = buildingArray.filter({($0.type == pickedScope || pickedScope == "") && ($0.name.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased() || $0.acronym.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased())})
+            filteredBuildings = buildingArray.filter({($0.type == pickedScope || pickedScope == "") && ($0.name.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased() || $0.acronym.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased())})
         }
         else {
+            loadFavorites()
+//            filteredBuildings = favoritesArray
             filteredBuildings = favoritesArray.filter({($0.name.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased() || $0.acronym.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased())})
+            tbView.reloadData()
         }
         
         print(pickedScope)

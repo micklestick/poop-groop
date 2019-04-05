@@ -11,6 +11,7 @@ target 'KnightsMaps' do
   	pod 'CodableFirebase'
 	pod 'AsyncSwift'
   	pod 'SwiftyTimer'
+    pod 'Disk'
   
 	target 'KnightsMapsTests' do
 		inherit! :search_paths

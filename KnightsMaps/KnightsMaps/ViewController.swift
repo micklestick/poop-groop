@@ -26,8 +26,6 @@ class ViewController: UIViewController {
     let averageWalkSpeed = 1.4 //1.4 meters per second
     
     var sceneLocationView = SceneLocationView()
-    var sceneLocationViewInfo = SceneLocationView()
-
     private let manager = CMMotionManager()
 
     var buildings : [KMBuilding] = []
@@ -39,6 +37,7 @@ class ViewController: UIViewController {
     var angleLabel = UILabel()
     var timeLeftLabel = UILabel()
     
+    var searchButton = UIButton()
     // temporary for data testing
     var buildingInfo = KMBuilding(name: "Engineering 2", acronym: "EGN2", latitude: 28.60198153, longitude: -81.19868504, info: "Faculty Center For Teaching and Learning Room 207 Contact: 407-823-3544\nOffice of Instructional Resources Room 203 Contact: 407-823-2571\nTech Commons Computer Lab Hours: Mon-Fri 8am-5pm ", type: "Building" )
 
@@ -48,7 +47,9 @@ class ViewController: UIViewController {
     
     private let motionQueue = OperationQueue()
     
-    let scene = SCNScene(named: "art.scnassets/ship.scn")!
+    let arrowScene = SCNScene(named: "art.scnassets/ship.scn")!
+    var arrowNode = SCNNode()
+    
     var loc = CLLocation()
     private var arrowUpdateTimer: Timer?
     private var nodeUpdateTimer: Timer?
@@ -60,12 +61,13 @@ class ViewController: UIViewController {
             createDebugLabels()
         }
         
-        let searchButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 60, y: 40), size: CGSize(width: 50, height: 50)))
+        searchButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 60, y: 40), size: CGSize(width: 50, height: 50)))
         searchButton.setImage(UIImage(named: "search.png"), for: .normal)
         searchButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
         sceneLocationView.addSubview(searchButton)
         sceneLocationView.run()
+        
         view.addSubview(sceneLocationView)
         
         let infoButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 60, y: 130), size: CGSize(width: 50, height: 50)))
@@ -98,16 +100,21 @@ class ViewController: UIViewController {
         
         trackLocation()
         
-        sceneLocationView.scene = scene
+        sceneLocationView.scene = arrowScene
+        arrowNode = self.arrowScene.rootNode.childNodes.first!
+
         arrowUpdateTimer = Timer.every(1/100) {
-            let arrowNode = self.scene.rootNode.childNodes.first
 
             if self.destinationNode != nil {
                 
-                arrowNode?.isHidden = false
-                
+                self.arrowNode.isHidden = false
+                //self.arrowNode.look(at: self.destinationNode.worldPosition)
+
                 let camera = self.sceneLocationView.pointOfView
                 let position = SCNVector3(x: 0, y: -1.5, z: -2.5)
+
+                //let position = SCNVector3(x: 0, y: -25.0, z: -45.0)
+
                 let referenceNodeTransform = matrix_float4x4(camera!.transform)
                 
                 // Setup a translation matrix with the desired position
@@ -118,22 +125,17 @@ class ViewController: UIViewController {
                 
                 // Combine the configured translation matrix with the referenceNode's transform to get the desired position AND orientation
                 let updatedTransform = matrix_multiply(referenceNodeTransform, translationMatrix)
-                arrowNode!.transform = SCNMatrix4(updatedTransform)
+
+                self.arrowNode.transform = SCNMatrix4(updatedTransform)
+                self.arrowNode.look(at: self.destinationNode.worldPosition)
                 
-                if self.destinationNode != nil {
-                    arrowNode!.look(at: self.destinationNode.worldPosition)
-                    
-                }
 
             }
             else {
-                arrowNode?.isHidden = true
+                self.arrowNode.isHidden = true
             }
 
         }
-        
-
-
     }
     
     
@@ -168,27 +170,48 @@ class ViewController: UIViewController {
         Locator.subscribePosition(accuracy: .room, onUpdate: { location in
             
             self.loc = location
-            var lat = Double(location.coordinate.latitude)
-            var long = Double(location.coordinate.longitude)
-            lat = lat.roundTo(places: 9)
-            long = long.roundTo(places: 9)
-            
-            self.positionLabel.text = "Lat: \(lat), Long: \(long)"
             
             if self.destinationNode != nil {
+                self.distanceLabel.isHidden = false
+                self.timeLeftLabel.isHidden = false
+                
                 let testlocation = self.destinationNode.location
                 //let vectorToTest = testNode.eulerAngles
-                let distanceInMeters = Double(location.distance(from: testlocation!))
+                var distanceInMeters = Double(location.distance(from: testlocation!))
+                distanceInMeters = distanceInMeters.roundTo(places: 1)
                 
                 self.distanceLabel.text = "Distance: \(distanceInMeters)m"
                 
-                self.timeLeftLabel.text = "Time Left: \(self.timeLeft(distance: distanceInMeters))s"
+                let timeLeft = self.timeLeft(distance: distanceInMeters)
+                //timeLeft = timeLeft.roundTo(places: 1)
+                let timeStr = self.printSecondsToHoursMinutesSeconds(seconds: timeLeft)
+                self.timeLeftLabel.text = "Time Left: \(timeStr)"
                 
+            }
+            else{
+                self.distanceLabel.isHidden = true
+                self.timeLeftLabel.isHidden = true
+
             }
             
         }, onFail: { error, _ in
             //log.error(error.localizedDescription)
         })
+    }
+    
+    func printSecondsToHoursMinutesSeconds(seconds:Double) -> (String) {
+        
+        let (h, m, s) = secondsToHoursMinutesSeconds (seconds: seconds)
+        let mi = Int(m)
+        let si = Int(s)
+        return ("\(mi) m, \(si) s")
+    }
+    
+    func secondsToHoursMinutesSeconds(seconds : Double) -> (Double, Double, Double) {
+        
+        let (hr,  minf) = modf (seconds / 3600)
+        let (min, secf) = modf (60 * minf)
+        return (hr, min, 60 * secf)
     }
     
     func timeLeft(distance: Double) -> Double {
@@ -257,7 +280,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
+
     // TODO: this function is using the testPoints array, when the database is hooked up
     // we will change the testPoint to buildings
     func addBuildingTags() {
@@ -348,35 +371,21 @@ class ViewController: UIViewController {
     
     func createDebugLabels() {
         
-        let point = CGPoint(x: 10, y: view.frame.height - 150)
+        let point = CGPoint(x: 10, y: view.frame.height - 125)
         let size = CGSize(width: 800, height: 100)
         let rekt = CGRect(origin: point, size: size)
-        positionLabel = UILabel(frame: rekt)
-        positionLabel.textColor = UIColor.green
-        positionLabel.text = "Lat: 12.12121, Long: 12.121212"
-        sceneLocationView.addSubview(positionLabel)
-        
-        let point2 = CGPoint(x: 10, y: view.frame.height - 125)
-        let size2 = CGSize(width: 800, height: 100)
-        let rekt2 = CGRect(origin: point2, size: size2)
-        distanceLabel = UILabel(frame: rekt2)
-        distanceLabel.textColor = UIColor.green
+        distanceLabel = UILabel(frame: rekt)
+        distanceLabel.textColor = UIColor.white
+        distanceLabel.font = UIFont(name: "Futura-CondensedExtraBold", size: 30)
         distanceLabel.text = "Distance: 0.0m"
         sceneLocationView.addSubview(distanceLabel)
-        
-        let point3 = CGPoint(x: 10, y: view.frame.height - 100)
-        let size3 = CGSize(width: 800, height: 100)
-        let rekt3 = CGRect(origin: point3, size: size3)
-        angleLabel = UILabel(frame: rekt3)
-        angleLabel.textColor = UIColor.green
-        angleLabel.text = "Angle: 12.12121 deg"
-        sceneLocationView.addSubview(angleLabel)
-        
-        let point4 = CGPoint(x: 10, y: view.frame.height - 175)
+
+        let point4 = CGPoint(x: 10, y: view.frame.height - 100)
         let size4 = CGSize(width: 800, height: 100)
         let rekt4 = CGRect(origin: point4, size: size4)
         timeLeftLabel = UILabel(frame: rekt4)
-        timeLeftLabel.textColor = UIColor.green
+        timeLeftLabel.textColor = UIColor.white
+        timeLeftLabel.font = UIFont(name: "Futura-CondensedExtraBold", size: 30)
         timeLeftLabel.text = "Time Left: 0.0"
         sceneLocationView.addSubview(timeLeftLabel)
     }
@@ -391,6 +400,7 @@ extension ViewController : FilterViewDelegate {
                 destinationNode = building
             }
         }
+        searchButton.becomeFirstResponder()
     }
     
 }
