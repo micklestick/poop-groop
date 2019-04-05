@@ -43,6 +43,7 @@ class FilterView: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    
     //This is called when you tap on a specific row in the search
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if searching {
@@ -92,18 +93,44 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate, FilterViewCell
     }
     
     func didPressButton(_ tag: Int) {
+        
         if searching {
             print("The button pressed is \(filteredBuildings[tag].name)")
             
-            favoritesArray.append(filteredBuildings[tag])
-
-        } else
-        {
+            //Making sure we can't add duplicates
+            if favoritesArray.contains(where: {$0.name == filteredBuildings[tag].name}) {
+                print("Already there. Removing")
+                favoritesArray.removeAll(where: {$0.name == filteredBuildings[tag].name})
+                
+                if(pickedScope == "Favorites") {
+                    filteredBuildings = favoritesArray
+                    tbView.reloadData()
+                }
+            }
+            else {
+                favoritesArray.append(filteredBuildings[tag])
+            }
+            
+        } else {
             print("The button pressed is \(buildingArray[tag].name)")
-            favoritesArray.append(buildingArray[tag])
+            
+            if favoritesArray.contains(where: {$0.name == buildingArray[tag].name}) {
+                print("Already there. Removing.")
+                favoritesArray.removeAll(where: {$0.name == buildingArray[tag].name})
+                if(pickedScope == "Favorites") {
+                    filteredBuildings = favoritesArray
+                    tbView.reloadData()
+                }
+                
+            }
+            else {
+                favoritesArray.append(buildingArray[tag])
+            }
         }
         
+        
     }
+    
     
 }
 
@@ -150,7 +177,7 @@ extension FilterView: UISearchBarDelegate {
         }
         
         if(selectedScope < 5) {
-           filteredBuildings = buildingArray.filter({($0.type == pickedScope || pickedScope == "") && ($0.name.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased() || $0.acronym.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased())})
+            filteredBuildings = buildingArray.filter({($0.type == pickedScope || pickedScope == "") && ($0.name.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased() || $0.acronym.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased())})
         }
         else {
             filteredBuildings = favoritesArray.filter({($0.name.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased() || $0.acronym.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased())})
