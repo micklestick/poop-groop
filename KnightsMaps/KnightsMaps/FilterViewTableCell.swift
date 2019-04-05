@@ -16,6 +16,8 @@ class FilterViewTableCell: UITableViewCell {
         
         super.awakeFromNib()
         // Initialization code
+        let image = UIImage(named: "faveOutline.png")
+        button.setImage(image, for: .normal)
     }
     
     var cellDelegate: FilterViewCellDelegate?

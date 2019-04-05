@@ -18,7 +18,6 @@
 		70B9A6952213E7FF003C11EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B9A6932213E7FF003C11EF /* LaunchScreen.storyboard */; };
 		70B9A6AB2213E7FF003C11EF /* KnightsMapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B9A6AA2213E7FF003C11EF /* KnightsMapsUITests.swift */; };
 		9D6633289001B9CA54913DF8 /* libPods-KnightsMapsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A9A32EC7E3455193187BFF /* libPods-KnightsMapsTests.a */; };
-		F43B3D722257E60A005D6DD2 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B3D712257E60A005D6DD2 /* PersistanceService.swift */; };
 		F4A46511223C647E00284FD9 /* FilterViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A46510223C647E00284FD9 /* FilterViewTableCell.swift */; };
 		F4F1CDDD2235B0FA00F7B438 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F1CDDC2235B0FA00F7B438 /* FilterView.swift */; };
 		FE3C463122473C940059F32B /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3C463022473C940059F32B /* InfoView.swift */; };
@@ -68,7 +67,6 @@
 		DAADB87BF87E9CEFA915644F /* Pods-KnightsMapsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMapsTests.debug.xcconfig"; path = "Target Support Files/Pods-KnightsMapsTests/Pods-KnightsMapsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB8C553EC2EF7B3A602D04AC /* Pods-KnightsMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMaps.release.xcconfig"; path = "Target Support Files/Pods-KnightsMaps/Pods-KnightsMaps.release.xcconfig"; sourceTree = "<group>"; };
 		DD9EC0AC53717030D5AD7269 /* Pods-KnightsMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMaps.debug.xcconfig"; path = "Target Support Files/Pods-KnightsMaps/Pods-KnightsMaps.debug.xcconfig"; sourceTree = "<group>"; };
-		F43B3D712257E60A005D6DD2 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
 		F4A46510223C647E00284FD9 /* FilterViewTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewTableCell.swift; sourceTree = "<group>"; };
 		F4F1CDDC2235B0FA00F7B438 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		FE3C463022473C940059F32B /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				FEA83B7A2232420C00C5BEAA /* SearchBuilding.swift */,
 				FEC9A2292217B15300EBC9B2 /* KMDatabaseHelper.swift */,
 				149D9DEB22384F9200AC750E /* GoogleService-Info.plist */,
-				F43B3D712257E60A005D6DD2 /* PersistanceService.swift */,
 			);
 			path = KnightsMaps;
 			sourceTree = "<group>";
@@ -392,7 +389,6 @@
 				70B9A68D2213E7FE003C11EF /* ViewController.swift in Sources */,
 				FEB73ED1221638B70040A251 /* KMBuilding.swift in Sources */,
 				FEC9A22A2217B15300EBC9B2 /* KMDatabaseHelper.swift in Sources */,
-				F43B3D722257E60A005D6DD2 /* PersistanceService.swift in Sources */,
 				70B9A6892213E7FE003C11EF /* AppDelegate.swift in Sources */,
 				F4A46511223C647E00284FD9 /* FilterViewTableCell.swift in Sources */,
 				F4F1CDDD2235B0FA00F7B438 /* FilterView.swift in Sources */,

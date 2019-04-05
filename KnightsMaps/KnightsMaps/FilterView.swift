@@ -88,19 +88,34 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate, FilterViewCell
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FilterViewTableCell
+        let filledImage = UIImage(named: "faveFilled.png")
+        let outlineImage = UIImage(named: "faveOutline.png")
+        
         if searching {
             cell?.textLabel?.text = filteredBuildings[indexPath.row].name
             cell?.detailTextLabel?.text = filteredBuildings[indexPath.row].acronym
             cell?.cellDelegate = self
             cell?.button.tag = indexPath.row
-//            cell?.button.addTarget(self, action: Selector("buttonClicked:"), for: UIControl.Event.touchUpInside)
-
+            
+            
+            if favoritesArray.contains(where: {$0.name == filteredBuildings[indexPath.row].name}) {
+                cell?.button.setImage(filledImage, for: .normal)
+            } else {
+                cell?.button.setImage(outlineImage, for: .normal)
+            }
+            
         } else {
             cell?.textLabel?.text = buildingArray[indexPath.row].name
             cell?.detailTextLabel?.text = buildingArray[indexPath.row].acronym
             cell?.cellDelegate = self
             cell?.button?.tag = indexPath.row
-//            cell?.button?.addTarget(self, action: Selector("buttonClicked:"), for: UIControl.Event.touchUpInside)
+            
+            
+            if favoritesArray.contains(where: {$0.name == buildingArray[indexPath.row].name}) {
+                cell?.button.setImage(filledImage, for: .normal)
+            } else {
+                cell?.button.setImage(outlineImage, for: .normal)
+            }
         }
 
         
@@ -144,6 +159,7 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate, FilterViewCell
         }
         
         saveFavorites()
+        tbView.reloadData()
         
     }
     
