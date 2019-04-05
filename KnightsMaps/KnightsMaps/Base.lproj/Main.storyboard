@@ -27,7 +27,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-109" y="133"/>
+            <point key="canvasLocation" x="-110.14492753623189" y="132.58928571428572"/>
         </scene>
         <!--Filter View-->
         <scene sceneID="sIK-Vv-PlS">
@@ -198,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x3d-ps-hfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-349.27536231884062" y="898.66071428571422"/>
+            <point key="canvasLocation" x="-110" y="889"/>
         </scene>
     </scenes>
 </document>
