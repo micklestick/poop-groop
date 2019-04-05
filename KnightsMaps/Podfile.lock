@@ -2,6 +2,7 @@ PODS:
   - ARCL (1.1.0)
   - AsyncSwift (2.0.4)
   - CodableFirebase (0.2.1)
+  - Disk (0.5.0)
   - Firebase/Core (5.20.1):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.8.0)
@@ -72,6 +73,7 @@ DEPENDENCIES:
   - ARCL
   - AsyncSwift
   - CodableFirebase
+  - Disk
   - Firebase/Core
   - Firebase/Database
   - SnapKit
@@ -84,6 +86,7 @@ SPEC REPOS:
     - ARCL
     - AsyncSwift
     - CodableFirebase
+    - Disk
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuthInterop
@@ -104,6 +107,7 @@ SPEC CHECKSUMS:
   ARCL: 8b0a375942c575472c3cdbec80262d8400f1ec42
   AsyncSwift: 65775a7b32e740609b24969ece3de58723b9dc3e
   CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
+  Disk: 20263582698f4331c2dac15f9fda95069aba8dae
   Firebase: 2f5235e62f141cb86181c3af0dfe4509706351ac
   FirebaseAnalytics: fd72a26bf8dac84cefba2f0864366f718555a5b0
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
@@ -120,6 +124,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
 
-PODFILE CHECKSUM: e3846568d1569f8115a609dd9117b00ea14cfe97
+PODFILE CHECKSUM: 56a6f7059557d553a93953e3a49b8ddd760600c6
 
 COCOAPODS: 1.6.1
