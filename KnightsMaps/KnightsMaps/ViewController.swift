@@ -111,7 +111,7 @@ class ViewController: UIViewController {
                 //self.arrowNode.look(at: self.destinationNode.worldPosition)
 
                 let camera = self.sceneLocationView.pointOfView
-                let position = SCNVector3(x: 0, y: -1.5, z: -2.5)
+                let position = SCNVector3(x: 0, y: -1.5, z: -3.5)
 
                 //let position = SCNVector3(x: 0, y: -25.0, z: -45.0)
 
