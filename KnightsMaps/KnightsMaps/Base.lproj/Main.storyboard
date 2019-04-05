@@ -27,7 +27,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-109" y="133"/>
+            <point key="canvasLocation" x="-110.14492753623189" y="132.58928571428572"/>
         </scene>
         <!--Filter View-->
         <scene sceneID="sIK-Vv-PlS">
@@ -53,6 +53,7 @@
                                         <string>Store</string>
                                         <string>Restuarant</string>
                                         <string>Garage</string>
+                                        <string>Favorites</string>
                                     </scopeButtonTitles>
                                     <connections>
                                         <outlet property="delegate" destination="sGS-DX-vH8" id="B8I-aW-a8y"/>
@@ -66,12 +67,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTi-av-jEQ">
-                                                    <rect key="frame" x="180" y="4" width="54" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <state key="selected" image="arrowTexture.jpg"/>
-                                                </button>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bwr-oX-WHe">
                                                     <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
@@ -79,6 +74,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ear-YT-ozl">
+                                                    <rect key="frame" x="311" y="5" width="88" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="buttonPressed:" destination="Ne0-Y9-bbF" eventType="touchUpInside" id="S4I-fQ-gj4"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eu1-ow-juE">
                                                     <rect key="frame" x="20" y="25.5" width="33" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
@@ -89,7 +92,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="button" destination="bTi-av-jEQ" id="okK-6R-n5u"/>
+                                            <outlet property="button" destination="Ear-YT-ozl" id="Obe-Pw-q46"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -133,7 +136,7 @@
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BbP-q8-Je1">
                                         <rect key="frame" x="0.0" y="45" width="414" height="44"/>
-                                        <color key="barTintColor" red="1" green="0.78823529411764703" blue="0.015686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="barTintColor" red="1" green="0.792156862745098" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                         <items>
                                             <navigationItem id="4ok-Pv-4ia">
                                                 <barButtonItem key="leftBarButtonItem" title="&lt;- Back" id="gvB-wf-nc9">
@@ -160,7 +163,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQv-nh-Y3s">
-                                <rect key="frame" x="57" y="631" width="300" height="96.5"/>
+                                <rect key="frame" x="57" y="631" width="300" height="148"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -175,12 +178,12 @@
                             <constraint firstItem="qoe-d8-FsH" firstAttribute="bottom" secondItem="DXv-9P-Eqm" secondAttribute="bottom" constant="274" id="W0l-ST-j7T"/>
                             <constraint firstItem="aRO-3d-IsS" firstAttribute="leading" secondItem="qoe-d8-FsH" secondAttribute="leading" id="XHg-ND-SF4"/>
                             <constraint firstItem="aRO-3d-IsS" firstAttribute="centerX" secondItem="b0K-7a-bNQ" secondAttribute="centerX" id="Y2d-tg-i3v"/>
-                            <constraint firstItem="qoe-d8-FsH" firstAttribute="bottom" secondItem="LQv-nh-Y3s" secondAttribute="bottom" constant="134.5" id="ZbV-UO-arM"/>
                             <constraint firstItem="DXv-9P-Eqm" firstAttribute="top" secondItem="b0K-7a-bNQ" secondAttribute="bottom" constant="44" id="bXC-2p-ggi"/>
                             <constraint firstItem="b0K-7a-bNQ" firstAttribute="top" secondItem="aRO-3d-IsS" secondAttribute="bottom" constant="81" id="cpS-mc-EPL"/>
                             <constraint firstItem="b0K-7a-bNQ" firstAttribute="leading" secondItem="qoe-d8-FsH" secondAttribute="leading" constant="57" id="eZ8-JH-pt0"/>
                             <constraint firstItem="DXv-9P-Eqm" firstAttribute="top" secondItem="qoe-d8-FsH" secondAttribute="top" constant="237" id="f6p-jJ-alm"/>
                             <constraint firstItem="b0K-7a-bNQ" firstAttribute="top" secondItem="qoe-d8-FsH" secondAttribute="top" constant="126" id="gsa-Mp-YTg"/>
+                            <constraint firstItem="qoe-d8-FsH" firstAttribute="bottom" secondItem="LQv-nh-Y3s" secondAttribute="bottom" constant="83" id="kmq-P4-VSz"/>
                             <constraint firstItem="LQv-nh-Y3s" firstAttribute="top" secondItem="DXv-9P-Eqm" secondAttribute="bottom" constant="43" id="ldn-z6-sZj"/>
                             <constraint firstItem="DXv-9P-Eqm" firstAttribute="leading" secondItem="qoe-d8-FsH" secondAttribute="leading" constant="57" id="sz0-ae-rRN"/>
                             <constraint firstItem="qoe-d8-FsH" firstAttribute="trailing" secondItem="b0K-7a-bNQ" secondAttribute="trailing" constant="57" id="zp0-Qx-aVe"/>
@@ -195,10 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x3d-ps-hfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-349.27536231884062" y="898.66071428571422"/>
+            <point key="canvasLocation" x="-110" y="889"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="arrowTexture.jpg" width="1920" height="1277"/>
-    </resources>
 </document>

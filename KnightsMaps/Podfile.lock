@@ -2,12 +2,13 @@ PODS:
   - ARCL (1.1.0)
   - AsyncSwift (2.0.4)
   - CodableFirebase (0.2.1)
-  - Firebase/Core (5.19.0):
+  - Disk (0.5.0)
+  - Firebase/Core (5.20.1):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.8.0)
-  - Firebase/CoreOnly (5.19.0):
-    - FirebaseCore (= 5.4.0)
-  - Firebase/Database (5.19.0):
+  - Firebase/CoreOnly (5.20.1):
+    - FirebaseCore (= 5.4.1)
+  - Firebase/Database (5.20.1):
     - Firebase/CoreOnly
     - FirebaseDatabase (= 5.1.1)
   - FirebaseAnalytics (5.8.0):
@@ -20,14 +21,14 @@ PODS:
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
   - FirebaseAuthInterop (1.0.0)
-  - FirebaseCore (5.4.0):
+  - FirebaseCore (5.4.1):
     - GoogleUtilities/Environment (~> 5.2)
     - GoogleUtilities/Logger (~> 5.2)
   - FirebaseDatabase (5.1.1):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.2)
     - leveldb-library (~> 1.18)
-  - FirebaseInstanceID (3.8.0):
+  - FirebaseInstanceID (3.8.1):
     - FirebaseCore (~> 5.2)
     - GoogleUtilities/Environment (~> 5.2)
     - GoogleUtilities/UserDefaults (~> 5.2)
@@ -72,6 +73,7 @@ DEPENDENCIES:
   - ARCL
   - AsyncSwift
   - CodableFirebase
+  - Disk
   - Firebase/Core
   - Firebase/Database
   - SnapKit
@@ -84,6 +86,7 @@ SPEC REPOS:
     - ARCL
     - AsyncSwift
     - CodableFirebase
+    - Disk
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuthInterop
@@ -104,12 +107,13 @@ SPEC CHECKSUMS:
   ARCL: 8b0a375942c575472c3cdbec80262d8400f1ec42
   AsyncSwift: 65775a7b32e740609b24969ece3de58723b9dc3e
   CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
-  Firebase: c60d49e9c2630875a96207d15e2affb8364996d1
+  Disk: 20263582698f4331c2dac15f9fda95069aba8dae
+  Firebase: 2f5235e62f141cb86181c3af0dfe4509706351ac
   FirebaseAnalytics: fd72a26bf8dac84cefba2f0864366f718555a5b0
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
-  FirebaseCore: 22a79a961c3951ef2f77b67bfbc99e454247b319
+  FirebaseCore: f1a9a8be1aee4bf71a2fc0f4096df6788bdfda61
   FirebaseDatabase: 2c15b0ea6f2c6eb5e57413f9d6340f1e50b81ae3
-  FirebaseInstanceID: cf488df2f4b79782f0e430b04a0e17c0aa7979b2
+  FirebaseInstanceID: a122b0c258720cf250551bb2bedf48c699f80d90
   GoogleAppMeasurement: 1624046ab1bcc5e170061a56ef5679000b079c8e
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
@@ -120,6 +124,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
 
-PODFILE CHECKSUM: e3846568d1569f8115a609dd9117b00ea14cfe97
+PODFILE CHECKSUM: 56a6f7059557d553a93953e3a49b8ddd760600c6
 
 COCOAPODS: 1.6.1
