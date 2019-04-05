@@ -25,6 +25,7 @@ class FilterView: UIViewController {
     var filteredBuildings = [KMBuilding]()
     var pickedScope = ""
     var masterSearchText = ""
+    var favoritesArray = [KMBuilding]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,6 @@ class FilterView: UIViewController {
             itemSelected(bName: filteredBuildings[indexPath.row].name)
         } else {
             itemSelected(bName: buildingArray[indexPath.row].name)
-
         }
     }
     
@@ -56,7 +56,9 @@ class FilterView: UIViewController {
     
 }   //end of FilterView
 
-extension FilterView: UITableViewDataSource, UITableViewDelegate {
+extension FilterView: UITableViewDataSource, UITableViewDelegate, FilterViewCellDelegate {
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching {
@@ -70,18 +72,37 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FilterViewTableCell
-//        let favoriteButton = UIButton(frame: CGRect(origin: CGPoint(x: 100, y: 100), size: CGSize(width: 50, height: 50)))
-//        favoriteButton.titleLabel?.text = "Favorite"
-//        cell?.addSubview(favoriteButton)
         if searching {
             cell?.textLabel?.text = filteredBuildings[indexPath.row].name
             cell?.detailTextLabel?.text = filteredBuildings[indexPath.row].acronym
-            cell?.button
+            cell?.cellDelegate = self
+            cell?.button.tag = indexPath.row
+//            cell?.button.addTarget(self, action: Selector("buttonClicked:"), for: UIControl.Event.touchUpInside)
+
         } else {
             cell?.textLabel?.text = buildingArray[indexPath.row].name
             cell?.detailTextLabel?.text = buildingArray[indexPath.row].acronym
+            cell?.cellDelegate = self
+            cell?.button?.tag = indexPath.row
+//            cell?.button?.addTarget(self, action: Selector("buttonClicked:"), for: UIControl.Event.touchUpInside)
         }
+
+        
         return cell!
+    }
+    
+    func didPressButton(_ tag: Int) {
+        if searching {
+            print("The button pressed is \(filteredBuildings[tag].name)")
+            
+            favoritesArray.append(filteredBuildings[tag])
+
+        } else
+        {
+            print("The button pressed is \(buildingArray[tag].name)")
+            favoritesArray.append(buildingArray[tag])
+        }
+        
     }
     
 }
@@ -120,36 +141,33 @@ extension FilterView: UISearchBarDelegate {
             pickedScope = "Garage"
             searching = true
             break
+        case 5:
+            pickedScope = "Favorites"
+            searching = true
+            break
         default:
             pickedScope = ""
         }
-        filteredBuildings = buildingArray.filter({($0.type == pickedScope || pickedScope == "") && ($0.name.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased() || $0.acronym.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased())})
+        
+        if(selectedScope < 5) {
+           filteredBuildings = buildingArray.filter({($0.type == pickedScope || pickedScope == "") && ($0.name.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased() || $0.acronym.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased())})
+        }
+        else {
+            filteredBuildings = favoritesArray.filter({($0.name.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased() || $0.acronym.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased())})
+        }
+        
         print(pickedScope)
         tbView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searching = false
+        self.view.endEditing(true)
         searchBar.text = ""
         tbView.reloadData()
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
-    
-//    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-//        filteredBuildings = buildingArray.filter({( building : KMBuilding) -> Bool in
-//            let doesCategoryMatch = (scope == "All") || (building.type == scope)
-//
-//            if searching {
-//                return doesCategoryMatch && building.name.lowercased().contains(searchText.lowercased())
-//            } else {
-//                return doesCategoryMatch
-//            }
-//        })
-//        tbView.reloadData()
-//    }
-    
-
     
 }
 

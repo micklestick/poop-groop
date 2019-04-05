@@ -53,6 +53,7 @@
                                         <string>Store</string>
                                         <string>Restuarant</string>
                                         <string>Garage</string>
+                                        <string>Favorites</string>
                                     </scopeButtonTitles>
                                     <connections>
                                         <outlet property="delegate" destination="sGS-DX-vH8" id="B8I-aW-a8y"/>
@@ -66,12 +67,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTi-av-jEQ">
-                                                    <rect key="frame" x="180" y="4" width="54" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <state key="selected" image="arrowTexture.jpg"/>
-                                                </button>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bwr-oX-WHe">
                                                     <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
@@ -79,6 +74,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ear-YT-ozl">
+                                                    <rect key="frame" x="311" y="5" width="88" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="buttonPressed:" destination="Ne0-Y9-bbF" eventType="touchUpInside" id="S4I-fQ-gj4"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eu1-ow-juE">
                                                     <rect key="frame" x="20" y="25.5" width="33" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
@@ -89,7 +92,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="button" destination="bTi-av-jEQ" id="okK-6R-n5u"/>
+                                            <outlet property="button" destination="Ear-YT-ozl" id="Obe-Pw-q46"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -133,7 +136,7 @@
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BbP-q8-Je1">
                                         <rect key="frame" x="0.0" y="45" width="414" height="44"/>
-                                        <color key="barTintColor" red="1" green="0.78823529411764703" blue="0.015686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="barTintColor" red="1" green="0.792156862745098" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                         <items>
                                             <navigationItem id="4ok-Pv-4ia">
                                                 <barButtonItem key="leftBarButtonItem" title="&lt;- Back" id="gvB-wf-nc9">
@@ -198,7 +201,4 @@
             <point key="canvasLocation" x="-349.27536231884062" y="898.66071428571422"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="arrowTexture.jpg" width="1920" height="1277"/>
-    </resources>
 </document>
