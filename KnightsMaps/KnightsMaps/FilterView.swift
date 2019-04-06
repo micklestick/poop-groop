@@ -72,9 +72,7 @@ class FilterView: UIViewController {
     
 }   //end of FilterView
 
-extension FilterView: UITableViewDataSource, UITableViewDelegate, FilterViewCellDelegate {
-    
-    
+extension FilterView: UITableViewDataSource, UITableViewDelegate, FilterViewCellDelegate, InfoViewCellDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching {
@@ -95,7 +93,9 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate, FilterViewCell
             cell?.textLabel?.text = filteredBuildings[indexPath.row].name
             cell?.detailTextLabel?.text = filteredBuildings[indexPath.row].acronym
             cell?.cellDelegate = self
+            cell?.infoDelegate = self
             cell?.button.tag = indexPath.row
+            cell?.infoButton.tag = indexPath.row
             
             
             if favoritesArray.contains(where: {$0.name == filteredBuildings[indexPath.row].name}) {
@@ -108,7 +108,9 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate, FilterViewCell
             cell?.textLabel?.text = buildingArray[indexPath.row].name
             cell?.detailTextLabel?.text = buildingArray[indexPath.row].acronym
             cell?.cellDelegate = self
+            cell?.infoDelegate = self
             cell?.button?.tag = indexPath.row
+            cell?.infoButton?.tag = indexPath.row
             
             
             if favoritesArray.contains(where: {$0.name == buildingArray[indexPath.row].name}) {
@@ -161,6 +163,16 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate, FilterViewCell
         saveFavorites()
         tbView.reloadData()
         
+    }
+    
+    func didPressInfoButton(_ tag: Int) {
+        let tempBuilding = buildingArray[tag]
+        performSegue(withIdentifier: "infoTableSegue", sender: tempBuilding)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let view = segue.destination as? InfoView
+        view?.building = sender as? KMBuilding
     }
     
     

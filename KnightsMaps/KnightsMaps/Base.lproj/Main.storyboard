@@ -82,6 +82,14 @@
                                                         <action selector="buttonPressed:" destination="Ne0-Y9-bbF" eventType="touchUpInside" id="S4I-fQ-gj4"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="069-5k-ggl">
+                                                    <rect key="frame" x="223" y="17" width="80" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Info"/>
+                                                    <connections>
+                                                        <action selector="infoButtonPressed:" destination="Ne0-Y9-bbF" eventType="touchUpInside" id="pmq-dp-8YK"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eu1-ow-juE">
                                                     <rect key="frame" x="20" y="25.5" width="33" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
@@ -93,6 +101,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="button" destination="Ear-YT-ozl" id="Obe-Pw-q46"/>
+                                            <outlet property="infoButton" destination="Ear-YT-ozl" id="cpf-bC-b9S"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -108,11 +117,12 @@
                     <connections>
                         <outlet property="searchBarView" destination="MbD-ED-AX8" id="Riw-US-XUk"/>
                         <outlet property="tbView" destination="kMz-ae-h0g" id="e76-nc-mn0"/>
+                        <segue destination="WLf-sg-I42" kind="show" identifier="infoTableSegue" id="cWv-Lo-CFs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFN-Mq-Dzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="889.85507246376824" y="101.78571428571428"/>
+            <point key="canvasLocation" x="1038" y="90"/>
         </scene>
         <!--Info View-->
         <scene sceneID="ot2-Qo-dWD">
@@ -149,6 +159,7 @@
                                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <connections>
                                                         <action selector="navigateButton:" destination="WLf-sg-I42" id="vcy-uy-yNA"/>
+                                                        <segue destination="BV1-FR-VrT" kind="show" id="JNP-Om-Ot3"/>
                                                     </connections>
                                                 </barButtonItem>
                                             </navigationItem>
@@ -201,4 +212,7 @@
             <point key="canvasLocation" x="-110" y="889"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="P9a-v3-IhW"/>
+    </inferredMetricsTieBreakers>
 </document>

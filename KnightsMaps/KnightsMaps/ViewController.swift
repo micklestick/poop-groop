@@ -398,6 +398,7 @@ extension ViewController : FilterViewDelegate {
         for building in self.buildingNodes {
             if building.tag == buildingName {
                 destinationNode = building
+                print(building.name)
             }
         }
         searchButton.becomeFirstResponder()

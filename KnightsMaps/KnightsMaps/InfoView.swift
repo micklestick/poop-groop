@@ -41,8 +41,6 @@ class InfoView: UIViewController {
         // segue back to original view sending data back
         let bname = building!.name
         delegate?.complete(buildingName: bname)
-        navigationController?.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backButton(_ sender: Any) {

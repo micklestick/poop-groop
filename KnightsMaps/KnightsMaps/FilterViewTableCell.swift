@@ -12,6 +12,8 @@ class FilterViewTableCell: UITableViewCell {
 
     
     @IBOutlet var button: UIButton!
+    @IBOutlet var infoButton: UIButton!
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()
@@ -21,6 +23,11 @@ class FilterViewTableCell: UITableViewCell {
     }
     
     var cellDelegate: FilterViewCellDelegate?
+    var infoDelegate: InfoViewCellDelegate?
+    
+    @IBAction func infoButtonPressed(_ sender: UIButton) {
+        infoDelegate?.didPressInfoButton(infoButton.tag)
+    }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         cellDelegate?.didPressButton(sender.tag)
@@ -32,11 +39,12 @@ class FilterViewTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-  
-
 }
 
 protocol FilterViewCellDelegate : class {
     func didPressButton(_ tag: Int)
+}
+
+protocol InfoViewCellDelegate : class {
+    func didPressInfoButton(_ tag: Int)
 }

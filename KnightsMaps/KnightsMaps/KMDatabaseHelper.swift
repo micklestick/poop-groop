@@ -33,7 +33,7 @@ class KMDatabaseHelper {
             for case let child as DataSnapshot in snapshot.children {
                 do {
                     let building = try FirebaseDecoder().decode(KMBuilding.self, from: child.value!)
-                    print(child.value!)
+                   // print(child.value!)
                     buildings.append(building)
                 } catch let error {
                     print(error)
