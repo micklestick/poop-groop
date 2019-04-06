@@ -38,8 +38,6 @@ class ViewController: UIViewController {
     var timeLeftLabel = UILabel()
     
     var searchButton = UIButton()
-    // temporary for data testing
-    var buildingInfo = KMBuilding(name: "Engineering 2", acronym: "EGN2", latitude: 28.60198153, longitude: -81.19868504, info: "Faculty Center For Teaching and Learning Room 207 Contact: 407-823-3544\nOffice of Instructional Resources Room 203 Contact: 407-823-2571\nTech Commons Computer Lab Hours: Mon-Fri 8am-5pm ", type: "Building" )
 
     var destinationNode: LocationAnnotationNode!
     
@@ -53,29 +51,22 @@ class ViewController: UIViewController {
     var loc = CLLocation()
     private var arrowUpdateTimer: Timer?
     private var nodeUpdateTimer: Timer?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if debug {
-            createDebugLabels()
-        }
+
+        createLabels()
         
-        searchButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 60, y: 40), size: CGSize(width: 50, height: 50)))
+        searchButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 60, y: view.frame.height - 80), size: CGSize(width: 50, height: 50)))
         searchButton.setImage(UIImage(named: "search.png"), for: .normal)
+        searchButton.setImage(UIImage(named: "Xbutton.png"), for: .selected)
         searchButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
         sceneLocationView.addSubview(searchButton)
         sceneLocationView.run()
         
         view.addSubview(sceneLocationView)
-        
-        let infoButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 60, y: 130), size: CGSize(width: 50, height: 50)))
-        infoButton.setTitle("Info", for: .normal)
-        infoButton.addTarget(self, action: #selector(buttonInfoAction), for: .touchUpInside)
-        infoButton.setTitleColor(.white, for: .normal)
-
-        view.addSubview(infoButton)
         
         manager.deviceMotionUpdateInterval = 1/15
         manager.startDeviceMotionUpdates(using: .xTrueNorthZVertical, to: motionQueue) { data, error in
@@ -108,10 +99,9 @@ class ViewController: UIViewController {
             if self.destinationNode != nil {
                 
                 self.arrowNode.isHidden = false
-                //self.arrowNode.look(at: self.destinationNode.worldPosition)
 
                 let camera = self.sceneLocationView.pointOfView
-                let position = SCNVector3(x: 0, y: -1.5, z: -3.5)
+                let position = SCNVector3(x: 0, y: -1.2, z: -2.5)
 
                 //let position = SCNVector3(x: 0, y: -25.0, z: -45.0)
 
@@ -140,6 +130,7 @@ class ViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "filterSegue" {
             let destinationVC = segue.destination as? FilterView
             destinationVC?.delegate = self
@@ -148,17 +139,22 @@ class ViewController: UIViewController {
         else {
             let destinationVC = segue.destination as? InfoView
            // destinationVC?.delegate = self
-            destinationVC?.building = sender as! KMBuilding
+            destinationVC?.building = sender as? KMBuilding
         }
     }
     
     @objc func buttonAction(sender: UIButton!) {
-        performSegue(withIdentifier: "filterSegue", sender: sender)
-    }
-    
-    @objc func buttonInfoAction(sender: UIButton!) {
-        let tempBuilding = buildingInfo
-        performSegue(withIdentifier: "infoSegue", sender: tempBuilding)
+        if sender.isSelected {
+            
+            sender.isSelected = false
+            timeLeftLabel.isHidden = true
+            distanceLabel.isHidden = true
+            destinationNode = nil
+        }
+        else {
+            sender.isSelected = true
+            performSegue(withIdentifier: "filterSegue", sender: sender)
+        }
     }
     
     var hasMotion: Bool {
@@ -188,7 +184,7 @@ class ViewController: UIViewController {
                 self.timeLeftLabel.text = "Time Left: \(timeStr)"
                 
             }
-            else{
+            else {
                 self.distanceLabel.isHidden = true
                 self.timeLeftLabel.isHidden = true
 
@@ -201,7 +197,7 @@ class ViewController: UIViewController {
     
     func printSecondsToHoursMinutesSeconds(seconds:Double) -> (String) {
         
-        let (h, m, s) = secondsToHoursMinutesSeconds (seconds: seconds)
+        let (_, m, s) = secondsToHoursMinutesSeconds (seconds: seconds)
         let mi = Int(m)
         let si = Int(s)
         return ("\(mi) m, \(si) s")
@@ -209,7 +205,7 @@ class ViewController: UIViewController {
     
     func secondsToHoursMinutesSeconds(seconds : Double) -> (Double, Double, Double) {
         
-        let (hr,  minf) = modf (seconds / 3600)
+        let (hr, minf) = modf (seconds / 3600)
         let (min, secf) = modf (60 * minf)
         return (hr, min, 60 * secf)
     }
@@ -248,41 +244,7 @@ class ViewController: UIViewController {
         
         return radiansToDegrees(radians: radiansBearing)
     }
-    
-    // TODO: write code to get this, The LNTouchDelegate
-    // is not working, we can use the following
-    /*
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-    }
-    */
-    func locationNodeTouched(node: AnnotationNode) {
-        /* Do stuffs with the node instance
-        
-        // node could have either node.view or node.image
-        if let nodeView = node.view{
-            // Do stuffs with the nodeView
-            // ...
-        }
-        if let nodeImage = node.image{
-            // Do stuffs with the nodeImage
-            // ...
-        }
-         */
-        
-        // performs the info segue. When node is touched it finds the building object and
-        // passes to the prepareForSegue. Then calls the segue transitioning to the InfoView
-        var nodeBuilding: KMBuilding
-        for building in buildings {
-            if building.name == node.name {
-                nodeBuilding = building
-                performSegue(withIdentifier: "infoSegue", sender: nodeBuilding)
-            }
-        }
-    }
 
-    // TODO: this function is using the testPoints array, when the database is hooked up
-    // we will change the testPoint to buildings
     func addBuildingTags() {
         
         Async.main {
@@ -369,7 +331,7 @@ class ViewController: UIViewController {
 
     }
     
-    func createDebugLabels() {
+    func createLabels() {
         
         let point = CGPoint(x: 10, y: view.frame.height - 125)
         let size = CGSize(width: 800, height: 100)
@@ -398,7 +360,6 @@ extension ViewController : FilterViewDelegate {
         for building in self.buildingNodes {
             if building.tag == buildingName {
                 destinationNode = building
-                print(building.name)
             }
         }
         searchButton.becomeFirstResponder()
@@ -416,7 +377,3 @@ extension Double {
     }
     
 }
-
-// we may want images to float so keep this code around for now
-//let image = UIImage(named: "pin")!
-//let annotationNode = LocationAnnotationNode(location: location, image: image)
