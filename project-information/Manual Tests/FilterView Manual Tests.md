@@ -1,5 +1,29 @@
 ### This file details the manual test procedures necessary for fully testing FilterView.swift.
 
+### filterView: didPressButton
+| Step | Action | Observation |
+|-|-|-|
+| 1 | Tap on the magnifying glass icon in the top right corner. | A list of buildings and a search bar slide up from the bottom.|
+| 2 | Tap on the heart icon next to the first cell. | The heart icon is now filled in.|
+| 3 | Tap on the "Favorites" tab in the scoping bar. | The only cell on screen is the cell that was favorited.|
+
+### filterView: saveFavorites/loadFavorites
+| Step | Action | Observation |
+|-|-|-|
+| 1 | Tap on the magnifying glass icon in the top right corner. | A list of buildings and a search bar slide up from the bottom.|
+| 2 | Tap on the heart icon next to the first cell. | The heart icon is now filled in.|
+| 3 | Tap on the "Favorites" tab in the scoping bar. | The only cell on screen is the cell that was favorited.|
+| 4 | Close the app completely | The device is back at the home screen.|
+| 5 | Tap on the "Knights Map" app icon.| The "Knights Map" application launches.|
+| 6 | Tap on the magnifying glass icon in the top right corner. | A list of buildings and a search bar slide up from the bottom.|
+| 7 | Tap on the "Favorites" tab in the scoping bar. | The only cell on screen is the cell that was originally favorited before closing out of the app.|
+
+### filterView: didPressInfoButton
+| Step | Action | Observation |
+|-|-|-|
+| 1 | Tap on the magnifying glass icon in the top right corner. | A list of buildings and a search bar slide up from the bottom.|
+| 2 | Tap on the information button next to the first cell. | The app transitions to an information page specific to the building within the tapped cell.|
+
 ### tableView: didSelectRowAt
 | Step | Action | Observation |
 |-|-|-|
@@ -43,3 +67,6 @@
 | 1 | Tap on the magnifying glass icon in the top right corner. | A list of buildings and a search bar slide up from the bottom.|
 | 2 | Tap on the search bar. | The search bar is now selected with a cursor blinking and the keyboard pulled up.|
 | 3 | Tap on the "Cancel" button to the right of the search bar. | The search view disappears and now the application is back at the main Augmented Reality View.|
+
+
+
