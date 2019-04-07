@@ -52,9 +52,16 @@ class FilterView: UIViewController {
     }
 
     func loadFavorites() {
-        let retreivedFavorites = try! Disk.retrieve("kmfavorites.json", from: .documents, as: [KMBuilding].self)
-        favoritesArray = retreivedFavorites
-        print("Attempting to load favorites.......")
+        
+        if Disk.exists("kmfavorites.json", in: .documents) {
+            let retreivedFavorites = try! Disk.retrieve("kmfavorites.json", from: .documents, as: [KMBuilding].self)
+            favoritesArray = retreivedFavorites
+            print("Attempting to load favorites.......")
+            
+        } else {
+            print("No file found....")
+        }
+        
     }
     
     
