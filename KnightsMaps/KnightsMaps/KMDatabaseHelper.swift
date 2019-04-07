@@ -13,7 +13,10 @@ import CodableFirebase
 // Class for connecting to and reading database
 class KMDatabaseHelper {
     
-    static var databaseRef: DatabaseReference = Database.database().reference()
+    static let databaseRef: DatabaseReference = Database.database().reference()
+    static let buildingsURL = "https://raw.githubusercontent.com/micklestick/poop-groop/master/project-information/knightsmaps_buildings.json"
+    // TODO: Use this to auto-update db.
+    static let versionURL = "https://raw.githubusercontent.com/micklestick/poop-groop/master/project-information/knightsmaps_db_versions.json"
 
     static func needUpdate(localVersion: Float, dbVersion: Float) -> Bool {
         // check database for version number
@@ -23,6 +26,15 @@ class KMDatabaseHelper {
         else {
             return true
         }
+    }
+    
+    static func doUpdate() {
+        Database.database().reference().child("buildings").observeSingleEvent(of: .value, with: { snapshot in
+            for case let child as DataSnapshot in snapshot.children {
+                child.ref.child(child.key).parent?.removeValue()
+            }
+            loadFromJson()
+        })
     }
 
     // get connection to database to recieve JSON and run through decode
@@ -53,6 +65,30 @@ class KMDatabaseHelper {
         for building in buildings {
             addBuilding(building)
         }
+    }
+    
+    static func loadFromJson() {
+        guard let endpoint = URL(string: buildingsURL) else {
+            fatalError("Error creating endpoint")
+        }
+        
+        // create JSON url session for get request
+        URLSession.shared.dataTask(with: endpoint) { (data, response, err) in
+            // create instance of data pulled from get request
+            guard let data = data else {
+                fatalError("JSONError: failed to get data")
+            }
+            
+            // decode the json into an array named building
+            do {
+                let building = try JSONDecoder().decode([KMBuilding].self, from: data)
+                
+                // call the completion handler to escape the URL session
+                addBuildings(building)
+            } catch let jsonErr {
+                print("error serializing json:", jsonErr)
+            }
+        }.resume()
     }
     
     static func aTestPoints() -> [KMBuilding] {
