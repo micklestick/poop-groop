@@ -148,17 +148,10 @@
                                         <color key="barTintColor" red="1" green="0.792156862745098" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                         <items>
                                             <navigationItem id="4ok-Pv-4ia">
-                                                <barButtonItem key="leftBarButtonItem" title="&lt;- Back" id="gvB-wf-nc9">
+                                                <barButtonItem key="leftBarButtonItem" title="Back" id="gvB-wf-nc9">
                                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <connections>
                                                         <action selector="backButton:" destination="WLf-sg-I42" id="FiN-mh-Hca"/>
-                                                    </connections>
-                                                </barButtonItem>
-                                                <barButtonItem key="rightBarButtonItem" title="Navigate" id="6zr-pD-2Qr">
-                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <connections>
-                                                        <action selector="navigateButton:" destination="WLf-sg-I42" id="vcy-uy-yNA"/>
-                                                        <segue destination="BV1-FR-VrT" kind="show" id="JNP-Om-Ot3"/>
                                                     </connections>
                                                 </barButtonItem>
                                             </navigationItem>
