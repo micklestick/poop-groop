@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import ARCL
+import UIKit
+import CoreLocation
 
 class KMBuilding: NSObject, Codable, NSCoding {
     let name: String
@@ -43,6 +46,21 @@ class KMBuilding: NSObject, Codable, NSCoding {
         aCoder.encode(longitude, forKey: "longitude")
         aCoder.encode(info, forKey: "info")
         aCoder.encode(type, forKey: "type")
-
+    }
+    
+    func makeNode(_ tagHeight: Double) -> LocationAnnotationNode {
+        let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.longitude))
+        //changed the altitude to 5 for testing, 25-35 will be needed for buildings
+        let location = CLLocation(coordinate: coordinate, altitude: tagHeight)
+        
+        // TODO: FIX THE WHITE CORNERS, not clipping correctly
+        // create a view with size
+        let tagView = BuildingView(name: self.name)
+        
+        let annotationNode = LocationAnnotationNode(location: location, view: tagView)
+        annotationNode.tag = self.name
+        annotationNode.scaleRelativeToDistance = true
+        
+        return annotationNode;
     }
 }
