@@ -31,6 +31,7 @@ class KMDatabaseHelper {
         Database.database().reference().child("buildings").observeSingleEvent(of: .value, with: { snapshot in
             var buildings: [KMBuilding] = []
             for case let child as DataSnapshot in snapshot.children {
+//                child.ref.child(child.key).parent?.removeValue()
                 do {
                     let building = try FirebaseDecoder().decode(KMBuilding.self, from: child.value!)
                    // print(child.value!)
@@ -40,6 +41,7 @@ class KMDatabaseHelper {
                 }
             }
             completionHandler(buildings)
+//            loadFromJson()
         })
     }
     
@@ -53,6 +55,30 @@ class KMDatabaseHelper {
         for building in buildings {
             addBuilding(building)
         }
+    }
+    
+    static func loadFromJson() {
+        guard let endpoint = URL(string: "https://raw.githubusercontent.com/micklestick/poop-groop/master/project-information/knightsmaps_buildings.json") else {
+            fatalError("Error creating endpoint")
+        }
+        
+        // create JSON url session for get request
+        URLSession.shared.dataTask(with: endpoint) { (data, response, err) in
+            // create instance of data pulled from get request
+            guard let data = data else {
+                fatalError("JSONError: failed to get data")
+            }
+            
+            // decode the json into an array named building
+            do {
+                let building = try JSONDecoder().decode([KMBuilding].self, from: data)
+                
+                // call the completion handler to escape the URL session
+                addBuildings(building)
+            } catch let jsonErr {
+                print("error serializing json:", jsonErr)
+            }
+        }.resume()
     }
     
     static func aTestPoints() -> [KMBuilding] {
