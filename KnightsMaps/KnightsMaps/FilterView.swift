@@ -35,7 +35,7 @@ class FilterView: UIViewController {
         searchController.searchBar.scopeButtonTitles = ["All", "Building", "Restaurant", "Store", "Garage", "Favorites"]
         searchController.searchBar.delegate = self
         
-        // Do any additional setup after loading the view.
+        loadFavorites()
     }
     
     
