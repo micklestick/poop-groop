@@ -16,4 +16,4 @@
 | 011 | 011 | 006 | The user will have a launch screen for the app. | High | DONE |
 | 012 | 012 | 000 | The user can search for restuarants around campus. | Low | DONE |
 | 013 | 013 | 005 | The user can search for stores around campus. | Low | DONE |
-| 014 | 001 | 001.0 | The user can search for buildings around campus. | High | Done |
+| 014 | 001 | 001.0 | The user can search for buildings around campus. | High | DONE |
