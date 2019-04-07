@@ -27,7 +27,6 @@ class ViewController: UIViewController {
     private let manager = CMMotionManager()
 
     var buildings : [KMBuilding] = []
-    var testPoints = KMDatabaseHelper.aTestPoints()
     
     //debug labels
     var positionLabel = UILabel()
@@ -78,14 +77,10 @@ class ViewController: UIViewController {
         }
         
         // TODO: we are reloading data from the DB every run
-        KMDatabaseHelper.getData {
-            (array) in
-            
+        KMDatabaseHelper.getData(completionHandler: {(array) in
             self.buildings.append(contentsOf: array)
-            // THIS IS TESTING DATA FOR ALEC
-            self.buildings.append(contentsOf: self.testPoints)
             self.addBuildingTags()
-        }
+        })
         
         trackLocation()
         

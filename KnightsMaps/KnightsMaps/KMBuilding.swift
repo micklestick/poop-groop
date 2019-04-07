@@ -50,13 +50,13 @@ class KMBuilding: NSObject, Codable, NSCoding {
     
     func makeNode(_ tagHeight: Double) -> LocationAnnotationNode {
         let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.longitude))
-        //changed the altitude to 5 for testing, 25-35 will be needed for buildings
+        // changed the altitude to 5 for testing, 25-35 will be needed for buildings
         let location = CLLocation(coordinate: coordinate, altitude: tagHeight)
         
         let tagView = BuildingView(name: self.name)
         
         let annotationNode = LocationAnnotationNode(location: location, image: tagView.renderAsImage())
-        //let annotationNode = LocationAnnotationNode(location: location, view: tagView.renderAsImage())
+        
         annotationNode.tag = self.name
         annotationNode.scaleRelativeToDistance = true
         return annotationNode
