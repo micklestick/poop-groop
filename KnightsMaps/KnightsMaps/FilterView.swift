@@ -173,8 +173,13 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate, FilterViewCell
     }
     
     func didPressInfoButton(_ tag: Int) {
-        let tempBuilding = buildingArray[tag]
-        performSegue(withIdentifier: "infoTableSegue", sender: tempBuilding)
+        if searching {
+            let tempBuilding = filteredBuildings[tag]
+             performSegue(withIdentifier: "infoTableSegue", sender: tempBuilding)
+        } else {
+            let tempBuilding = buildingArray[tag]
+             performSegue(withIdentifier: "infoTableSegue", sender: tempBuilding)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
