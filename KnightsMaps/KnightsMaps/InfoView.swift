@@ -37,12 +37,6 @@ class InfoView: UIViewController {
         
     }
     
-    @IBAction func navigateButton(_ sender: Any) {
-        // segue back to original view sending data back
-        let bname = building!.name
-        delegate?.complete(buildingName: bname)
-    }
-    
     @IBAction func backButton(_ sender: Any) {
         // normal naviagtion back to home screen??
         dismiss(animated: true)

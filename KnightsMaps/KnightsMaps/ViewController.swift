@@ -18,8 +18,6 @@ import SwiftyTimer
 
 class ViewController: UIViewController {
 
-    let debug = true
-    
     // In meters
     let renderDistance = 200.0
     let tagHeight = 45.0
@@ -58,10 +56,10 @@ class ViewController: UIViewController {
 
         createLabels()
         
-        searchButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 60, y: view.frame.height - 80), size: CGSize(width: 50, height: 50)))
+        searchButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 60, y: 40), size: CGSize(width: 50, height: 50)))
         searchButton.setImage(UIImage(named: "search.png"), for: .normal)
         searchButton.setImage(UIImage(named: "Xbutton.png"), for: .selected)
-        searchButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        searchButton.addTarget(self, action: #selector(searchTapped), for: .touchUpInside)
         
         sceneLocationView.addSubview(searchButton)
         sceneLocationView.run()
@@ -94,7 +92,7 @@ class ViewController: UIViewController {
         sceneLocationView.scene = arrowScene
         arrowNode = self.arrowScene.rootNode.childNodes.first!
 
-        arrowUpdateTimer = Timer.every(1/100) {
+        arrowUpdateTimer = Timer.every(1/60) {
 
             if self.destinationNode != nil {
                 
@@ -102,8 +100,6 @@ class ViewController: UIViewController {
 
                 let camera = self.sceneLocationView.pointOfView
                 let position = SCNVector3(x: 0, y: -1.2, z: -2.5)
-
-                //let position = SCNVector3(x: 0, y: -25.0, z: -45.0)
 
                 let referenceNodeTransform = matrix_float4x4(camera!.transform)
                 
@@ -143,7 +139,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func buttonAction(sender: UIButton!) {
+    @objc func searchTapped(sender: UIButton!) {
         if sender.isSelected {
             
             sender.isSelected = false
@@ -152,7 +148,6 @@ class ViewController: UIViewController {
             destinationNode = nil
         }
         else {
-            sender.isSelected = true
             performSegue(withIdentifier: "filterSegue", sender: sender)
         }
     }
@@ -172,7 +167,6 @@ class ViewController: UIViewController {
                 self.timeLeftLabel.isHidden = false
                 
                 let testlocation = self.destinationNode.location
-                //let vectorToTest = testNode.eulerAngles
                 var distanceInMeters = Double(location.distance(from: testlocation!))
                 distanceInMeters = distanceInMeters.roundTo(places: 1)
                 
@@ -309,6 +303,7 @@ class ViewController: UIViewController {
         distanceLabel.textColor = UIColor.white
         distanceLabel.font = UIFont(name: "Futura-CondensedExtraBold", size: 30)
         distanceLabel.text = "Distance: 0.0m"
+        distanceLabel.isHidden = true
         sceneLocationView.addSubview(distanceLabel)
 
         let point4 = CGPoint(x: 10, y: view.frame.height - 100)
@@ -318,10 +313,12 @@ class ViewController: UIViewController {
         timeLeftLabel.textColor = UIColor.white
         timeLeftLabel.font = UIFont(name: "Futura-CondensedExtraBold", size: 30)
         timeLeftLabel.text = "Time Left: 0.0"
+        timeLeftLabel.isHidden = true
         sceneLocationView.addSubview(timeLeftLabel)
     }
-
+    
 }
+
 
 extension ViewController : FilterViewDelegate {
     
@@ -329,6 +326,7 @@ extension ViewController : FilterViewDelegate {
         for building in self.buildingNodes {
             if building.tag == buildingName {
                 destinationNode = building
+                searchButton.isSelected = true
                 print(building.name ?? "Missing")
             }
         }

@@ -37,31 +37,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0DG-Qn-nIZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="1" green="0.79215686269999996" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem id="muh-nt-Dqs"/>
+                                </items>
+                            </navigationBar>
+                            <searchBar clipsSubviews="YES" contentMode="redraw" fixedFrame="YES" text="" placeholder="Search Your Building" showsCancelButton="YES" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MbD-ED-AX8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="barTintColor" red="1" green="0.792156862745098" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>All</string>
+                                    <string>Building</string>
+                                    <string>Store</string>
+                                    <string>Food</string>
+                                    <string>Garage</string>
+                                    <string>Favorites</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="sGS-DX-vH8" id="B8I-aW-a8y"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kMz-ae-h0g">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="146" width="414" height="756"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <searchBar key="tableHeaderView" clipsSubviews="YES" contentMode="redraw" text="" placeholder="Search Your Building" showsCancelButton="YES" showsScopeBar="YES" id="MbD-ED-AX8">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="barTintColor" red="1" green="0.792156862745098" blue="0.019607843137254902" alpha="1" colorSpace="calibratedRGB"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <scopeButtonTitles>
-                                        <string>All</string>
-                                        <string>Building</string>
-                                        <string>Store</string>
-                                        <string>Food</string>
-                                        <string>Garage</string>
-                                        <string>Favorites</string>
-                                    </scopeButtonTitles>
-                                    <connections>
-                                        <outlet property="delegate" destination="sGS-DX-vH8" id="B8I-aW-a8y"/>
-                                    </connections>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="bwr-oX-WHe" detailTextLabel="eu1-ow-juE" style="IBUITableViewCellStyleSubtitle" id="Ne0-Y9-bbF" customClass="FilterViewTableCell" customModule="KnightsMaps" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="84" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ne0-Y9-bbF" id="oDm-A1-JfD">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -148,17 +156,10 @@
                                         <color key="barTintColor" red="1" green="0.792156862745098" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                         <items>
                                             <navigationItem id="4ok-Pv-4ia">
-                                                <barButtonItem key="leftBarButtonItem" title="&lt;- Back" id="gvB-wf-nc9">
+                                                <barButtonItem key="leftBarButtonItem" title="Back" id="gvB-wf-nc9">
                                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <connections>
                                                         <action selector="backButton:" destination="WLf-sg-I42" id="FiN-mh-Hca"/>
-                                                    </connections>
-                                                </barButtonItem>
-                                                <barButtonItem key="rightBarButtonItem" title="Navigate" id="6zr-pD-2Qr">
-                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <connections>
-                                                        <action selector="navigateButton:" destination="WLf-sg-I42" id="vcy-uy-yNA"/>
-                                                        <segue destination="BV1-FR-VrT" kind="show" id="JNP-Om-Ot3"/>
                                                     </connections>
                                                 </barButtonItem>
                                             </navigationItem>
