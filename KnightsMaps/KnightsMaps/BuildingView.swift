@@ -13,13 +13,13 @@ class BuildingView: UIView {
     let buildingTitle: UILabel
     
     init(name: String) {
-        let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 4200, height: 400))
+        let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 800, height: 100))
         
         self.buildingTitle = UILabel(frame: frame)
         
         super.init(frame: frame)
-        self.addViews()
         self.initViews(name)
+        self.addViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,7 +38,7 @@ class BuildingView: UIView {
         buildingTitle.text = name
         buildingTitle.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 0.3)
         buildingTitle.textAlignment = NSTextAlignment.center
-        buildingTitle.font = UIFont.systemFont(ofSize: 300)
+        buildingTitle.font = UIFont.systemFont(ofSize: 100)
     }
     
     func addViews() {
