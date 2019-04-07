@@ -53,13 +53,19 @@ class KMBuilding: NSObject, Codable, NSCoding {
         // changed the altitude to 5 for testing, 25-35 will be needed for buildings
         let location = CLLocation(coordinate: coordinate, altitude: tagHeight)
         
+        // TODO: FIX THE WHITE CORNERS, not clipping correctly
+        // create a view with size
         let tagView = BuildingView(name: self.name)
         
+<<<<<<< HEAD
         let annotationNode = LocationAnnotationNode(location: location, image: tagView.renderAsImage())
         
+=======
+        let annotationNode = LocationAnnotationNode(location: location, view: tagView)
+>>>>>>> parent of b3f03cf... VERSION 1.0!
         annotationNode.tag = self.name
         annotationNode.scaleRelativeToDistance = true
-        return annotationNode
+        
+        return annotationNode;
     }
-    
 }

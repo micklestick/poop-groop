@@ -25,13 +25,6 @@ class BuildingView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    func renderAsImage() -> UIImage {
-        let renderer = UIGraphicsImageRenderer(bounds: bounds)
-        return renderer.image { context in
-            layer.render(in: context.cgContext)
-        }
-    }
     
     func initViews(_ name: String) {
         self.backgroundColor = UIColor.clear
