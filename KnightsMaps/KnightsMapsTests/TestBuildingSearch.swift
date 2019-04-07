@@ -29,7 +29,6 @@ class TestBuildingSearch: XCTestCase {
     func testBuildingSearch() {
         let buildingResult = SearchBuilding.searchArray(input: "Building 1", buildingArray: sampleBuildings())
         
-        print(buildingResult)
         XCTAssert(buildingResult != nil)
         XCTAssert(buildingResult?.acronym == "b1")
         XCTAssert(buildingResult?.info == "Far building")
