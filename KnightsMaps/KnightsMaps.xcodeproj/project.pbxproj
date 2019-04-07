@@ -12,7 +12,6 @@
 		149D9DEC22384F9900AC750E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 149D9DEB22384F9200AC750E /* GoogleService-Info.plist */; };
 		6AE0DA85225960A700409156 /* BuildingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE0DA84225960A700409156 /* BuildingView.swift */; };
 		6AE0DA89225A260E00409156 /* TestBuildingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE0DA88225A260E00409156 /* TestBuildingView.swift */; };
-		6AE0DA8B225A3AEB00409156 /* TestBuildingSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE0DA8A225A3AEB00409156 /* TestBuildingSearch.swift */; };
 		70B9A6892213E7FE003C11EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B9A6882213E7FE003C11EF /* AppDelegate.swift */; };
 		70B9A68B2213E7FE003C11EF /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 70B9A68A2213E7FE003C11EF /* art.scnassets */; };
 		70B9A68D2213E7FE003C11EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B9A68C2213E7FE003C11EF /* ViewController.swift */; };
@@ -24,7 +23,6 @@
 		F4A46511223C647E00284FD9 /* FilterViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A46510223C647E00284FD9 /* FilterViewTableCell.swift */; };
 		F4F1CDDD2235B0FA00F7B438 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F1CDDC2235B0FA00F7B438 /* FilterView.swift */; };
 		FE3C463122473C940059F32B /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3C463022473C940059F32B /* InfoView.swift */; };
-		FEA83B7B2232420C00C5BEAA /* SearchBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA83B7A2232420C00C5BEAA /* SearchBuilding.swift */; };
 		FEB73ED1221638B70040A251 /* KMBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB73ED0221638B70040A251 /* KMBuilding.swift */; };
 		FEC9A22A2217B15300EBC9B2 /* KMDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9A2292217B15300EBC9B2 /* KMDatabaseHelper.swift */; };
 		FF16D994FF858E57B7686F88 /* libPods-KnightsMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B71002B3C1C8B6938BB71AB /* libPods-KnightsMaps.a */; };
@@ -55,7 +53,6 @@
 		5286F789FE9C6DFFD024E7C4 /* Pods-KnightsMapsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightsMapsTests.release.xcconfig"; path = "Target Support Files/Pods-KnightsMapsTests/Pods-KnightsMapsTests.release.xcconfig"; sourceTree = "<group>"; };
 		6AE0DA84225960A700409156 /* BuildingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingView.swift; sourceTree = "<group>"; };
 		6AE0DA88225A260E00409156 /* TestBuildingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBuildingView.swift; sourceTree = "<group>"; };
-		6AE0DA8A225A3AEB00409156 /* TestBuildingSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBuildingSearch.swift; sourceTree = "<group>"; };
 		70B9A6852213E7FE003C11EF /* KnightsMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnightsMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B9A6882213E7FE003C11EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70B9A68A2213E7FE003C11EF /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -76,7 +73,6 @@
 		F4A46510223C647E00284FD9 /* FilterViewTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewTableCell.swift; sourceTree = "<group>"; };
 		F4F1CDDC2235B0FA00F7B438 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		FE3C463022473C940059F32B /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		FEA83B7A2232420C00C5BEAA /* SearchBuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBuilding.swift; sourceTree = "<group>"; };
 		FEB73ED0221638B70040A251 /* KMBuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMBuilding.swift; sourceTree = "<group>"; };
 		FEC9A2292217B15300EBC9B2 /* KMDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMDatabaseHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,7 +160,6 @@
 				70B9A6932213E7FF003C11EF /* LaunchScreen.storyboard */,
 				70B9A6962213E7FF003C11EF /* Info.plist */,
 				FEB73ED0221638B70040A251 /* KMBuilding.swift */,
-				FEA83B7A2232420C00C5BEAA /* SearchBuilding.swift */,
 				FEC9A2292217B15300EBC9B2 /* KMDatabaseHelper.swift */,
 				149D9DEB22384F9200AC750E /* GoogleService-Info.plist */,
 				6AE0DA84225960A700409156 /* BuildingView.swift */,
@@ -179,7 +174,6 @@
 				6AE0DA88225A260E00409156 /* TestBuildingView.swift */,
 				148E10082228C61700CC2C08 /* TestBuildingObject.swift */,
 				14365568222D8AA200031F4F /* TestDatabaseHelper.swift */,
-				6AE0DA8A225A3AEB00409156 /* TestBuildingSearch.swift */,
 			);
 			path = KnightsMapsTests;
 			sourceTree = "<group>";
@@ -402,7 +396,6 @@
 				70B9A6892213E7FE003C11EF /* AppDelegate.swift in Sources */,
 				F4A46511223C647E00284FD9 /* FilterViewTableCell.swift in Sources */,
 				F4F1CDDD2235B0FA00F7B438 /* FilterView.swift in Sources */,
-				FEA83B7B2232420C00C5BEAA /* SearchBuilding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +406,6 @@
 				14365569222D8AA200031F4F /* TestDatabaseHelper.swift in Sources */,
 				6AE0DA89225A260E00409156 /* TestBuildingView.swift in Sources */,
 				148E10092228C61700CC2C08 /* TestBuildingObject.swift in Sources */,
-				6AE0DA8B225A3AEB00409156 /* TestBuildingSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

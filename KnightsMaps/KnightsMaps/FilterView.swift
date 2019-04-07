@@ -34,6 +34,7 @@ class FilterView: UIViewController {
         
         searchController.searchBar.scopeButtonTitles = ["All", "Building", "Restaurant", "Store", "Garage", "Favorites"]
         searchController.searchBar.delegate = self
+        loadFavorites()
         
         // Do any additional setup after loading the view.
     }
@@ -237,7 +238,6 @@ extension FilterView: UISearchBarDelegate {
         }
         else {
             loadFavorites()
-//            filteredBuildings = favoritesArray
             filteredBuildings = favoritesArray.filter({($0.name.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased() || $0.acronym.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased())})
             tbView.reloadData()
         }
