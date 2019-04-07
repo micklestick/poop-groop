@@ -251,25 +251,20 @@ class ViewController: UIViewController {
             //update nodes every 1 second
 
             for building in self.buildings {
-
                 self.drawBuildingNode(building: building)
-
             }
             
             //this will hide nodes too far away
             self.nodeUpdateTimer = Timer.every(1) {
                 for building in self.buildingNodes {
-                    
                     let distanceInMeters = Double(self.loc.distance(from: building.location))
 
                     // if distance is greater then render distance hide it and not the destination
                     if (distanceInMeters > self.renderDistance) && (building != self.destinationNode) {
                         building.isHidden = true
-                        
                     }
                     else {
                         building.isHidden = false
-
                     }
                 }
             }
@@ -277,35 +272,9 @@ class ViewController: UIViewController {
     }
     
     func drawBuildingNode(building: KMBuilding) {
-        let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(building.latitude), longitude: CLLocationDegrees(building.longitude))
-        //changed the altitude to 5 for testing, 25-35 will be needed for buildings
-        let location = CLLocation(coordinate: coordinate, altitude: tagHeight)
-        
-        // TODO: FIX THE WHITE CORNERS, not clipping correctly
-        //create a view with size
-        let tagView = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 800, height: 100)))
-        tagView.backgroundColor = UIColor.clear
-        tagView.layer.cornerRadius = 40.0
-        tagView.layer.borderWidth = 10.0
-        tagView.layer.masksToBounds = true
-        tagView.layer.borderColor = UIColor(red:0.0, green:0.52, blue:1.0, alpha:1.0).cgColor
-        tagView.layer.backgroundColor = UIColor.clear.cgColor
-        tagView.clipsToBounds = true
-        
-        let buildingTitle = UILabel(frame: tagView.frame)
-        buildingTitle.text = building.name
-        buildingTitle.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 0.3)
-        buildingTitle.textAlignment = NSTextAlignment.center
-        buildingTitle.font = UIFont.systemFont(ofSize: 100)
-        
-        tagView.addSubview(buildingTitle)
-        
-        let annotationNode = LocationAnnotationNode(location: location, view: tagView)
-        annotationNode.tag = building.name
-        annotationNode.scaleRelativeToDistance = true
+        let annotationNode = building.makeNode(tagHeight)
         
         self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
-        
         self.buildingNodes.append(annotationNode)
     }
     
@@ -360,6 +329,7 @@ extension ViewController : FilterViewDelegate {
         for building in self.buildingNodes {
             if building.tag == buildingName {
                 destinationNode = building
+                print(building.name ?? "Missing")
             }
         }
         searchButton.becomeFirstResponder()

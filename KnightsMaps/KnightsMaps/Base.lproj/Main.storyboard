@@ -51,7 +51,7 @@
                                         <string>All</string>
                                         <string>Building</string>
                                         <string>Store</string>
-                                        <string>Restuarant</string>
+                                        <string>Food</string>
                                         <string>Garage</string>
                                         <string>Favorites</string>
                                     </scopeButtonTitles>
@@ -82,10 +82,9 @@
                                                         <action selector="buttonPressed:" destination="Ne0-Y9-bbF" eventType="touchUpInside" id="S4I-fQ-gj4"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="069-5k-ggl">
-                                                    <rect key="frame" x="324" y="7" width="32" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="069-5k-ggl">
+                                                    <rect key="frame" x="334" y="11" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Info"/>
                                                     <connections>
                                                         <action selector="infoButtonPressed:" destination="Ne0-Y9-bbF" eventType="touchUpInside" id="pmq-dp-8YK"/>
                                                     </connections>
