@@ -51,7 +51,7 @@
                                         <string>All</string>
                                         <string>Building</string>
                                         <string>Store</string>
-                                        <string>Restuarant</string>
+                                        <string>Food</string>
                                         <string>Garage</string>
                                         <string>Favorites</string>
                                     </scopeButtonTitles>
@@ -75,17 +75,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ear-YT-ozl">
-                                                    <rect key="frame" x="311" y="5" width="88" height="29"/>
+                                                    <rect key="frame" x="372" y="8" width="27" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="buttonPressed:" destination="Ne0-Y9-bbF" eventType="touchUpInside" id="S4I-fQ-gj4"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="069-5k-ggl">
-                                                    <rect key="frame" x="223" y="17" width="80" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="069-5k-ggl">
+                                                    <rect key="frame" x="334" y="11" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Info"/>
                                                     <connections>
                                                         <action selector="infoButtonPressed:" destination="Ne0-Y9-bbF" eventType="touchUpInside" id="pmq-dp-8YK"/>
                                                     </connections>
@@ -122,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFN-Mq-Dzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038" y="90"/>
+            <point key="canvasLocation" x="1037.68115942029" y="89.732142857142847"/>
         </scene>
         <!--Info View-->
         <scene sceneID="ot2-Qo-dWD">
@@ -213,6 +212,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="P9a-v3-IhW"/>
+        <segue reference="cWv-Lo-CFs"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>sss.KnightsMaps</string>
+	<string>ss.KnightsMaps</string>
 	<key>PROJECT_ID</key>
 	<string>knightsmaps</string>
 	<key>STORAGE_BUCKET</key>

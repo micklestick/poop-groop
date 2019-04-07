@@ -62,13 +62,6 @@
       "name" : "Band Storage",
       "type" : "Building"
     },{
-      "acronym" : "BYC",
-      "info" : "",
-      "latitude" : 28.59542531,
-      "longitude" : -81.20264935,
-      "name" : "Barbara Ying Center",
-      "type" : "Building"
-    },{
       "acronym" : "",
       "info" : "",
       "latitude" : 28.5891513,
@@ -80,7 +73,7 @@
       "info" : "",
       "latitude" : 28.59501118,
       "longitude" : -81.20257918,
-      "name" : "Barbara Ying Center - Center for Multilingual Multicultural Studies",
+      "name" : "Multilingual Multicultural Studies",
       "type" : "Building"
     },{
       "acronym" : "BIO",
@@ -157,7 +150,7 @@
       "info" : "Hours: Mon-Fri: 8am - 5pm\nEmail: career@ucf.edu\nUCF Career Services provides help to students with resume and coverletter critiques, as well as other interview and employment stratigies. ",
       "latitude" : 28.605286,
       "longitude" : -81.199026,
-      "name" : "Career Services and Experiential Learning",
+      "name" : "Career Services",
       "type" : "Building"
     }, {
       "acronym" : "ARNA",
@@ -760,7 +753,7 @@
       "info" : "",
       "latitude" : 28.58856722,
       "longitude" : -81.19730639,
-      "name" : "Simulation, Training and Technology Center",
+      "name" : "Sim, Training and Tech Center",
       "type" : "Building"
     }, {
       "acronym" : "",
@@ -914,7 +907,7 @@
       "info" : "",
       "latitude" : 28.607487,
       "longitude" : -81.191288,
-      "name" : "Wayne Densch Center for Student-Athlete Leadership",
+      "name" : "Wayne Densch Center",
       "type" : "Building"
     }, {
       "acronym" : "WD1",
