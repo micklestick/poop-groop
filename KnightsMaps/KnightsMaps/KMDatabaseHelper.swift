@@ -13,7 +13,10 @@ import CodableFirebase
 // Class for connecting to and reading database
 class KMDatabaseHelper {
     
-    static var databaseRef: DatabaseReference = Database.database().reference()
+    static let databaseRef: DatabaseReference = Database.database().reference()
+    static let buildingsURL = "https://raw.githubusercontent.com/micklestick/poop-groop/master/project-information/knightsmaps_buildings.json"
+    // TODO: Use this to auto-update db.
+    static let versionURL = "https://raw.githubusercontent.com/micklestick/poop-groop/master/project-information/knightsmaps_db_versions.json"
 
     static func needUpdate(localVersion: Float, dbVersion: Float) -> Bool {
         // check database for version number
@@ -24,6 +27,15 @@ class KMDatabaseHelper {
             return true
         }
     }
+    
+    static func doUpdate() {
+        Database.database().reference().child("buildings").observeSingleEvent(of: .value, with: { snapshot in
+            for case let child as DataSnapshot in snapshot.children {
+                child.ref.child(child.key).parent?.removeValue()
+            }
+            loadFromJson()
+        })
+    }
 
     // get connection to database to recieve JSON and run through decode
     // function returns an array of type KMBuilding with the current databse info
@@ -31,7 +43,6 @@ class KMDatabaseHelper {
         Database.database().reference().child("buildings").observeSingleEvent(of: .value, with: { snapshot in
             var buildings: [KMBuilding] = []
             for case let child as DataSnapshot in snapshot.children {
-//                child.ref.child(child.key).parent?.removeValue()
                 do {
                     let building = try FirebaseDecoder().decode(KMBuilding.self, from: child.value!)
                    // print(child.value!)
@@ -41,7 +52,6 @@ class KMDatabaseHelper {
                 }
             }
             completionHandler(buildings)
-//            loadFromJson()
         })
     }
     
@@ -58,7 +68,7 @@ class KMDatabaseHelper {
     }
     
     static func loadFromJson() {
-        guard let endpoint = URL(string: "https://raw.githubusercontent.com/micklestick/poop-groop/master/project-information/knightsmaps_buildings.json") else {
+        guard let endpoint = URL(string: buildingsURL) else {
             fatalError("Error creating endpoint")
         }
         
