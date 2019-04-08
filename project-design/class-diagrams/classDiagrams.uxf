@@ -4,19 +4,22 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>60</y>
-      <w>192</w>
-      <h>108</h>
+      <x>42</x>
+      <y>138</y>
+      <w>240</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>KMDatabaseHelper
 --
--jsonUrlString: String
+-databaseRef: DatabaseReference
+-buildingsURL: String
+-versionURL: String
 --
-#needUpdate(): Bool
-#getData(completionHandler: Func): Void
-#makeObjectArray(): KMBuilding[0..n]
-#aTestPoints(): KMBuilding[0..n]
+#getData(completionHandler: Func, branch: String): Void
+#doUpdate(branch: String): Void
+#addBuiling(branch: String): Void
+#addBuilings(branch: String): Void
+#loadFromJSON(branch: String): Void
  </panel_attributes>
     <additional_attributes/>
   </element>
@@ -26,7 +29,7 @@
       <x>306</x>
       <y>186</y>
       <w>228</w>
-      <h>102</h>
+      <h>108</h>
     </coordinates>
     <panel_attributes>KMBuilding
 --
@@ -39,30 +42,7 @@
 --
 #init(name: String, acronym: String, latitude: Float,
          longitude: Float, info: String, type: String): Void
- </panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>156</x>
-      <y>378</y>
-      <w>168</w>
-      <h>108</h>
-    </coordinates>
-    <panel_attributes>LocationManager
---
--locationManager: CLLocationManager
--location: CLLocation
--isUpdatingLocation: Bool
--lastLocationError: Error
---
-#findLocation(view: ViewController)
-#startLocationManager()
-#stopLocationManager()
-#didUpdate()
-#didFailWithErrors()
- </panel_attributes>
+#makeNode(tagHeight: Double)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -111,23 +91,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>60</x>
-      <y>330</y>
-      <w>300</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>SearchBuilding
---
-#searchArray(input: String, buildingArray: KMBuilding[0.n]): KMBuilding
-
- </panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>0</x>
-      <y>186</y>
+      <x>84</x>
+      <y>324</y>
       <w>270</w>
       <h>102</h>
     </coordinates>
@@ -142,25 +107,26 @@ filteredBuildings: KMBuilding[0..n]
 #viewDidLoad(): Void
 #itemSelected(bName: String): Void
 #tableView(tableView: UITableView, indexPath: IndexPath): Void
-
+#saveFavorites()
+#loadFavorites()
  </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
-      <y>18</y>
-      <w>276</w>
-      <h>102</h>
+      <x>192</x>
+      <y>12</y>
+      <w>414</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>AppDelegate
 --
 -window: UIWindow
 -dbHelper: KMDatabaseHelper
 --
-#application
-#applicationWillResignActive
+#application(application: UIApplication, launchOptions: UIApplication.LaunchOptionsKey[0..n]): Bool
+#applicationWillResignActive(application: UIApplication): Void
 #applicationDidEnterBackground(application: UIApplication): Void
 #applicationWillEnterForeground(application: UIApplication): Void
 #applicationDidBecomeActive(application: UIApplication): Void
@@ -170,42 +136,19 @@ filteredBuildings: KMBuilding[0..n]
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>330</x>
-      <y>162</y>
-      <w>18</w>
-      <h>36</h>
+      <x>276</x>
+      <y>210</y>
+      <w>42</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>306</x>
-      <y>282</y>
-      <w>18</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>528</x>
-      <y>222</y>
-      <w>60</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=0..n</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>60</x>
-      <y>120</y>
+      <x>78</x>
+      <y>276</y>
       <w>216</w>
       <h>36</h>
     </coordinates>
@@ -220,26 +163,14 @@ m1=0..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>486</x>
-      <y>90</y>
-      <w>126</w>
-      <h>24</h>
+      <x>192</x>
+      <y>102</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
-    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>264</x>
-      <y>216</y>
-      <w>54</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=0..n</panel_attributes>
-    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -257,10 +188,10 @@ m1=0..n</panel_attributes>
 -mapDisplay: MKMapView
 --
 #viewDidLoad(): Void
-#navigateButton(sender: Any)
-#backButton(sender: Any)
-#setCenter(latitude:Float, longitude: Float)
-#setPin(latitude:Float, longitude:Float)
+#navigateButton(sender: Any): Void
+#backButton(sender: Any): Void
+#setCenter(latitude:Float, longitude: Float): Void
+#setPin(latitude:Float, longitude:Float): Void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -268,12 +199,54 @@ m1=0..n</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>450</x>
-      <y>282</y>
+      <y>288</y>
+      <w>30</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>228</y>
+      <w>60</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>288</y>
       <w>30</w>
       <h>48</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=0..n</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>336</x>
+      <y>444</y>
+      <w>228</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>BuildingView
+--
+-buildingTitle: UILabel
+--
+#init(name: String): Void
+#renderAsImage(): UIImage
+#initViews(name: String): Void
+#addViews(): Void</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

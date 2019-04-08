@@ -17,7 +17,6 @@ import Async
 import SwiftyTimer
 
 class ViewController: UIViewController {
-
     // In meters
     let renderDistance = 200.0
     let tagHeight = 45.0
@@ -33,7 +32,6 @@ class ViewController: UIViewController {
     var distanceLabel = UILabel()
     var angleLabel = UILabel()
     var timeLeftLabel = UILabel()
-    
     var searchButton = UIButton()
 
     var destinationNode: LocationAnnotationNode!
@@ -52,7 +50,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         createLabels()
         
         searchButton = UIButton(frame: CGRect(origin: CGPoint(x: view.frame.width - 60, y: 40), size: CGSize(width: 50, height: 50)))
@@ -70,10 +67,7 @@ class ViewController: UIViewController {
             guard let data = data, error == nil else { return }
             Async.main {
                 self.angleLabel.text = "Heading: \(data.heading.roundTo(places: 5))"
-                
-
             }
-         
         }
         
         // TODO: we are reloading data from the DB every run
@@ -88,9 +82,7 @@ class ViewController: UIViewController {
         arrowNode = self.arrowScene.rootNode.childNodes.first!
 
         arrowUpdateTimer = Timer.every(1/60) {
-
             if self.destinationNode != nil {
-                
                 self.arrowNode.isHidden = false
 
                 let camera = self.sceneLocationView.pointOfView
@@ -115,13 +107,11 @@ class ViewController: UIViewController {
             else {
                 self.arrowNode.isHidden = true
             }
-
         }
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "filterSegue" {
             let destinationVC = segue.destination as? FilterView
             destinationVC?.delegate = self
@@ -278,7 +268,6 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         sceneLocationView.run()
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -286,11 +275,9 @@ class ViewController: UIViewController {
         
         //Stop the scene when the view dissapears
         sceneLocationView.pause()
-
     }
     
     func createLabels() {
-        
         let point = CGPoint(x: 10, y: view.frame.height - 125)
         let size = CGSize(width: 800, height: 100)
         let rekt = CGRect(origin: point, size: size)
@@ -311,12 +298,10 @@ class ViewController: UIViewController {
         timeLeftLabel.isHidden = true
         sceneLocationView.addSubview(timeLeftLabel)
     }
-    
 }
 
 
 extension ViewController : FilterViewDelegate {
-    
     func complete(buildingName: String) {
         for building in self.buildingNodes {
             if building.tag == buildingName {
@@ -327,16 +312,13 @@ extension ViewController : FilterViewDelegate {
         }
         searchButton.becomeFirstResponder()
     }
-    
 }
 
 
 extension Double {
-    
     /// Rounds the double to decimal places value
     func roundTo(places: Int) -> Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
     }
-    
 }

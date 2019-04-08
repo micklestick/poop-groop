@@ -64,8 +64,6 @@ class FilterView: UIViewController {
         
     }
     
-    
-    
     //This is called when you tap on a specific row in the search
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if searching {
