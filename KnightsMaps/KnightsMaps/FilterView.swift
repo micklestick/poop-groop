@@ -34,9 +34,8 @@ class FilterView: UIViewController {
         
         searchController.searchBar.scopeButtonTitles = ["All", "Building", "Restaurant", "Store", "Garage", "Favorites"]
         searchController.searchBar.delegate = self
-        loadFavorites()
         
-        // Do any additional setup after loading the view.
+        loadFavorites()
     }
     
     
@@ -174,8 +173,13 @@ extension FilterView: UITableViewDataSource, UITableViewDelegate, FilterViewCell
     }
     
     func didPressInfoButton(_ tag: Int) {
-        let tempBuilding = buildingArray[tag]
-        performSegue(withIdentifier: "infoTableSegue", sender: tempBuilding)
+        if searching {
+            let tempBuilding = filteredBuildings[tag]
+             performSegue(withIdentifier: "infoTableSegue", sender: tempBuilding)
+        } else {
+            let tempBuilding = buildingArray[tag]
+             performSegue(withIdentifier: "infoTableSegue", sender: tempBuilding)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -238,6 +242,7 @@ extension FilterView: UISearchBarDelegate {
         }
         else {
             loadFavorites()
+//            filteredBuildings = favoritesArray
             filteredBuildings = favoritesArray.filter({($0.name.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased() || $0.acronym.lowercased().prefix(masterSearchText.count) == masterSearchText.lowercased())})
             tbView.reloadData()
         }
