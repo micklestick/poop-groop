@@ -12,7 +12,7 @@
 
 | Step | Action | Observation |
 |-|-|-|
-| 1 | From AR Home screen tap search icon in bottom right corner | The application should direct user to search page |
+| 1 | From AR Home screen tap search icon in top right corner | The application should direct user to search page |
 | 2 | On search page in the navigation bar, Tap the tab that is named "Garage" | Search page should update, showing only Garages |
 | 3 | Verify that the search page is displaying only parking garages | The only objects on the page should be the parking garages |
 
@@ -29,7 +29,7 @@
 
 | Step | Action | Observation |
 |-|-|-|
-| 1 | From AR home screen tap search icon in bottom right corner | The application should direct user to search page |
+| 1 | From AR home screen tap search icon in top right corner | The application should direct user to search page |
 | 2 | Tap on the first building on the search page | Application should return user to AR view with a destination |
 | 3 | Verify that the label named "Time Left:" in the bottom left corner is displaying a number | The label should be displaying the time to the destination |
 | 4 | Start walking and verify the time changes | The time should update as the user moves closer to the destination |
@@ -38,7 +38,7 @@
 
 | Step | Action | Observation |
 |-|-|-|
-| 1 | From AR home screen tap search icon in bottom right corner | The application should direct user to search page |
+| 1 | From AR home screen tap search icon in top right corner | The application should direct user to search page |
 | 2 | Tap on the first building on the search page | Application should return user to AR view with a destination |
 | 3 | Verify that the label named "Distance:" in the bottom left corner is displaying a number | The label should be displaying the current distance to the destination |
 | 4 | Start walking and verify the distance changes | The distance should update as the user moves closer to the destination |
@@ -47,7 +47,7 @@
 
 | Step | Action | Observation |
 |-|-|-|
-| 1 | From AR Home screen tap search icon in bottom right corner | The application should direct user to search page |
+| 1 | From AR Home screen tap search icon in top right corner | The application should direct user to search page |
 | 2 | Tap on the heart button next to the first building on search page | the building should be added to the favorites list |
 | 3 | On search page in the navigation bar tap the "Favorites Tab" | The app should filter out all buildings not in favorites. Will only show the one building added. |
 | 4 | Verify the building just tapped appears under the favorites tab | The building should be there |
@@ -58,7 +58,7 @@
 
 | Step | Action | Observation |
 |-|-|-|
-| 1 | Tap on the magnifying glass icon in the bottom right corner. | A list of buildings and a search bar slide up from the bottom. |
+| 1 | Tap on the magnifying glass icon in the top right corner. | A list of buildings and a search bar slide up from the bottom. |
 | 2 | Tap on the search bar. | The search bar is now selected with a cursor blinking and the keyboard pulled up. |
 | 3 | Type in "Engin" | The search bar has "Engin" filled in. |
 | 4 | Verify a list of auto-complete options are available. | The search results filter out to anything applicable, in this case "Engineering I" and "Engineering II" |
@@ -68,7 +68,7 @@
 
 | Step | Action | Observation |
 |-|-|-|
-| 1 | From AR Home screen tap search icon in bottom right corner | The application should direct user to search page |
+| 1 | From AR Home screen tap search icon in top right corner | The application should direct user to search page |
 | 2 | On search page in the navigation bar, Tap the tab that is named "Food" | Search page should update, showing only Restaurants |
 | 3 | Verify that the search page is displaying Restaruants | The only objects on the page should be Restaruants |
 
@@ -76,7 +76,7 @@
 
 | Step | Action | Observation |
 |-|-|-|
-| 1 | From AR Home screen tap search icon in bottom right corner | The application should direct user to search page |
+| 1 | From AR Home screen tap search icon in top right corner | The application should direct user to search page |
 | 2 | On search page in the navigation bar, Tap the tab that is named "Store" | Search page should update, showing only stores |
 | 3 | Verify that the search page is displaying stores | The page should filter out all but stores. The only objects on the page should be stores |
 
@@ -113,7 +113,7 @@
 
 | Step | Action | Observation |
 |-|-|-|
-| 1 | Tap on the maginfying glass icon in the bottom right corner. | A list of buildings and a search bar slide up from the bottom. |
+| 1 | Tap on the maginfying glass icon in the top right corner. | A list of buildings and a search bar slide up from the bottom. |
 | 2 | Tap on the search bar | The search bar is now selected with a cursor blinking and the keyboard pulled up. |
 | 3 | Type in "Engineering I" | The table will filter out results as you type. The only entry left is “Engineering I” |
 | 4 | Select the "Engineering I" row | The search view disappears and now the application is back at the main Augmented Reality View. |
