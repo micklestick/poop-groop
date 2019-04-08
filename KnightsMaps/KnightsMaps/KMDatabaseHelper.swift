@@ -55,7 +55,7 @@ class KMDatabaseHelper {
     // Add an array of buildings to the database.
     static func addBuildings(_ buildings: [KMBuilding], _ branch: String = "main") {
         for building in buildings {
-            addBuilding(building)
+            addBuilding(building, branch)
         }
     }
     

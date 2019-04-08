@@ -57,17 +57,17 @@ class TestDatabaseHelper: XCTestCase {
     func testDatabaseUpdate() {
         var buildingsOriginal: [KMBuilding] = []
         var buildingsUpdated: [KMBuilding] = []
-        
+
         KMDatabaseHelper.getData(completionHandler: { (array) in
             buildingsOriginal.append(contentsOf: array)
         }, branch: "dev")
         
         KMDatabaseHelper.doUpdate("dev");
-        
+
         KMDatabaseHelper.getData(completionHandler: { (array) in
             buildingsUpdated.append(contentsOf: array)
         }, branch: "dev")
-        
+
         XCTAssert(buildingsOriginal == buildingsUpdated)
     }
 }
