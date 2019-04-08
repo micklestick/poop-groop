@@ -147,16 +147,22 @@ filteredBuildings: KMBuilding[0..n]
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>78</x>
-      <y>276</y>
+      <x>576</x>
+      <y>414</y>
       <w>216</w>
-      <h>36</h>
+      <h>102</h>
     </coordinates>
     <panel_attributes>FilterViewTableCell
 --
+-button: UIButton
+-infoButton: UIButton
+-cellDelegate: FilterViewCellDelegate
+-infoDelegate: FilterViewCellDelegate
+--
 #awakeFromNib(): Void
 #setSelected(selection: Bool, animated: Bool): Void
-
+#infoButtonPressed(sender: UIButton): Void
+#buttonPressed(sender: UIButton): Void
  </panel_attributes>
     <additional_attributes/>
   </element>
